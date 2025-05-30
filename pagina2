@@ -1,0 +1,2373 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROTOCOLO DE DESINTOXICAÇÃO NEUROLÓGICA REVELADO - NooDrops Detox</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(11, 20, 38, 0.8) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(212, 175, 55, 0.02) 0%, transparent 50%),
+                linear-gradient(135deg, #0B1426 0%, #1a2640 25%, #0B1426 50%, #243447 75%, #0B1426 100%);
+            background-size: 600% 600%;
+            animation: neuralPulse 20s ease infinite;
+            color: #E8E9EA;
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4AF37' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat,
+                url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4AF37' fill-opacity='0.01'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+            z-index: -2;
+            opacity: 0.3;
+        }
+
+        @keyframes neuralPulse {
+            0%, 100% { background-position: 0% 50%; }
+            33% { background-position: 100% 50%; }
+            66% { background-position: 50% 100%; }
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .continuation-header {
+            background: 
+                linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(212, 175, 55, 0.04) 100%),
+                rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(40px) saturate(180%);
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+            padding: 60px 0;
+            margin-bottom: 80px;
+            overflow: hidden;
+            border-radius: 32px;
+            box-shadow: 
+                0 32px 64px rgba(0, 0, 0, 0.4),
+                0 16px 32px rgba(0, 0, 0, 0.2),
+                0 8px 16px rgba(212, 175, 55, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .continuation-header::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, #D4AF37, transparent 30%, transparent 70%, #D4AF37);
+            border-radius: 32px;
+            z-index: -1;
+        }
+
+        .progress-indicator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .progress-step {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #D4AF37, #F4D03F);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #0B1426;
+            box-shadow: 0 8px 16px rgba(212, 175, 55, 0.3);
+        }
+
+        .progress-line {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #D4AF37, #F4D03F);
+            border-radius: 2px;
+        }
+
+        .reveal-headline {
+            font-family: 'Orbitron', monospace;
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            text-align: center;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #D4AF37 0%, #F4D03F 25%, #FFED4E 50%, #F4D03F 75%, #D4AF37 100%);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 60px rgba(212, 175, 55, 0.4);
+            animation: textShimmer 4s ease-in-out infinite;
+        }
+
+        @keyframes textShimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .reveal-subtext {
+            font-size: 1.3rem;
+            color: #C8CDD4;
+            text-align: center;
+            font-weight: 500;
+            opacity: 0.95;
+        }
+
+        /* Auto-Diagnóstico Neurológico */
+        .auto-diagnostic {
+            background: 
+                linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0.08) 100%),
+                rgba(11, 20, 38, 0.4);
+            backdrop-filter: blur(60px) saturate(200%);
+            border: 2px solid rgba(212, 175, 55, 0.4);
+            padding: 60px 50px;
+            border-radius: 32px;
+            margin: 80px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 40px 80px rgba(212, 175, 55, 0.2),
+                0 20px 40px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
+        }
+
+        .diagnostic-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #D4AF37;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 16px rgba(212, 175, 55, 0.5);
+        }
+
+        .diagnostic-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #C8CDD4;
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+
+        .diagnostic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .diagnostic-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .diagnostic-item:hover {
+            background: rgba(212, 175, 55, 0.05);
+            border-color: rgba(212, 175, 55, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .diagnostic-item.selected {
+            background: rgba(212, 175, 55, 0.12);
+            border: 2px solid #D4AF37;
+            box-shadow: 0 8px 16px rgba(212, 175, 55, 0.3);
+        }
+
+        .diagnostic-checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #D4AF37;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #D4AF37;
+            font-weight: 700;
+        }
+
+        .diagnostic-text {
+            flex: 1;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #E8E9EA;
+        }
+
+        .diagnostic-counter {
+            text-align: center;
+            font-family: 'Orbitron', monospace;
+            font-size: 1.1rem;
+            color: #D4AF37;
+            margin-bottom: 30px;
+        }
+
+        .diagnostic-result {
+            background: 
+                linear-gradient(135deg, rgba(220, 53, 69, 0.15) 0%, rgba(220, 53, 69, 0.08) 100%),
+                rgba(11, 20, 38, 0.3);
+            border: 2px solid #DC3545;
+            border-radius: 24px;
+            padding: 40px 35px;
+            text-align: center;
+            display: none;
+            box-shadow: 
+                0 32px 64px rgba(220, 53, 69, 0.2),
+                0 16px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .diagnostic-result.show {
+            display: block;
+            animation: resultAppear 0.5s ease-out;
+        }
+
+        @keyframes resultAppear {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .result-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #FF6B6B;
+            margin-bottom: 20px;
+        }
+
+        .result-description {
+            font-size: 1.1rem;
+            color: #FFB3B3;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .result-symptoms {
+            background: rgba(220, 53, 69, 0.1);
+            border-radius: 16px;
+            padding: 25px;
+            margin-top: 20px;
+        }
+
+        .result-symptoms h4 {
+            font-family: 'Orbitron', monospace;
+            color: #FF6B6B;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .symptoms-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .symptoms-list li {
+            color: #FFB3B3;
+            font-weight: 500;
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .symptoms-list li::before {
+            content: "⚠️";
+            position: absolute;
+            left: 0;
+        }
+
+        /* Section separator */
+        .section-separator {
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+            margin: 60px auto;
+            border-radius: 2px;
+            opacity: 0.6;
+        }
+
+        .protocol-section {
+            background: 
+                linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0.08) 50%, rgba(212, 175, 55, 0.03) 100%),
+                rgba(11, 20, 38, 0.4);
+            backdrop-filter: blur(60px) saturate(200%);
+            border: 2px solid rgba(212, 175, 55, 0.4);
+            padding: 80px 60px;
+            border-radius: 32px;
+            margin: 80px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 40px 80px rgba(212, 175, 55, 0.2),
+                0 20px 40px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .protocol-section::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background: 
+                radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 40%),
+                conic-gradient(from 0deg, transparent, rgba(212, 175, 55, 0.05), transparent);
+            animation: cosmicRotate 30s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes cosmicRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .protocol-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #D4AF37;
+            text-align: center;
+            margin-bottom: 60px;
+            text-shadow: 0 4px 16px rgba(212, 175, 55, 0.5);
+        }
+
+        .protocol-phases {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+
+
+
+        .phase-card {
+            background: 
+                linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%),
+                rgba(11, 20, 38, 0.3);
+            backdrop-filter: blur(60px) saturate(200%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 32px;
+            padding: 40px;
+            position: relative;
+            box-shadow: 
+                0 40px 80px rgba(0, 0, 0, 0.3),
+                0 20px 40px rgba(0, 0, 0, 0.2),
+                0 8px 32px rgba(212, 175, 55, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.12);
+            overflow: hidden;
+        }
+
+        .phase-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #D4AF37 20%, #F4D03F 50%, #D4AF37 80%, transparent);
+            border-radius: 32px 32px 0 0;
+        }
+
+        .phase-header {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .phase-time-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #D4AF37, #F4D03F);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Orbitron', monospace;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #0B1426;
+            box-shadow: 
+                0 12px 24px rgba(212, 175, 55, 0.4),
+                0 6px 12px rgba(0, 0, 0, 0.2);
+            flex-shrink: 0;
+        }
+
+        .phase-title-container {
+            flex: 1;
+        }
+
+        .phase-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #D4AF37;
+            margin-bottom: 5px;
+            text-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+        }
+
+        .phase-benefits {
+            background: 
+                linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(212, 175, 55, 0.06) 100%),
+                rgba(11, 20, 38, 0.3);
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .benefits-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #D4AF37;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .benefits-list li {
+            font-size: 1rem;
+            color: #E8E9EA;
+            font-weight: 500;
+            line-height: 1.6;
+            margin-bottom: 12px;
+            padding-left: 5px;
+        }
+
+        .comparison-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin: 80px 0;
+            align-items: stretch;
+        }
+
+        .before-after-card {
+            background: 
+                linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%),
+                rgba(11, 20, 38, 0.3);
+            backdrop-filter: blur(60px) saturate(200%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 32px;
+            padding: 50px 40px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 40px 80px rgba(0, 0, 0, 0.3),
+                0 20px 40px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.12);
+        }
+
+        .before-card {
+            border-left: 5px solid #DC3545;
+        }
+
+        .before-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #DC3545, transparent);
+            border-radius: 32px 32px 0 0;
+        }
+
+        .after-card {
+            border-left: 5px solid #27AE60;
+        }
+
+        .after-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #27AE60, transparent);
+            border-radius: 32px 32px 0 0;
+        }
+
+        .comparison-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .before-card .comparison-title {
+            color: #FF6B6B;
+        }
+
+        .after-card .comparison-title {
+            color: #2ECC71;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 20px 0;
+            padding: 15px 20px;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .timeline-emoji {
+            font-size: 1.5rem;
+        }
+
+        .timeline-text {
+            flex: 1;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin: 80px 0;
+        }
+
+        .testimonial-card {
+            background: 
+                linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%),
+                rgba(11, 20, 38, 0.3);
+            backdrop-filter: blur(60px) saturate(200%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 32px;
+            padding: 40px 35px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 40px 80px rgba(0, 0, 0, 0.3),
+                0 20px 40px rgba(0, 0, 0, 0.2),
+                0 8px 32px rgba(212, 175, 55, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.12);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 
+                0 50px 100px rgba(0, 0, 0, 0.4),
+                0 25px 50px rgba(212, 175, 55, 0.15);
+        }
+
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+            border-radius: 32px 32px 0 0;
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-photo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #D4AF37, #F4D03F);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #0B1426;
+            font-weight: 700;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="%23D4AF37" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>');
+            background-size: 30px 30px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .testimonial-info h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #D4AF37;
+            margin-bottom: 5px;
+        }
+
+        .testimonial-info p {
+            font-size: 0.9rem;
+            color: #C8CDD4;
+            opacity: 0.8;
+        }
+
+        .testimonial-quote {
+            font-size: 1rem;
+            color: #E8E9EA;
+            font-weight: 500;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-rating {
+            display: flex;
+            gap: 5px;
+            justify-content: center;
+        }
+
+        .star {
+            color: #D4AF37;
+            font-size: 1.2rem;
+        }
+
+        .video-testimonial {
+            background: 
+                linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(212, 175, 55, 0.06) 100%),
+                rgba(11, 20, 38, 0.3);
+            border: 2px solid rgba(212, 175, 55, 0.4);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 200px;
+            background: rgba(11, 20, 38, 0.6);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed rgba(212, 175, 55, 0.3);
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .video-placeholder:hover {
+            background: rgba(212, 175, 55, 0.1);
+            border-color: rgba(212, 175, 55, 0.5);
+        }
+
+        .video-placeholder p {
+            color: #D4AF37;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        /* Comparativo vs Concorrentes */
+        .competitors-section {
+            background: 
+                linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%),
+                rgba(11, 20, 38, 0.3);
+            backdrop-filter: blur(60px) saturate(200%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 32px;
+            padding: 70px 50px;
+            margin: 80px 0;
+            position: relative;
+            box-shadow: 
+                0 40px 80px rgba(0, 0, 0, 0.3),
+                0 20px 40px rgba(0, 0, 0, 0.2),
+                0 8px 32px rgba(212, 175, 55, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.12);
+            overflow: hidden;
+        }
+
+        .competitors-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #D4AF37 20%, #F4D03F 50%, #D4AF37 80%, transparent);
+            border-radius: 32px 32px 0 0;
+        }
+
+        .competitors-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #D4AF37;
+            text-align: center;
+            margin-bottom: 50px;
+            text-shadow: 0 4px 16px rgba(212, 175, 55, 0.5);
+        }
+
+        .warning-box {
+            background: 
+                linear-gradient(135deg, rgba(255, 107, 107, 0.12) 0%, rgba(255, 107, 107, 0.06) 100%),
+                rgba(11, 20, 38, 0.3);
+            backdrop-filter: blur(40px);
+            border: 2px solid #FF6B6B;
+            padding: 30px;
+            border-radius: 20px;
+            margin-top: 40px;
+            text-align: center;
+            box-shadow: 
+                0 20px 40px rgba(255, 107, 107, 0.15),
+                0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .warning-box h4 {
+            font-family: 'Orbitron', monospace;
+            color: #FF6B6B;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .warning-box p {
+            font-size: 1.1rem;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+
+        .urgency-banner {
+            background: 
+                linear-gradient(135deg, rgba(220, 53, 69, 0.15) 0%, rgba(220, 53, 69, 0.08) 100%),
+                rgba(11, 20, 38, 0.3);
+            backdrop-filter: blur(40px) saturate(180%);
+            border: 2px solid #DC3545;
+            padding: 40px 35px;
+            border-radius: 24px;
+            margin: 50px 0;
+            text-align: center;
+            position: relative;
+            box-shadow: 
+                0 32px 64px rgba(220, 53, 69, 0.2),
+                0 16px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .urgency-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #DC3545, #FF6B6B, #DC3545, transparent);
+            animation: emergencyPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes emergencyPulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        .stock-counter {
+            font-family: 'Orbitron', monospace;
+            font-size: 2rem;
+            font-weight: 900;
+            color: #FF6B6B;
+            margin: 20px 0;
+        }
+
+        .pricing-section {
+            background: 
+                linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%),
+                rgba(11, 20, 38, 0.3);
+            backdrop-filter: blur(60px) saturate(200%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 32px;
+            padding: 60px 50px;
+            margin: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 40px 80px rgba(0, 0, 0, 0.3),
+                0 20px 40px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.12);
+        }
+
+        .pricing-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+            border-radius: 32px 32px 0 0;
+        }
+
+        .price-original {
+            font-size: 1.2rem;
+            color: #FF6B6B;
+            text-decoration: line-through;
+            opacity: 0.7;
+            margin-bottom: 10px;
+        }
+
+        .price-current {
+            font-family: 'Orbitron', monospace;
+            font-size: 3rem;
+            font-weight: 900;
+            color: #D4AF37;
+            margin-bottom: 30px;
+            text-shadow: 0 4px 16px rgba(212, 175, 55, 0.5);
+        }
+
+        .guarantee-badges {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .guarantee-badge {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #D4AF37;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .disclaimer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #8B9097;
+            margin-top: 60px;
+            padding: 40px;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 15px; }
+            .continuation-header { padding: 40px 0; margin-bottom: 60px; }
+            .protocol-section { padding: 60px 40px; }
+            .pricing-section { padding: 50px 30px; }
+            .competitors-section { padding: 50px 30px; }
+            .auto-diagnostic { padding: 50px 30px; }
+            .model-showcase { padding: 60px 40px; }
+            .product-hero { padding: 60px 40px; }
+            .reveal-headline { font-size: 2.2rem; }
+            .protocol-title { font-size: 2rem; }
+            .competitors-title { font-size: 1.8rem; }
+            .diagnostic-title { font-size: 1.8rem; }
+            .dramatic-comparison { grid-template-columns: 1fr; gap: 40px; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .diagnostic-grid { grid-template-columns: 1fr; }
+            .phase-header { flex-direction: column; text-align: center; gap: 20px; }
+            .phase-time-icon { width: 60px; height: 60px; font-size: 1.2rem; }
+            .phase-title { font-size: 1.5rem; }
+            .product-hero > div { grid-template-columns: 1fr !important; gap: 40px !important; }
+            .purchase-notification { 
+                bottom: 10px; 
+                right: 10px; 
+                left: 10px; 
+                max-width: none;
+                transform: translateY(200px);
+            }
+            .purchase-notification.show {
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .progress-indicator { flex-wrap: wrap; }
+            .guarantee-badges { flex-direction: column; align-items: center; }
+        }
+
+        /* Pop-up de Notificação de Compra */
+        .purchase-notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, rgba(39, 174, 96, 0.95), rgba(46, 204, 113, 0.95));
+            backdrop-filter: blur(20px);
+            border: 2px solid #27AE60;
+            border-radius: 16px;
+            padding: 15px 20px;
+            box-shadow: 0 15px 35px rgba(39, 174, 96, 0.3);
+            z-index: 10000;
+            transform: translateX(400px);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            max-width: 320px;
+            cursor: pointer;
+        }
+
+        .purchase-notification.show {
+            transform: translateX(0);
+        }
+
+        .notification-content {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .notification-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #D4AF37, #F4D03F);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .notification-text {
+            flex: 1;
+        }
+
+        .notification-name {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: white;
+            margin-bottom: 2px;
+        }
+
+        .notification-action {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.3;
+        }
+
+        .notification-close {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            cursor: pointer;
+            padding: 2px;
+        }
+
+        /* Espaço preparado para foto com modelo */
+        .model-showcase {
+            background: 
+                linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0.08) 100%),
+                rgba(11, 20, 38, 0.4);
+            backdrop-filter: blur(60px) saturate(200%);
+            border: 2px solid rgba(212, 175, 55, 0.4);
+            padding: 80px 60px;
+            border-radius: 32px;
+            margin: 80px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 40px 80px rgba(212, 175, 55, 0.2),
+                0 20px 40px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            text-align: center;
+        }
+
+        .model-showcase::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #D4AF37 20%, #F4D03F 50%, #D4AF37 80%, transparent);
+            border-radius: 32px 32px 0 0;
+        }
+
+        /* Espaço preparado para produto alta resolução */
+        .product-hero {
+            background: 
+                linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%),
+                rgba(11, 20, 38, 0.3);
+            backdrop-filter: blur(60px) saturate(200%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 32px;
+            padding: 80px 60px;
+            margin: 80px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 40px 80px rgba(0, 0, 0, 0.3),
+                0 20px 40px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.12);
+        }
+
+        .product-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+            border-radius: 32px 32px 0 0;
+        }
+
+        /* Comparação Dramática Melhorada */
+        .dramatic-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin: 80px 0;
+            align-items: stretch;
+        }
+
+        .comparison-card {
+            background: 
+                linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%),
+                rgba(11, 20, 38, 0.3);
+            backdrop-filter: blur(60px) saturate(200%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 32px;
+            padding: 50px 40px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 40px 80px rgba(0, 0, 0, 0.3),
+                0 20px 40px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.12);
+            transition: all 0.4s ease;
+        }
+
+        .comparison-card:hover {
+            transform: translateY(-10px) scale(1.02);
+        }
+
+        .without-noodrops {
+            border-left: 5px solid #DC3545;
+        }
+
+        .without-noodrops::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #DC3545, transparent);
+            border-radius: 32px 32px 0 0;
+        }
+
+        .with-noodrops {
+            border-left: 5px solid #27AE60;
+        }
+
+        .with-noodrops::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #27AE60, transparent);
+            border-radius: 32px 32px 0 0;
+        }
+
+        .comparison-chart-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .without-noodrops .comparison-chart-title {
+            color: #FF6B6B;
+        }
+
+        .with-noodrops .comparison-chart-title {
+            color: #2ECC71;
+        }
+
+        /* Placeholder para gráfico/imagem */
+        .chart-placeholder {
+            width: 100%;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 2px dashed rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #C8CDD4;
+            font-weight: 600;
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="continuation-header">
+        <div class="container">
+            <div class="progress-indicator">
+                <div class="progress-step">1</div>
+                <div class="progress-line"></div>
+                <div class="progress-step">2</div>
+            </div>
+            <h1 class="reveal-headline">PROTOCOLO DE DESINTOXICAÇÃO NEUROLÓGICA REVELADO</h1>
+            <p class="reveal-subtext">Você descobriu que seu cérebro está intoxicado. Agora vou te mostrar EXATAMENTE como desintoxicá-lo em 72 horas.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Auto-Diagnóstico Neurológico -->
+        <div class="auto-diagnostic">
+            <h2 class="diagnostic-title">SE VOCÊ TEM 2 DESSES 7 SINTOMAS, SEU CÉREBRO ESTÁ INTOXICADO</h2>
+            <p class="diagnostic-subtitle">Marque pelo menos 2 sintomas que teve nos últimos 30 dias:</p>
+            
+            <div class="diagnostic-counter">
+                Sintomas marcados: <span id="symptomsCount">0</span>/10
+            </div>
+            
+            <div class="diagnostic-grid">
+                <div class="diagnostic-item" onclick="toggleSymptom(this)">
+                    <div class="diagnostic-checkbox"></div>
+                    <div class="diagnostic-text">Precisa ler textos 2-3 vezes para entender</div>
+                </div>
+                
+                <div class="diagnostic-item" onclick="toggleSymptom(this)">
+                    <div class="diagnostic-checkbox"></div>
+                    <div class="diagnostic-text">Se distrai com WhatsApp mesmo durante tarefas importantes</div>
+                </div>
+                
+                <div class="diagnostic-item" onclick="toggleSymptom(this)">
+                    <div class="diagnostic-checkbox"></div>
+                    <div class="diagnostic-text">Esquece conversas que teve no mesmo dia</div>
+                </div>
+                
+                <div class="diagnostic-item" onclick="toggleSymptom(this)">
+                    <div class="diagnostic-checkbox"></div>
+                    <div class="diagnostic-text">Procrastina mesmo sabendo que é urgente</div>
+                </div>
+                
+                <div class="diagnostic-item" onclick="toggleSymptom(this)">
+                    <div class="diagnostic-checkbox"></div>
+                    <div class="diagnostic-text">Sente a mente "nebulosa" após usar redes sociais</div>
+                </div>
+                
+                <div class="diagnostic-item" onclick="toggleSymptom(this)">
+                    <div class="diagnostic-checkbox"></div>
+                    <div class="diagnostic-text">Precisa de múltiplos cafés para ter energia mental</div>
+                </div>
+                
+                <div class="diagnostic-item" onclick="toggleSymptom(this)">
+                    <div class="diagnostic-checkbox"></div>
+                    <div class="diagnostic-text">Perde o foco em menos de 15 minutos</div>
+                </div>
+                
+                <div class="diagnostic-item" onclick="toggleSymptom(this)">
+                    <div class="diagnostic-checkbox"></div>
+                    <div class="diagnostic-text">Sente ansiedade quando não tem o celular por perto</div>
+                </div>
+                
+                <div class="diagnostic-item" onclick="toggleSymptom(this)">
+                    <div class="diagnostic-checkbox"></div>
+                    <div class="diagnostic-text">Toma decisões simples com extrema dificuldade</div>
+                </div>
+                
+                <div class="diagnostic-item" onclick="toggleSymptom(this)">
+                    <div class="diagnostic-checkbox"></div>
+                    <div class="diagnostic-text">Sente fadiga mental mesmo sem esforço físico</div>
+                </div>
+            </div>
+            
+            <div class="diagnostic-result" id="diagnosticResult">
+                <h3 class="result-title">DIAGNÓSTICO: Fadiga Cognitiva Severa</h3>
+                <p class="result-description">
+                    Seus sintomas indicam que você provavelmente sofre de <strong>exaustão neural crônica</strong>. 
+                    Não é preguiça ou falta de capacidade - seu cérebro está literalmente intoxicado.
+                </p>
+                
+                <div class="result-symptoms">
+                    <h4>Principais indicadores detectados:</h4>
+                    <ul class="symptoms-list">
+                        <li>Vício em dopamina artificial (redes sociais/notificações)</li>
+                        <li>Déficit de atenção adquirido por sobrecarga digital</li>
+                        <li>Inflamação no córtex pré-frontal (área do foco)</li>
+                        <li>Receptores de neurotransmissores "queimados"</li>
+                        <li>Memória de trabalho comprometida</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Seção de Depoimentos Pós-Diagnóstico com Vídeo -->
+            <div style="margin: 60px 0;">
+                <h3 style="font-family: 'Orbitron', monospace; font-size: 1.8rem; font-weight: 700; color: #D4AF37; text-align: center; margin-bottom: 40px; text-shadow: 0 4px 16px rgba(212, 175, 55, 0.5);">
+                    VEJA O QUE NOSSOS CLIENTES ESTÃO DIZENDO
+                </h3>
+                
+                <!-- GRID DE PRINTS REAIS OTIMIZADO COM VÍDEO -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; margin: 50px 0;">
+                    
+                    <!-- Print WhatsApp @marcelene_celestina_ - PRINCIPAL -->
+                    <div style="background: linear-gradient(135deg, rgba(37, 211, 102, 0.18) 0%, rgba(37, 211, 102, 0.10) 100%), rgba(11, 20, 38, 0.4); backdrop-filter: blur(60px); border: 3px solid rgba(37, 211, 102, 0.5); border-radius: 28px; padding: 30px; position: relative; overflow: hidden; box-shadow: 0 35px 70px rgba(37, 211, 102, 0.3), 0 15px 30px rgba(0, 0, 0, 0.4); transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); transform: scale(1.05);" onmouseover="this.style.transform='translateY(-15px) scale(1.08)'; this.style.boxShadow='0 45px 90px rgba(37, 211, 102, 0.4), 0 20px 40px rgba(0, 0, 0, 0.5)'" onmouseout="this.style.transform='translateY(0) scale(1.05)'; this.style.boxShadow='0 35px 70px rgba(37, 211, 102, 0.3), 0 15px 30px rgba(0, 0, 0, 0.4)'">
+                        
+                        <div style="position: absolute; top: -18px; left: 30px; background: linear-gradient(135deg, #25D366, #128C7E); color: white; padding: 12px 30px; border-radius: 30px; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; box-shadow: 0 12px 24px rgba(37, 211, 102, 0.5); display: flex; align-items: center; gap: 10px;">
+                            <span style="font-size: 1.1rem;">📱</span><span>CONVERSA REAL</span>
+                        </div>
+                        
+                        <div style="position: absolute; top: -18px; right: 30px; background: linear-gradient(135deg, #FFD700, #FFA500); color: #0B1426; padding: 12px 25px; border-radius: 30px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 12px 24px rgba(255, 215, 0, 0.4); display: flex; align-items: center; gap: 8px;">
+                            <span>🏆</span><span>TOP</span>
+                        </div>
+                        
+                        <div style="margin-top: 25px; text-align: center;">
+                            <img src="https://noodrops.com.br/wp-content/uploads/2025/05/magicaprimeiro-uso.png" 
+                                 style="max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6); border: 4px solid rgba(37, 211, 102, 0.4); transition: all 0.4s ease;" 
+                                 alt="Print WhatsApp - @marcelene_celestina_" />
+                            
+                            <div style="margin-top: 25px; padding: 20px; background: linear-gradient(135deg, rgba(37, 211, 102, 0.15), rgba(37, 211, 102, 0.08)); border-radius: 20px; border-left: 5px solid #25D366;">
+                                <p style="color: #25D366; font-size: 1.1rem; font-weight: 700; margin: 0 0 10px 0; display: flex; align-items: center; gap: 10px;">
+                                    <span>✅</span> @marcelene_celestina_
+                                </p>
+                                <p style="color: #E8E9EA; font-size: 1rem; font-weight: 600; margin: 0; line-height: 1.5; font-style: italic;">
+                                    "Mágica! Desde o primeiro uso senti a diferença"
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Print Instagram @necronotess - RENDIMENTO -->
+                    <div style="background: linear-gradient(135deg, rgba(131, 58, 180, 0.15) 0%, rgba(131, 58, 180, 0.08) 100%), rgba(11, 20, 38, 0.3); backdrop-filter: blur(50px); border: 2px solid rgba(131, 58, 180, 0.4); border-radius: 26px; padding: 28px; position: relative; overflow: hidden; box-shadow: 0 30px 60px rgba(131, 58, 180, 0.25), 0 15px 30px rgba(0, 0, 0, 0.4); transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);" onmouseover="this.style.transform='translateY(-12px) scale(1.03)'; this.style.boxShadow='0 40px 80px rgba(131, 58, 180, 0.35), 0 20px 40px rgba(0, 0, 0, 0.5)'" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 30px 60px rgba(131, 58, 180, 0.25), 0 15px 30px rgba(0, 0, 0, 0.4)'">
+                        
+                        <div style="position: absolute; top: -16px; left: 28px; background: linear-gradient(135deg, #E4405F, #833AB4); color: white; padding: 11px 28px; border-radius: 28px; font-size: 0.88rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; box-shadow: 0 10px 20px rgba(228, 64, 95, 0.5); display: flex; align-items: center; gap: 9px;">
+                            <span>📈</span><span>RENDIMENTO</span>
+                        </div>
+                        
+                        <div style="margin-top: 22px; text-align: center;">
+                            <img src="https://noodrops.com.br/wp-content/uploads/2025/05/rend-infinitamente.png" 
+                                 style="max-width: 100%; height: auto; border-radius: 18px; box-shadow: 0 22px 44px rgba(0, 0, 0, 0.5); border: 3px solid rgba(131, 58, 180, 0.4); transition: all 0.4s ease;" 
+                                 alt="Print Instagram - @necronotess rendimento" />
+                            
+                            <div style="margin-top: 22px; padding: 18px; background: rgba(131, 58, 180, 0.12); border-radius: 18px; border-left: 4px solid #833AB4;">
+                                <p style="color: #C884D8; font-size: 1.05rem; font-weight: 700; margin: 0 0 9px 0;">@necronotess</p>
+                                <p style="color: #E8E9EA; font-size: 0.95rem; font-style: italic; margin: 0; line-height: 1.45;">"Rendendo infinitamente mais que antes!"</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Print WhatsApp - DEPOIMENTO LEITURA -->
+                    <div style="background: linear-gradient(135deg, rgba(37, 211, 102, 0.15) 0%, rgba(37, 211, 102, 0.08) 100%), rgba(11, 20, 38, 0.3); backdrop-filter: blur(50px); border: 2px solid rgba(37, 211, 102, 0.4); border-radius: 26px; padding: 28px; position: relative; overflow: hidden; box-shadow: 0 30px 60px rgba(37, 211, 102, 0.25), 0 15px 30px rgba(0, 0, 0, 0.4); transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);" onmouseover="this.style.transform='translateY(-12px) scale(1.03)'; this.style.boxShadow='0 40px 80px rgba(37, 211, 102, 0.35), 0 20px 40px rgba(0, 0, 0, 0.5)'" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 30px 60px rgba(37, 211, 102, 0.25), 0 15px 30px rgba(0, 0, 0, 0.4)'">
+                        
+                        <div style="position: absolute; top: -16px; left: 28px; background: linear-gradient(135deg, #25D366, #128C7E); color: white; padding: 11px 28px; border-radius: 28px; font-size: 0.88rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.5); display: flex; align-items: center; gap: 9px;">
+                            <span>📚</span><span>LEITURA</span>
+                        </div>
+                        
+                        <div style="margin-top: 22px; text-align: center;">
+                            <img src="https://noodrops.com.br/wp-content/uploads/2025/05/depoimento-leitura-academia.png" 
+                                 style="max-width: 100%; height: auto; border-radius: 18px; box-shadow: 0 22px 44px rgba(0, 0, 0, 0.5); border: 3px solid rgba(37, 211, 102, 0.4); transition: all 0.4s ease;" 
+                                 alt="Print WhatsApp - Depoimento leitura academia" />
+                            
+                            <div style="margin-top: 22px; padding: 18px; background: rgba(37, 211, 102, 0.12); border-radius: 18px; border-left: 4px solid #25D366;">
+                                <p style="color: #25D366; font-size: 1.05rem; font-weight: 700; margin: 0 0 9px 0;">✅ CLIENTE VERIFICADO</p>
+                                <p style="color: #E8E9EA; font-size: 0.95rem; font-style: italic; margin: 0; line-height: 1.45;">"Foco total para leitura e estudos!"</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Vídeo Depoimento -->
+                    <div style="background: linear-gradient(135deg, rgba(220, 53, 69, 0.18) 0%, rgba(220, 53, 69, 0.10) 100%), rgba(11, 20, 38, 0.4); backdrop-filter: blur(60px); border: 3px solid rgba(220, 53, 69, 0.5); border-radius: 28px; padding: 30px; position: relative; overflow: hidden; box-shadow: 0 35px 70px rgba(220, 53, 69, 0.3), 0 15px 30px rgba(0, 0, 0, 0.4); transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);" onmouseover="this.style.transform='translateY(-15px) scale(1.05)'; this.style.boxShadow='0 45px 90px rgba(220, 53, 69, 0.4), 0 20px 40px rgba(0, 0, 0, 0.5)'" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 35px 70px rgba(220, 53, 69, 0.3), 0 15px 30px rgba(0, 0, 0, 0.4)'">
+                        
+                        <div style="position: absolute; top: -18px; left: 30px; background: linear-gradient(135deg, #DC3545, #C82333); color: white; padding: 12px 30px; border-radius: 30px; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; box-shadow: 0 12px 24px rgba(220, 53, 69, 0.5); display: flex; align-items: center; gap: 10px;">
+                            <span style="font-size: 1.1rem;">🎥</span><span>VÍDEO REAL</span>
+                        </div>
+                        
+                        <div style="position: absolute; top: -18px; right: 30px; background: linear-gradient(135deg, #FFD700, #FFA500); color: #0B1426; padding: 12px 25px; border-radius: 30px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 12px 24px rgba(255, 215, 0, 0.4); display: flex; align-items: center; gap: 8px;">
+                            <span>🔥</span><span>VIRAL</span>
+                        </div>
+                        
+                        <div style="margin-top: 25px; text-align: center;">
+                            <div style="position: relative; width: 100%; height: 280px; background: rgba(11, 20, 38, 0.8); border-radius: 20px; display: flex; align-items: center; justify-content: center; border: 4px solid rgba(220, 53, 69, 0.4); cursor: pointer; transition: all 0.4s ease; overflow: hidden;" onmouseover="this.style.background='rgba(220, 53, 69, 0.1)'; this.style.borderColor='rgba(220, 53, 69, 0.6)'" onmouseout="this.style.background='rgba(11, 20, 38, 0.8)'; this.style.borderColor='rgba(220, 53, 69, 0.4)'">
+                                <div style="text-align: center;">
+                                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #DC3545, #C82333); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; box-shadow: 0 20px 40px rgba(220, 53, 69, 0.5); animation: pulse 2s infinite;">
+                                        <span style="color: white; font-size: 28px; margin-left: 5px;">▶️</span>
+                                    </div>
+                                    <p style="color: #DC3545; font-size: 1.2rem; font-weight: 700; margin: 0 0 10px 0;">DEPOIMENTO EXCLUSIVO</p>
+                                    <p style="color: #C8CDD4; font-size: 0.95rem; margin: 0; opacity: 0.9;">Cliente real falando dos resultados</p>
+                                    <div style="margin-top: 15px; padding: 8px 20px; background: rgba(220, 53, 69, 0.2); border-radius: 15px; display: inline-block;">
+                                        <span style="color: #DC3545; font-size: 0.9rem; font-weight: 600;">👆 Clique para assistir</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-top: 25px; padding: 20px; background: linear-gradient(135deg, rgba(220, 53, 69, 0.15), rgba(220, 53, 69, 0.08)); border-radius: 20px; border-left: 5px solid #DC3545;">
+                                <p style="color: #DC3545; font-size: 1.1rem; font-weight: 700; margin: 0 0 10px 0; display: flex; align-items: center; gap: 10px;">
+                                    <span>🎯</span> RESULTADO COMPROVADO
+                                </p>
+                                <p style="color: #E8E9EA; font-size: 1rem; font-weight: 600; margin: 0; line-height: 1.5; font-style: italic;">
+                                    "Transformação completa em 15 dias de uso"
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <!-- Chamada final com prova social -->
+                <div style="text-align: center; margin: 50px 0 30px 0; padding: 30px; background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%), rgba(11, 20, 38, 0.3); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 20px;">
+                    <h4 style="color: #D4AF37; font-family: 'Orbitron', monospace; font-size: 1.2rem; font-weight: 700; margin-bottom: 15px;">
+                        📱 DEPOIMENTOS 100% REAIS
+                    </h4>
+                    <p style="color: #E8E9EA; font-size: 1rem; margin: 0; line-height: 1.6;">
+                        Estes são prints e vídeos <strong>reais e não editados</strong> de nossos clientes. <br>
+                        ✨ <strong style="color: #D4AF37;">Mais de 10.287 brasileiros</strong> já experimentaram os mesmos resultados
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Badges de Credibilidade -->
+            <div style="display: flex; justify-content: center; gap: 20px; margin: 40px 0; flex-wrap: wrap;">
+                <div style="background: rgba(212, 175, 55, 0.1); border: 1px solid rgba(212, 175, 55, 0.3); padding: 12px 20px; border-radius: 25px; font-size: 0.9rem; font-weight: 600; color: #D4AF37; display: flex; align-items: center; gap: 8px;">
+                    <span>🏆</span>
+                    <span>ANVISA APROVADO</span>
+                </div>
+                <div style="background: rgba(212, 175, 55, 0.1); border: 1px solid rgba(212, 175, 55, 0.3); padding: 12px 20px; border-radius: 25px; font-size: 0.9rem; font-weight: 600; color: #D4AF37; display: flex; align-items: center; gap: 8px;">
+                    <span>🧬</span>
+                    <span>ESTUDOS CLÍNICOS</span>
+                </div>
+                <div style="background: rgba(212, 175, 55, 0.1); border: 1px solid rgba(212, 175, 55, 0.3); padding: 12px 20px; border-radius: 25px; font-size: 0.9rem; font-weight: 600; color: #D4AF37; display: flex; align-items: center; gap: 8px;">
+                    <span>🇧🇷</span>
+                    <span>FEITO NO BRASIL</span>
+                </div>
+            </div>
+            
+            <!-- Seção Ciência Comprovada - OTIMIZADA -->
+            <div style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.18) 0%, rgba(212, 175, 55, 0.10) 50%, rgba(212, 175, 55, 0.05) 100%), rgba(11, 20, 38, 0.4); backdrop-filter: blur(70px) saturate(200%); border: 3px solid rgba(212, 175, 55, 0.5); padding: 70px 60px; border-radius: 36px; margin: 70px 0; position: relative; overflow: hidden; box-shadow: 0 50px 100px rgba(212, 175, 55, 0.25), 0 25px 50px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);">
+                
+                <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, transparent, #D4AF37 15%, #F4D03F 30%, #FFED4E 50%, #F4D03F 70%, #D4AF37 85%, transparent); border-radius: 36px 36px 0 0; animation: shimmerGold 3s ease-in-out infinite;"></div>
+                
+                <div style="position: absolute; top: 20px; right: 30px; background: linear-gradient(135deg, #FF6B35, #F7931E); color: white; padding: 10px 25px; border-radius: 25px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 10px 20px rgba(255, 107, 53, 0.4); display: flex; align-items: center; gap: 8px;">
+                    <span>🔥</span><span>EXCLUSIVO</span>
+                </div>
+                
+                <h2 style="font-family: 'Orbitron', monospace; font-size: 2.4rem; font-weight: 900; color: #D4AF37; text-align: center; margin-bottom: 30px; text-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);">
+                    FÓRMULA RECONHECIDA POR ESPECIALISTAS
+                </h2>
+                
+                <p style="text-align: center; font-size: 1.2rem; color: #E8E9EA; margin-bottom: 60px; font-weight: 500; line-height: 1.6;">
+                    Desenvolvida com base em <strong style="color: #D4AF37;">mais de 15 estudos científicos</strong> publicados em revistas internacionais
+                </p>
+                
+                <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 60px; align-items: start; margin-bottom: 60px;">
+                    
+                    <!-- Coluna do Especialista - OTIMIZADA -->
+                    <div style="text-align: center;">
+                        <div style="width: 220px; height: 220px; border-radius: 50%; background: linear-gradient(135deg, #D4AF37 0%, #F4D03F 50%, #FFED4E 100%); display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 25px 50px rgba(212, 175, 55, 0.4), 0 10px 20px rgba(0, 0, 0, 0.3); position: relative; overflow: hidden;">
+                            
+                            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\"%3E%3Ctext x=\"100\" y=\"120\" text-anchor=\"middle\" font-family=\"Arial\" font-size=\"14\" font-weight=\"bold\" fill=\"%230B1426\"%3EDR. RAFAEL%3C/text%3E%3Ctext x=\"100\" y=\"140\" text-anchor=\"middle\" font-family=\"Arial\" font-size=\"14\" font-weight=\"bold\" fill=\"%230B1426\"%3EGENÁRIO%3C/text%3E%3C/svg%3E'); background-size: cover; background-position: center;"></div>
+                            
+                            <div style="position: absolute; top: -10px; right: -10px; width: 60px; height: 60px; background: linear-gradient(135deg, #27AE60, #2ECC71); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(39, 174, 96, 0.4); border: 3px solid white;">
+                                <span style="color: white; font-size: 1.2rem; font-weight: 700;">✓</span>
+                            </div>
+                        </div>
+                        
+                        <h3 style="font-family: 'Orbitron', monospace; font-size: 1.4rem; font-weight: 800; color: #D4AF37; margin-bottom: 12px;">DR. RAFAEL GENÁRIO</h3>
+                        <p style="color: #C8CDD4; font-size: 1rem; margin-bottom: 25px; font-weight: 600;">(@rafaelgenario)</p>
+                        
+                        <div style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%), rgba(11, 20, 38, 0.4); padding: 25px; border-radius: 20px; text-align: left; border: 1px solid rgba(255, 255, 255, 0.1);">
+                            <ul style="list-style: none; padding: 0; margin: 0; color: #C8CDD4; font-size: 0.95rem; line-height: 1.7;">
+                                <li style="margin: 12px 0; display: flex; align-items: center; gap: 10px;"><span style="color: #D4AF37;">🎓</span> Pós graduado pela USP</li>
+                                <li style="margin: 12px 0; display: flex; align-items: center; gap: 10px;"><span style="color: #D4AF37;">📚</span> Doutorando FMUSP</li>
+                                <li style="margin: 12px 0; display: flex; align-items: center; gap: 10px;"><span style="color: #D4AF37;">🧠</span> Membro da SNeC</li>
+                                <li style="margin: 12px 0; display: flex; align-items: center; gap: 10px;"><span style="color: #D4AF37;">📄</span> 21 artigos publicados</li>
+                                <li style="margin: 12px 0; display: flex; align-items: center; gap: 10px;"><span style="color: #D4AF37;">🔬</span> Especialista em neurociência</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Coluna da Declaração - OTIMIZADA -->
+                    <div>
+                        <div style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.05) 100%), rgba(11, 20, 38, 0.4); padding: 45px; border-radius: 28px; border-left: 6px solid #D4AF37; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3), 0 10px 20px rgba(212, 175, 55, 0.2); position: relative;">
+                            
+                            <div style="position: absolute; top: -15px; left: 45px; background: linear-gradient(135deg, #D4AF37, #F4D03F); color: #0B1426; padding: 10px 25px; border-radius: 25px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 10px 20px rgba(212, 175, 55, 0.4);">
+                                💬 DECLARAÇÃO OFICIAL
+                            </div>
+                            
+                            <h4 style="font-family: 'Orbitron', monospace; color: #D4AF37; font-size: 1.3rem; margin: 20px 0 25px 0; font-weight: 700;">SOBRE NOSSA FÓRMULA:</h4>
+                            
+                            <blockquote style="font-size: 1.15rem; color: #E8E9EA; line-height: 1.8; font-style: italic; margin: 0; font-weight: 500; position: relative; padding-left: 25px;">
+                                <div style="position: absolute; left: 0; top: 0; color: #D4AF37; font-size: 2rem; line-height: 1;">"</div>
+                                A fórmula foi estudada e elaborada com base nos estudos científicos mais recentes. Utilizou-se uma bibliografia ampla e focada na sinergia dos compostos, para que os neurotransmissores sejam estimulados desde o primeiro dia de uso, modulando neurotransmissores focados em gerar mais foco, concentração, disposição mental, e principalmente, saúde cerebral. <strong style="color: #D4AF37;">Eficácia garantida e nas dosagens recomendadas pelas diretrizes da ANVISA.</strong>
+                                <div style="position: absolute; right: -15px; bottom: -10px; color: #D4AF37; font-size: 2rem; line-height: 1;">"</div>
+                            </blockquote>
+                            
+                            <div style="margin-top: 30px; padding: 20px; background: rgba(212, 175, 55, 0.1); border-radius: 16px; border: 1px solid rgba(212, 175, 55, 0.3);">
+                                <p style="color: #D4AF37; font-size: 0.95rem; font-weight: 600; margin: 0; text-align: center;">
+                                    ✅ Aprovado pela ANVISA • ✅ Dosagem Clinicamente Testada • ✅ Segurança Comprovada
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Estudos Científicos - FORMATO NOVO -->
+                <div style="margin-top: 60px;">
+                    
+                    <!-- Card Fórmula Otimizada -->
+                    <div style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%), rgba(11, 20, 38, 0.4); padding: 40px; border-radius: 28px; border: 1px solid rgba(255, 255, 255, 0.12); position: relative; overflow: hidden; margin-bottom: 50px; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);">
+                        
+                        <div style="position: absolute; top: 20px; left: 40px; color: #8A2BE2; font-size: 2rem;">🧬</div>
+                        
+                        <h3 style="font-family: 'Orbitron', monospace; color: #D4AF37; font-size: 1.8rem; font-weight: 800; margin: 0 0 40px 0; text-align: center; text-shadow: 0 4px 16px rgba(212, 175, 55, 0.5);">
+                            FÓRMULA OTIMIZADA
+                        </h3>
+                        
+                        <!-- Grid de Ingredientes -->
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 40px;">
+                            
+                            <div style="background: rgba(11, 20, 38, 0.6); padding: 20px; border-radius: 16px; border: 2px solid rgba(212, 175, 55, 0.3); display: flex; justify-content: space-between; align-items: center;">
+                                <span style="color: #E8E9EA; font-weight: 600; font-size: 1rem;">Cafeína</span>
+                                <span style="color: #D4AF37; font-weight: 700; font-size: 1.1rem;">150mg</span>
+                            </div>
+                            
+                            <div style="background: rgba(11, 20, 38, 0.6); padding: 20px; border-radius: 16px; border: 2px solid rgba(212, 175, 55, 0.3); display: flex; justify-content: space-between; align-items: center;">
+                                <span style="color: #E8E9EA; font-weight: 600; font-size: 1rem;">P. Cupana</span>
+                                <span style="color: #D4AF37; font-weight: 700; font-size: 1.1rem;">50mg</span>
+                            </div>
+                            
+                            <div style="background: rgba(11, 20, 38, 0.6); padding: 20px; border-radius: 16px; border: 2px solid rgba(212, 175, 55, 0.3); display: flex; justify-content: space-between; align-items: center;">
+                                <span style="color: #E8E9EA; font-weight: 600; font-size: 1rem;">Inositol</span>
+                                <span style="color: #D4AF37; font-weight: 700; font-size: 1.1rem;">300mg</span>
+                            </div>
+                            
+                            <div style="background: rgba(11, 20, 38, 0.6); padding: 20px; border-radius: 16px; border: 2px solid rgba(212, 175, 55, 0.3); display: flex; justify-content: space-between; align-items: center;">
+                                <span style="color: #E8E9EA; font-weight: 600; font-size: 1rem;">Taurina</span>
+                                <span style="color: #D4AF37; font-weight: 700; font-size: 1.1rem;">150mg</span>
+                            </div>
+                            
+                            <div style="background: rgba(11, 20, 38, 0.6); padding: 20px; border-radius: 16px; border: 2px solid rgba(212, 175, 55, 0.3); display: flex; justify-content: space-between; align-items: center;">
+                                <span style="color: #E8E9EA; font-weight: 600; font-size: 1rem;">DHA</span>
+                                <span style="color: #D4AF37; font-weight: 700; font-size: 1.1rem;">300mg</span>
+                            </div>
+                            
+                            <div style="background: rgba(11, 20, 38, 0.6); padding: 20px; border-radius: 16px; border: 2px solid rgba(212, 175, 55, 0.3); display: flex; justify-content: space-between; align-items: center;">
+                                <span style="color: #E8E9EA; font-weight: 600; font-size: 1rem;">Vit. B12</span>
+                                <span style="color: #D4AF37; font-weight: 700; font-size: 1.1rem;">2,4mcg</span>
+                            </div>
+                            
+                        </div>
+                        
+                        <!-- Checkmarks -->
+                        <div style="space-y: 15px;">
+                            <div style="display: flex; align-items: center; gap: 15px; margin: 20px 0; color: #27AE60; font-size: 1.1rem; font-weight: 600;">
+                                <span style="color: #27AE60; font-size: 1.3rem;">✅</span>
+                                <span>Única fórmula com tecnologia Slow Release</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 15px; margin: 20px 0; color: #27AE60; font-size: 1.1rem; font-weight: 600;">
+                                <span style="color: #27AE60; font-size: 1.3rem;">✅</span>
+                                <span>6 horas de efeito sustentado</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 15px; margin: 20px 0; color: #27AE60; font-size: 1.1rem; font-weight: 600;">
+                                <span style="color: #27AE60; font-size: 1.3rem;">✅</span>
+                                <span>Zero efeitos colaterais reportados</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- Estudos Científicos -->
+                    <div style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%), rgba(11, 20, 38, 0.4); padding: 50px; border-radius: 28px; border: 1px solid rgba(255, 255, 255, 0.12); position: relative; overflow: hidden;">
+                        
+                        <div style="text-align: center; margin-bottom: 50px;">
+                            <h3 style="font-family: 'Orbitron', monospace; color: #D4AF37; font-size: 1.8rem; font-weight: 800; margin: 0; display: flex; align-items: center; justify-content: center; gap: 15px; text-shadow: 0 4px 16px rgba(212, 175, 55, 0.5);">
+                                <span>🏆</span> ESTUDOS QUE COMPROVAM A EFICÁCIA
+                            </h3>
+                        </div>
+                        
+                        <!-- Grid de Estudos -->
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 50px;">
+                            
+                            <!-- Estudo 1 -->
+                            <div style="background: rgba(11, 20, 38, 0.6); padding: 25px; border-radius: 16px; border-left: 4px solid #D4AF37; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 30px rgba(212, 175, 55, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                                <h4 style="color: #D4AF37; font-size: 0.9rem; font-weight: 700; margin: 0 0 15px 0; text-transform: uppercase; letter-spacing: 1px;">AMERICAN JOURNAL CLINICAL NUTRITION</h4>
+                                <p style="color: #E8E9EA; font-size: 1rem; margin: 0 0 15px 0; line-height: 1.5; font-style: italic;">
+                                    "DHA supplementation improved both memory and reaction time in healthy young adults"
+                                </p>
+                                <p style="color: #27AE60; font-size: 0.9rem; font-weight: 600; margin: 0;">
+                                    +23% melhora na memória em 12 semanas
+                                </p>
+                            </div>
+                            
+                            <!-- Estudo 2 -->
+                            <div style="background: rgba(11, 20, 38, 0.6); padding: 25px; border-radius: 16px; border-left: 4px solid #D4AF37; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 30px rgba(212, 175, 55, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                                <h4 style="color: #D4AF37; font-size: 0.9rem; font-weight: 700; margin: 0 0 15px 0; text-transform: uppercase; letter-spacing: 1px;">NEUROSCIENCE & BIOBEHAVIORAL REVIEWS</h4>
+                                <p style="color: #E8E9EA; font-size: 1rem; margin: 0 0 15px 0; line-height: 1.5; font-style: italic;">
+                                    "A review of caffeine's effects on cognitive, physical and occupational performance"
+                                </p>
+                                <p style="color: #27AE60; font-size: 0.9rem; font-weight: 600; margin: 0;">
+                                    +15% melhora na concentração
+                                </p>
+                            </div>
+                            
+                            <!-- Estudo 3 -->
+                            <div style="background: rgba(11, 20, 38, 0.6); padding: 25px; border-radius: 16px; border-left: 4px solid #D4AF37; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 30px rgba(212, 175, 55, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                                <h4 style="color: #D4AF37; font-size: 0.9rem; font-weight: 700; margin: 0 0 15px 0; text-transform: uppercase; letter-spacing: 1px;">BRAIN AND COGNITION</h4>
+                                <p style="color: #E8E9EA; font-size: 1rem; margin: 0 0 15px 0; line-height: 1.5; font-style: italic;">
+                                    "Caffeine, fatigue, and cognition enhancement in controlled trials"
+                                </p>
+                                <p style="color: #27AE60; font-size: 0.9rem; font-weight: 600; margin: 0;">
+                                    -40% fadiga mental reportada
+                                </p>
+                            </div>
+                            
+                            <!-- Estudo 4 -->
+                            <div style="background: rgba(11, 20, 38, 0.6); padding: 25px; border-radius: 16px; border-left: 4px solid #D4AF37; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 30px rgba(212, 175, 55, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                                <h4 style="color: #D4AF37; font-size: 0.9rem; font-weight: 700; margin: 0 0 15px 0; text-transform: uppercase; letter-spacing: 1px;">PHARMACOLOGY BIOCHEMISTRY</h4>
+                                <p style="color: #E8E9EA; font-size: 1rem; margin: 0 0 15px 0; line-height: 1.5; font-style: italic;">
+                                    "Improved cognitive performance with guarana extract administration"
+                                </p>
+                                <p style="color: #27AE60; font-size: 0.9rem; font-weight: 600; margin: 0;">
+                                    +30% velocidade de processamento
+                                </p>
+                            </div>
+                            
+                            <!-- Estudo 5 -->
+                            <div style="background: rgba(11, 20, 38, 0.6); padding: 25px; border-radius: 16px; border-left: 4px solid #D4AF37; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 30px rgba(212, 175, 55, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                                <h4 style="color: #D4AF37; font-size: 0.9rem; font-weight: 700; margin: 0 0 15px 0; text-transform: uppercase; letter-spacing: 1px;">MOLECULAR MEDICINE REPORTS</h4>
+                                <p style="color: #E8E9EA; font-size: 1rem; margin: 0 0 15px 0; line-height: 1.5; font-style: italic;">
+                                    "Protective effects of taurine against inflammation and oxidative stress"
+                                </p>
+                                <p style="color: #27AE60; font-size: 0.9rem; font-weight: 600; margin: 0;">
+                                    Neuroproteção comprovada
+                                </p>
+                            </div>
+                            
+                            <!-- Estudo 6 -->
+                            <div style="background: rgba(11, 20, 38, 0.6); padding: 25px; border-radius: 16px; border-left: 4px solid #D4AF37; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 30px rgba(212, 175, 55, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                                <h4 style="color: #D4AF37; font-size: 0.9rem; font-weight: 700; margin: 0 0 15px 0; text-transform: uppercase; letter-spacing: 1px;">ARCHIVES INTERNAL MEDICINE</h4>
+                                <p style="color: #E8E9EA; font-size: 1rem; margin: 0 0 15px 0; line-height: 1.5; font-style: italic;">
+                                    "Vitamin B12 supplementation and cognitive function systematic review"
+                                </p>
+                                <p style="color: #27AE60; font-size: 0.9rem; font-weight: 600; margin: 0;">
+                                    +18% função cognitiva geral
+                                </p>
+                            </div>
+                            
+                        </div>
+                        
+                        <!-- Diferencial Competitivo -->
+                        <div style="background: linear-gradient(135deg, rgba(27, 174, 96, 0.15) 0%, rgba(27, 174, 96, 0.08) 100%), rgba(11, 20, 38, 0.4); padding: 30px; border-radius: 20px; border: 2px solid rgba(27, 174, 96, 0.4); text-align: center; margin-bottom: 40px;">
+                            <h4 style="color: #27AE60; font-family: 'Orbitron', monospace; font-size: 1.3rem; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                                <span>🎯</span> DIFERENCIAL COMPETITIVO
+                            </h4>
+                            <p style="color: #E8E9EA; font-size: 1.1rem; line-height: 1.7; margin: 0; font-weight: 500;">
+                                Única empresa no Brasil com fórmula baseada em <strong style="color: #27AE60;">47 estudos independentes</strong>. Enquanto concorrentes usam 2-3 ingredientes básicos, nossa formulação combina <strong style="color: #27AE60;">9 compostos sinérgicos</strong> em dosagens clinicamente comprovadas.
+                            </p>
+                        </div>
+                        
+                        <!-- Botões -->
+                        <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+                            <a href="#" style="display: inline-block; background: linear-gradient(135deg, #D4AF37, #F4D03F); color: #0B1426; padding: 15px 35px; border-radius: 30px; font-size: 1rem; font-weight: 700; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3); display: flex; align-items: center; gap: 10px;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 15px 30px rgba(212, 175, 55, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 20px rgba(212, 175, 55, 0.3)'">
+                                <span>📚</span> VER TODOS OS ESTUDOS
+                            </a>
+                            <a href="#" style="display: inline-block; background: transparent; color: #D4AF37; padding: 15px 35px; border-radius: 30px; font-size: 1rem; font-weight: 700; text-decoration: none; transition: all 0.3s ease; border: 2px solid #D4AF37; display: flex; align-items: center; gap: 10px;" onmouseover="this.style.background='rgba(212, 175, 55, 0.1)'" onmouseout="this.style.background='transparent'">
+                                <span>📄</span> BAIXAR RELATÓRIO CIENTÍFICO
+                            </a>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="section-separator"></div>
+
+        <div class="protocol-section">
+            <h2 class="protocol-title">EM 72 HORAS: DE CÉREBRO INTOXICADO PARA FOCO TOTAL</h2>
+            
+            <div class="protocol-phases">
+                <!-- Fase 1: 24h -->
+                <div class="phase-card">
+                    <div class="phase-header">
+                        <div class="phase-time-icon">24h</div>
+                        <div class="phase-title-container">
+                            <h3 class="phase-title">O QUE VOCÊ VAI SENTIR EM 24H:</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="phase-benefits">
+                        <ul class="benefits-list">
+                            <li>✓ Ansiedade mental reduzida em 70% (sua cabeça para de "zunir")</li>
+                            <li>✓ Atenção às conversas dos filhos e esposa/marido/namorada</li>
+                            <li>✓ Impulso de pegar o celular diminui drasticamente</li>
+                            <li>✓ Você consegue assistir Netflix sem pegar o celular</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Fase 2: 48h -->
+                <div class="phase-card">
+                    <div class="phase-header">
+                        <div class="phase-time-icon">48h</div>
+                        <div class="phase-title-container">
+                            <h3 class="phase-title">O QUE VOCÊ VAI SENTIR EM 48H:</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="phase-benefits">
+                        <ul class="benefits-list">
+                            <li>✓ Foco profundo de 2-3 horas seguidas SEM se distrair</li>
+                            <li>✓ Lê um livro por horas sem "viajar" na leitura</li>
+                            <li>✓ Memória funcionando 100% (para de esquecer coisas)</li>
+                            <li>✓ Clareza mental que você não sentia há anos</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Fase 3: 72h -->
+                <div class="phase-card">
+                    <div class="phase-header">
+                        <div class="phase-time-icon">72h</div>
+                        <div class="phase-title-container">
+                            <h3 class="phase-title">O QUE VOCÊ VAI SENTIR EM 72H:</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="phase-benefits">
+                        <ul class="benefits-list">
+                            <li>✓ Imunidade TOTAL ao FOMO (para de se comparar com os outros)</li>
+                            <li>✓ Toma decisões em minutos (acabou a paralisia)</li>
+                            <li>✓ Produtividade 300% maior que antes</li>
+                            <li>✓ Sensação de ter "controle total" da sua mente</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção de Benefícios Únicos -->
+        <div class="competitors-section">
+            <h2 class="competitors-title">POR QUE O NOODROPS É DIFERENTE DE TUDO?</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin: 40px 0;">
+                <div style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(212, 175, 55, 0.06) 100%), rgba(11, 20, 38, 0.3); border: 2px solid rgba(212, 175, 55, 0.4); border-radius: 20px; padding: 30px; text-align: center; transition: all 0.4s ease;" onmouseover="this.style.transform='translateY(-8px) scale(1.02)'; this.style.boxShadow='0 25px 50px rgba(212, 175, 55, 0.3)'" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='none'">
+                    <div style="font-size: 2rem; margin-bottom: 15px;">🧬</div>
+                    <h3 style="color: #D4AF37; font-family: 'Orbitron', monospace; font-size: 1.2rem; margin-bottom: 15px;">TECNOLOGIA EXCLUSIVA</h3>
+                    <p style="color: #E8E9EA; line-height: 1.6;">Única fórmula no Brasil com liberação controlada por 6 horas. Patenteada e comprovada cientificamente.</p>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(212, 175, 55, 0.06) 100%), rgba(11, 20, 38, 0.3); border: 2px solid rgba(212, 175, 55, 0.4); border-radius: 20px; padding: 30px; text-align: center; transition: all 0.4s ease;" onmouseover="this.style.transform='translateY(-8px) scale(1.02)'; this.style.boxShadow='0 25px 50px rgba(212, 175, 55, 0.3)'" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='none'">
+                    <div style="font-size: 2rem; margin-bottom: 15px;">⚡</div>
+                    <h3 style="color: #D4AF37; font-family: 'Orbitron', monospace; font-size: 1.2rem; margin-bottom: 15px;">ZERO EFEITOS COLATERAIS</h3>
+                    <p style="color: #E8E9EA; line-height: 1.6;">Sem palpitações, sem ansiedade, sem crash. Testado em mais de 50.000 brasileiros com resultados consistentes.</p>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(212, 175, 55, 0.06) 100%), rgba(11, 20, 38, 0.3); border: 2px solid rgba(212, 175, 55, 0.4); border-radius: 20px; padding: 30px; text-align: center; transition: all 0.4s ease;" onmouseover="this.style.transform='translateY(-8px) scale(1.02)'; this.style.boxShadow='0 25px 50px rgba(212, 175, 55, 0.3)'" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='none'">
+                    <div style="font-size: 2rem; margin-bottom: 15px;">🎯</div>
+                    <h3 style="color: #D4AF37; font-family: 'Orbitron', monospace; font-size: 1.2rem; margin-bottom: 15px;">HIPERFOCO E CONCENTRAÇÃO O DIA TODO</h3>
+                    <p style="color: #E8E9EA; line-height: 1.6;">Estado de flow sustentado durante todas as suas atividades, sem quebras de concentração ou distrações.</p>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(212, 175, 55, 0.06) 100%), rgba(11, 20, 38, 0.3); border: 2px solid rgba(212, 175, 55, 0.4); border-radius: 20px; padding: 30px; text-align: center; transition: all 0.4s ease;" onmouseover="this.style.transform='translateY(-8px) scale(1.02)'; this.style.boxShadow='0 25px 50px rgba(212, 175, 55, 0.3)'" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='none'">
+                    <div style="font-size: 2rem; margin-bottom: 15px;">🧠</div>
+                    <h3 style="color: #D4AF37; font-family: 'Orbitron', monospace; font-size: 1.2rem; margin-bottom: 15px;">CLAREZA MENTAL PARA TAREFAS DIÁRIAS</h3>
+                    <p style="color: #E8E9EA; line-height: 1.6;">Tomada de decisões rápidas e precisas, organização mental superior e pensamento estratégico aprimorado.</p>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(212, 175, 55, 0.06) 100%), rgba(11, 20, 38, 0.3); border: 2px solid rgba(212, 175, 55, 0.4); border-radius: 20px; padding: 30px; text-align: center; transition: all 0.4s ease;" onmouseover="this.style.transform='translateY(-8px) scale(1.02)'; this.style.boxShadow='0 25px 50px rgba(212, 175, 55, 0.3)'" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='none'">
+                    <div style="font-size: 2rem; margin-bottom: 15px;">🔒</div>
+                    <h3 style="color: #D4AF37; font-family: 'Orbitron', monospace; font-size: 1.2rem; margin-bottom: 15px;">RESULTADOS GARANTIDOS</h3>
+                    <p style="color: #E8E9EA; line-height: 1.6;">7 dias de garantia incondicional. Se não sentir diferença, devolvemos 100% do seu dinheiro.</p>
+                </div>
+            </div>
+            
+            <div class="warning-box">
+                <h4>⚠️ ATENÇÃO: Cuidado com imitações baratas</h4>
+                <p>Somos a <strong>ÚNICA empresa no Brasil</strong> com tecnologia Slow Release comprovada e patenteada. Aceite apenas o original.</p>
+            </div>
+        </div>
+
+        <div class="section-separator"></div>
+
+        <!-- COMPARAÇÃO DRAMÁTICA MELHORADA - PREPARADA PARA GRÁFICO -->
+        <div style="text-align: center; margin: 80px 0 40px 0;">
+            <h2 style="font-family: 'Orbitron', monospace; font-size: 2.5rem; font-weight: 900; color: #D4AF37; margin-bottom: 30px; text-shadow: 0 4px 16px rgba(212, 175, 55, 0.5);">
+                A DIFERENÇA É CHOCANTE
+            </h2>
+            <p style="font-size: 1.2rem; color: #C8CDD4; font-weight: 500;">
+                Veja o impacto real do NooDrops na sua performance mental em 30 dias
+            </p>
+        </div>
+
+        <div class="dramatic-comparison">
+            <div class="comparison-card without-noodrops">
+                <div class="comparison-chart-title">SEM NOODROPS: A REALIDADE CRUEL</div>
+                
+                <!-- PLACEHOLDER PARA GRÁFICO "ANTES" -->
+                <div class="chart-placeholder">
+                    📊 INSERIR GRÁFICO DE PERFORMANCE<br>
+                    <span style="font-size: 0.9rem; opacity: 0.7;">"ANTES" - Baixa produtividade</span>
+                </div>
+                
+                <div style="background: rgba(220, 53, 69, 0.1); border-radius: 16px; padding: 20px; margin-top: 20px;">
+                    <div style="display: flex; align-items: center; gap: 10px; margin: 15px 0; color: #FF6B6B; font-weight: 600;">
+                        <span style="font-size: 1.2rem;">📉</span>
+                        <span>Produtividade: 23% do potencial</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px; margin: 15px 0; color: #FF6B6B; font-weight: 600;">
+                        <span style="font-size: 1.2rem;">⏱️</span>
+                        <span>Foco máximo: 12 minutos</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px; margin: 15px 0; color: #FF6B6B; font-weight: 600;">
+                        <span style="font-size: 1.2rem;">😵</span>
+                        <span>Clareza mental: 2/10</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px; margin: 15px 0; color: #FF6B6B; font-weight: 600;">
+                        <span style="font-size: 1.2rem;">📱</span>
+                        <span>Distrações por hora: 47</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="comparison-card with-noodrops">
+                <div class="comparison-chart-title">COM NOODROPS: ALTA PERFORMANCE</div>
+                
+                <!-- PLACEHOLDER PARA GRÁFICO "DEPOIS" -->
+                <div class="chart-placeholder">
+                    📊 INSERIR GRÁFICO DE PERFORMANCE<br>
+                    <span style="font-size: 0.9rem; opacity: 0.7;">"DEPOIS" - Alta produtividade</span>
+                </div>
+                
+                <div style="background: rgba(39, 174, 96, 0.1); border-radius: 16px; padding: 20px; margin-top: 20px;">
+                    <div style="display: flex; align-items: center; gap: 10px; margin: 15px 0; color: #27AE60; font-weight: 600;">
+                        <span style="font-size: 1.2rem;">📈</span>
+                        <span>Produtividade: 94% do potencial</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px; margin: 15px 0; color: #27AE60; font-weight: 600;">
+                        <span style="font-size: 1.2rem;">⚡</span>
+                        <span>Foco máximo: 3+ horas</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px; margin: 15px 0; color: #27AE60; font-weight: 600;">
+                        <span style="font-size: 1.2rem;">🧠</span>
+                        <span>Clareza mental: 9/10</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px; margin: 15px 0; color: #27AE60; font-weight: 600;">
+                        <span style="font-size: 1.2rem;">🎯</span>
+                        <span>Distrações por hora: 3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action Intermediário -->
+        <div style="text-align: center; margin: 60px 0; padding: 40px; background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0.08) 100%), rgba(11, 20, 38, 0.4); border-radius: 24px; border: 2px solid rgba(212, 175, 55, 0.4);">
+            <h3 style="font-family: 'Orbitron', monospace; color: #D4AF37; font-size: 1.6rem; font-weight: 700; margin-bottom: 20px;">
+                🚀 PRONTO PARA A TRANSFORMAÇÃO?
+            </h3>
+            <p style="color: #E8E9EA; font-size: 1.1rem; margin-bottom: 30px; line-height: 1.6;">
+                Você viu a diferença. Agora é sua vez de sair dos <strong>23% de performance</strong> para os <strong>94% de alta performance</strong>.
+            </p>
+            <a href="#pricing" style="display: inline-block; background: linear-gradient(135deg, #D4AF37 0%, #F4D03F 100%); color: #0B1426; padding: 18px 40px; border-radius: 50px; font-size: 1.1rem; font-weight: 700; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3);" onmouseover="this.style.transform='translateY(-3px) scale(1.05)'; this.style.boxShadow='0 20px 40px rgba(212, 175, 55, 0.4)'" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 15px 30px rgba(212, 175, 55, 0.3)'">
+                QUERO GARANTIR MEU KIT AGORA
+            </a>
+        </div>
+
+        <!-- Seção de Depoimentos Principais - PRINTS ÚNICOS E ORGANIZADOS -->
+        <div style="text-align: center; margin: 80px 0 40px 0;">
+            <h2 style="font-family: 'Orbitron', monospace; font-size: 2.2rem; font-weight: 700; color: #D4AF37; margin-bottom: 20px; text-shadow: 0 4px 16px rgba(212, 175, 55, 0.5);">
+                MAIS DEPOIMENTOS DE CLIENTES REAIS
+            </h2>
+            <p style="font-size: 1.1rem; color: #C8CDD4; font-weight: 500;">
+                Pessoas reais, resultados reais, transformações comprovadas
+            </p>
+        </div>
+
+        <!-- Grid de Novos Depoimentos (diferentes dos da seção superior) -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin: 40px 0;">
+            
+            <!-- Print Instagram 1 - @letidarosa -->
+            <div style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(212, 175, 55, 0.06) 100%), rgba(11, 20, 38, 0.3); backdrop-filter: blur(40px); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 20px; padding: 20px; position: relative; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(212, 175, 55, 0.1); transition: all 0.4s ease;" onmouseover="this.style.transform='translateY(-8px) scale(1.02)'" onmouseout="this.style.transform='translateY(0) scale(1)'">
+                
+                <div style="position: absolute; top: -12px; left: 20px; background: linear-gradient(135deg, #E4405F, #833AB4); color: white; padding: 8px 20px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; display: flex; align-items: center; gap: 8px; box-shadow: 0 8px 16px rgba(228, 64, 95, 0.4);">
+                    <span>📸</span><span>4 MESES DE USO</span>
+                </div>
+                
+                <div style="margin-top: 15px; text-align: center;">
+                    <!-- Placeholder - SUBSTITUA pela URL real da imagem @letidarosa -->
+                    <div style="width: 100%; height: 280px; background: linear-gradient(135deg, #E4405F, #833AB4); border-radius: 15px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; margin-bottom: 15px;">
+                        @letidarosa<br>4 meses de uso
+                    </div>
+                    <p style="color: #D4AF37; font-size: 0.9rem; font-weight: 600; margin: 0;">
+                        ✅ @letidarosa - Uso contínuo
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Print Instagram 2 - @donapersistencia_ -->
+            <div style="background: linear-gradient(135deg, rgba(39, 174, 96, 0.12) 0%, rgba(39, 174, 96, 0.06) 100%), rgba(11, 20, 38, 0.3); backdrop-filter: blur(40px); border: 2px solid rgba(39, 174, 96, 0.4); border-radius: 20px; padding: 20px; position: relative; box-shadow: 0 25px 50px rgba(39, 174, 96, 0.2), 0 10px 20px rgba(0, 0, 0, 0.3); transition: all 0.4s ease;" onmouseover="this.style.transform='translateY(-10px) scale(1.02)'" onmouseout="this.style.transform='translateY(0) scale(1)'">
+                
+                <div style="position: absolute; top: -12px; left: 20px; background: linear-gradient(135deg, #27AE60, #229954); color: white; padding: 8px 20px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; display: flex; align-items: center; gap: 8px; box-shadow: 0 8px 16px rgba(39, 174, 96, 0.4);">
+                    <span>✅</span><span>NÃO É PUBLI!</span>
+                </div>
+                
+                <div style="margin-top: 15px; text-align: center;">
+                    <!-- Placeholder - SUBSTITUA pela URL real da imagem @donapersistencia_ -->
+                    <div style="width: 100%; height: 280px; background: linear-gradient(135deg, #27AE60, #229954); border-radius: 15px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; margin-bottom: 15px;">
+                        @donapersistencia_<br>NÃO É PUBLI
+                    </div>
+                    <p style="color: #27AE60; font-size: 0.9rem; font-weight: 600; margin: 0;">
+                        ✅ @donapersistencia_ - Depoimento espontâneo
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Print Instagram 3 - @jacquelinercamargo -->
+            <div style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(212, 175, 55, 0.06) 100%), rgba(11, 20, 38, 0.3); backdrop-filter: blur(40px); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 20px; padding: 20px; position: relative; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(212, 175, 55, 0.1); transition: all 0.4s ease;" onmouseover="this.style.transform='translateY(-8px) scale(1.02)'" onmouseout="this.style.transform='translateY(0) scale(1)'">
+                
+                <div style="position: absolute; top: -12px; left: 20px; background: linear-gradient(135deg, #FF6B6B, #FF5252); color: white; padding: 8px 20px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; display: flex; align-items: center; gap: 8px; box-shadow: 0 8px 16px rgba(255, 107, 107, 0.4);">
+                    <span>👩‍💼</span><span>MÃE TRABALHADORA</span>
+                </div>
+                
+                <div style="margin-top: 15px; text-align: center;">
+                    <!-- Placeholder - SUBSTITUA pela URL real da imagem @jacquelinercamargo -->
+                    <div style="width: 100%; height: 280px; background: linear-gradient(135deg, #FF6B6B, #FF5252); border-radius: 15px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; margin-bottom: 15px;">
+                        @jacquelinercamargo<br>MÃE TRABALHADORA
+                    </div>
+                    <p style="color: #D4AF37; font-size: 0.9rem; font-weight: 600; margin: 0;">
+                        ✅ @jacquelinercamargo - Multitarefas
+                    </p>
+                </div>
+            </div>
+
+            <!-- Print Instagram 4 - @eusouannalaura -->
+            <div style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(212, 175, 55, 0.06) 100%), rgba(11, 20, 38, 0.3); backdrop-filter: blur(40px); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 20px; padding: 20px; position: relative; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(212, 175, 55, 0.1); transition: all 0.4s ease;" onmouseover="this.style.transform='translateY(-8px) scale(1.02)'" onmouseout="this.style.transform='translateY(0) scale(1)'">
+                
+                <div style="position: absolute; top: -12px; left: 20px; background: linear-gradient(135deg, #FF9500, #FF7A00); color: white; padding: 8px 20px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; display: flex; align-items: center; gap: 8px; box-shadow: 0 8px 16px rgba(255, 149, 0, 0.4);">
+                    <span>📈</span><span>RENDIMENTO</span>
+                </div>
+                
+                <div style="margin-top: 15px; text-align: center;">
+                    <!-- Placeholder - SUBSTITUA pela URL real da imagem @eusouannalaura -->
+                    <div style="width: 100%; height: 280px; background: linear-gradient(135deg, #FF9500, #FF7A00); border-radius: 15px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; margin-bottom: 15px;">
+                        @eusouannalaura<br>RENDIMENTO
+                    </div>
+                    <p style="color: #D4AF37; font-size: 0.9rem; font-weight: 600; margin: 0;">
+                        ✅ @eusouannalaura - Performance
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- Segunda linha com vídeo -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin: 40px 0; justify-items: center;">
+            
+            <!-- Vídeo Depoimento 2 -->
+            <div style="background: linear-gradient(135deg, rgba(220, 53, 69, 0.12) 0%, rgba(220, 53, 69, 0.06) 100%), rgba(11, 20, 38, 0.3); backdrop-filter: blur(40px); border: 2px solid rgba(220, 53, 69, 0.4); border-radius: 20px; padding: 20px; position: relative; box-shadow: 0 25px 50px rgba(220, 53, 69, 0.2), 0 10px 20px rgba(0, 0, 0, 0.3); max-width: 400px;">
+                <div style="position: absolute; top: -12px; left: 20px; background: linear-gradient(135deg, #DC3545, #C82333); color: white; padding: 8px 20px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; display: flex; align-items: center; gap: 8px; box-shadow: 0 8px 16px rgba(220, 53, 69, 0.4);">
+                    <span>🎥</span><span>VÍDEO EXCLUSIVO</span>
+                </div>
+                <div style="margin-top: 15px; text-align: center;">
+                    <div style="width: 100%; height: 250px; background: rgba(11, 20, 38, 0.6); border-radius: 16px; display: flex; align-items: center; justify-content: center; border: 2px dashed rgba(220, 53, 69, 0.3); margin-bottom: 15px; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(220, 53, 69, 0.1)'" onmouseout="this.style.background='rgba(11, 20, 38, 0.6)'">
+                        <div style="text-align: center;">
+                            <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #DC3545, #C82333); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; box-shadow: 0 15px 30px rgba(220, 53, 69, 0.4);">
+                                <span style="color: white; font-size: 24px;">▶️</span>
+                            </div>
+                            <p style="color: #DC3545; font-size: 1rem; font-weight: 700; margin: 0;">INSERIR VÍDEO 2</p>
+                            <p style="color: #C8CDD4; font-size: 0.9rem; margin: 8px 0 0 0; opacity: 0.8;">Depoimento em vídeo</p>
+                            <p style="color: #DC3545; font-size: 0.8rem; margin: 5px 0 0 0; font-weight: 600;">Clique para assistir</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- NOVA SEÇÃO: ESTATÍSTICAS E MÉTRICAS (Substitui a seção duplicada) -->
+        <div style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0.08) 50%, rgba(212, 175, 55, 0.03) 100%), rgba(11, 20, 38, 0.4); backdrop-filter: blur(60px) saturate(200%); border: 2px solid rgba(212, 175, 55, 0.4); padding: 80px 60px; border-radius: 32px; margin: 80px 0; position: relative; overflow: hidden; box-shadow: 0 40px 80px rgba(212, 175, 55, 0.2), 0 20px 40px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.15), inset 0 -1px 0 rgba(0, 0, 0, 0.2);">
+            
+            <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, transparent, #D4AF37 20%, #F4D03F 50%, #D4AF37 80%, transparent); border-radius: 32px 32px 0 0;"></div>
+            
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2 style="font-family: 'Orbitron', monospace; font-size: 2.5rem; font-weight: 900; color: #D4AF37; margin-bottom: 25px; text-shadow: 0 4px 16px rgba(212, 175, 55, 0.5);">
+                    NÚMEROS QUE COMPROVAM A EFICÁCIA
+                </h2>
+                <p style="font-size: 1.2rem; color: #C8CDD4; font-weight: 500; opacity: 0.9;">
+                    Dados reais coletados de <strong style="color: #D4AF37;">12.847 usuários</strong> em todo o Brasil
+                </p>
+            </div>
+            
+            <!-- Grid de Estatísticas -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin: 50px 0;">
+                
+                <div style="text-align: center; padding: 30px; background: linear-gradient(135deg, rgba(39, 174, 96, 0.15) 0%, rgba(39, 174, 96, 0.08) 100%), rgba(11, 20, 38, 0.3); border-radius: 20px; border: 2px solid rgba(39, 174, 96, 0.4); box-shadow: 0 20px 40px rgba(39, 174, 96, 0.2); transition: all 0.4s ease;" onmouseover="this.style.transform='translateY(-8px) scale(1.02)'" onmouseout="this.style.transform='translateY(0) scale(1)'">
+                    <div style="font-family: 'Orbitron', monospace; font-size: 3rem; font-weight: 900; color: #27AE60; margin-bottom: 15px; text-shadow: 0 4px 16px rgba(39, 174, 96, 0.5);">96%</div>
+                    <h3 style="color: #27AE60; font-size: 1.1rem; font-weight: 700; margin-bottom: 10px;">SENTEM MELHORA EM 72H</h3>
+                    <p style="color: #C8CDD4; font-size: 0.9rem; opacity: 0.8;">Relatam maior foco e clareza mental em menos de 3 dias</p>
+                </div>
+                
+                <div style="text-align: center; padding: 30px; background: linear-gradient(135deg, rgba(255, 193, 7, 0.15) 0%, rgba(255, 193, 7, 0.08) 100%), rgba(11, 20, 38, 0.3); border-radius: 20px; border: 2px solid rgba(255, 193, 7, 0.4); box-shadow: 0 20px 40px rgba(255, 193, 7, 0.2); transition: all 0.4s ease;" onmouseover="this.style.transform='translateY(-8px) scale(1.02)'" onmouseout="this.style.transform='translateY(0) scale(1)'">
+                    <div style="font-family: 'Orbitron', monospace; font-size: 3rem; font-weight: 900; color: #FFC107; margin-bottom: 15px; text-shadow: 0 4px 16px rgba(255, 193, 7, 0.5);">4.9/5</div>
+                    <h3 style="color: #FFC107; font-size: 1.1rem; font-weight: 700; margin-bottom: 10px;">AVALIAÇÃO MÉDIA</h3>
+                    <p style="color: #C8CDD4; font-size: 0.9rem; opacity: 0.8;">Nota média em mais de 8.500 avaliações verificadas</p>
+                </div>
+                
+                <div style="text-align: center; padding: 30px; background: linear-gradient(135deg, rgba(220, 53, 69, 0.15) 0%, rgba(220, 53, 69, 0.08) 100%), rgba(11, 20, 38, 0.3); border-radius: 20px; border: 2px solid rgba(220, 53, 69, 0.4); box-shadow: 0 20px 40px rgba(220, 53, 69, 0.2); transition: all 0.4s ease;" onmouseover="this.style.transform='translateY(-8px) scale(1.02)'" onmouseout="this.style.transform='translateY(0) scale(1)'">
+                    <div style="font-family: 'Orbitron', monospace; font-size: 3rem; font-weight: 900; color: #DC3545; margin-bottom: 15px; text-shadow: 0 4px 16px rgba(220, 53, 69, 0.5);">0.8%</div>
+                    <h3 style="color: #DC3545; font-size: 1.1rem; font-weight: 700; margin-bottom: 10px;">TAXA DE DEVOLUÇÃO</h3>
+                    <p style="color: #C8CDD4; font-size: 0.9rem; opacity: 0.8;">Menos que 1% pedem reembolso por não funcionar</p>
+                </div>
+                
+            </div>
+            
+            <!-- Comparativo de Eficácia -->
+            <div style="margin-top: 60px; padding: 40px; background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%), rgba(11, 20, 38, 0.3); border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.1);">
+                <h3 style="font-family: 'Orbitron', monospace; color: #D4AF37; font-size: 1.6rem; font-weight: 700; text-align: center; margin-bottom: 30px;">
+                    COMPARATIVO DE EFICÁCIA
+                </h3>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                    <div style="text-align: center;">
+                        <h4 style="color: #FF6B6B; font-size: 1.2rem; margin-bottom: 20px;">CAFÉ/ENERGÉTICOS COMUNS</h4>
+                        <div style="font-size: 2rem; color: #FF6B6B; margin-bottom: 10px;">23%</div>
+                        <p style="color: #FFB3B3; font-size: 0.9rem;">relatam melhora sustentada</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <h4 style="color: #27AE60; font-size: 1.2rem; margin-bottom: 20px;">PROTOCOLO NOODROPS</h4>
+                        <div style="font-size: 2rem; color: #27AE60; margin-bottom: 10px;">96%</div>
+                        <p style="color: #C8CDD4; font-size: 0.9rem;">relatam melhora sustentada</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Call to Action da Seção -->
+            <div style="text-align: center; margin-top: 50px; padding: 35px; background: linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(212, 175, 55, 0.06) 100%), rgba(11, 20, 38, 0.3); border-radius: 24px; border: 2px solid rgba(212, 175, 55, 0.4);">
+                <h3 style="font-family: 'Orbitron', monospace; color: #D4AF37; font-size: 1.6rem; font-weight: 700; margin-bottom: 20px;">
+                    🎯 NÚMEROS NÃO MENTEM
+                </h3>
+                <p style="color: #E8E9EA; font-size: 1.2rem; font-weight: 600; line-height: 1.6; margin: 0;">
+                    <strong style="color: #D4AF37;">96% de eficácia comprovada</strong> vs 23% dos métodos tradicionais. <br>
+                    A ciência fala por si só.
+                </p>
+            </div>
+            
+        </div>
+
+        <div class="urgency-banner">
+            <h3 style="font-family: 'Orbitron', monospace; font-size: 1.6rem; font-weight: 700; color: #FF6B6B; margin-bottom: 20px;">⚠️ APENAS 347 KITS RESTANTES HOJE</h3>
+            <div class="stock-counter" id="stockCounter">347</div>
+            <p style="color: #FFB3B3; font-size: 1.1rem; margin-top: 10px;">
+                Próximo lote: <strong>4 meses de espera</strong>
+            </p>
+        </div>
+
+        <!-- ESPAÇO PREPARADO: PRODUTO EM ALTA RESOLUÇÃO -->
+        <div class="product-hero" id="pricing">
+            <div style="position: absolute; top: 20px; left: 30px; background: linear-gradient(135deg, #D4AF37, #F4D03F); color: #0B1426; padding: 10px 25px; border-radius: 25px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 10px 20px rgba(212, 175, 55, 0.4);">
+                🏆 FÓRMULA PREMIUM
+            </div>
+            
+            <h2 style="font-family: 'Orbitron', monospace; font-size: 2.4rem; font-weight: 900; color: #D4AF37; text-align: center; margin-bottom: 40px; text-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);">
+                CONHEÇA A FÓRMULA QUE ESTÁ TRANSFORMANDO MENTES
+            </h2>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+                <!-- PLACEHOLDER - INSERIR PRODUTO EM ALTA RESOLUÇÃO AQUI -->
+                <div style="text-align: center;">
+                    <div style="width: 100%; max-width: 400px; height: 500px; background: rgba(255, 255, 255, 0.05); border: 3px dashed rgba(212, 175, 55, 0.3); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto; color: #D4AF37; font-size: 1.2rem; font-weight: 600; text-align: center;">
+                        📸 PRODUTO ALTA RESOLUÇÃO<br>
+                        <span style="font-size: 1rem; opacity: 0.8; margin-top: 10px; display: block;">Frasco premium + detalhes</span>
+                    </div>
+                </div>
+                
+                <!-- Informações do produto -->
+                <div>
+                    <h3 style="font-family: 'Orbitron', monospace; font-size: 1.8rem; font-weight: 700; color: #D4AF37; margin-bottom: 25px;">
+                        CADA CÁPSULA CONTÉM:
+                    </h3>
+                    
+                    <div style="space-y: 20px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+                            <span style="color: #E8E9EA; font-weight: 600; font-size: 1.1rem;">Cafeína Premium</span>
+                            <span style="color: #D4AF37; font-weight: 700; font-size: 1.2rem;">150mg</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+                            <span style="color: #E8E9EA; font-weight: 600; font-size: 1.1rem;">Pó de Guaraná</span>
+                            <span style="color: #D4AF37; font-weight: 700; font-size: 1.2rem;">50mg</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+                            <span style="color: #E8E9EA; font-weight: 600; font-size: 1.1rem;">Inositol</span>
+                            <span style="color: #D4AF37; font-weight: 700; font-size: 1.2rem;">300mg</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+                            <span style="color: #E8E9EA; font-weight: 600; font-size: 1.1rem;">Taurina</span>
+                            <span style="color: #D4AF37; font-weight: 700; font-size: 1.2rem;">150mg</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+                            <span style="color: #E8E9EA; font-weight: 600; font-size: 1.1rem;">DHA Omega-3</span>
+                            <span style="color: #D4AF37; font-weight: 700; font-size: 1.2rem;">300mg</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0;">
+                            <span style="color: #E8E9EA; font-weight: 600; font-size: 1.1rem;">Vitamina B12</span>
+                            <span style="color: #D4AF37; font-weight: 700; font-size: 1.2rem;">2,4mcg</span>
+                        </div>
+                    </div>
+                    
+                    <div style="background: linear-gradient(135deg, rgba(39, 174, 96, 0.15) 0%, rgba(39, 174, 96, 0.08) 100%), rgba(11, 20, 38, 0.3); padding: 25px; border-radius: 16px; border: 2px solid rgba(39, 174, 96, 0.4); margin-top: 30px;">
+                        <div style="display: flex; align-items: center; gap: 12px; margin: 12px 0; color: #27AE60; font-size: 1rem; font-weight: 600;">
+                            <span style="font-size: 1.2rem;">✅</span>
+                            <span>Tecnologia Slow Release exclusiva</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 12px; margin: 12px 0; color: #27AE60; font-size: 1rem; font-weight: 600;">
+                            <span style="font-size: 1.2rem;">✅</span>
+                            <span>6 horas de efeito sustentado</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 12px; margin: 12px 0; color: #27AE60; font-size: 1rem; font-weight: 600;">
+                            <span style="font-size: 1.2rem;">✅</span>
+                            <span>Zero efeitos colaterais</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nova Seção de Precificação com Combos -->
+        <div class="pricing-section">
+            <h2 style="font-family: 'Orbitron', monospace; font-size: 2.2rem; font-weight: 700; color: #D4AF37; text-align: center; margin-bottom: 20px; text-shadow: 0 4px 16px rgba(212, 175, 55, 0.5);">
+                ESCOLHA SEU PROTOCOLO DE RECUPERAÇÃO MENTAL
+            </h2>
+            <p style="text-align: center; font-size: 1.1rem; color: #C8CDD4; margin-bottom: 60px; font-weight: 500;">
+                Conteúdo educativo + suporte real + resultados sustentáveis
+            </p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; margin: 50px 0;">
+                
+                <!-- Combo 1: Recomeço Mental (3 meses) -->
+                <div style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%), rgba(11, 20, 38, 0.3); backdrop-filter: blur(60px) saturate(200%); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 32px; padding: 40px 35px; position: relative; overflow: hidden; box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3), 0 20px 40px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.12); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);" onmouseover="this.style.transform='translateY(-8px) scale(1.02)'" onmouseout="this.style.transform='translateY(0) scale(1)'">
+                    <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, #D4AF37, transparent); border-radius: 32px 32px 0 0;"></div>
+                    
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <h3 style="font-family: 'Orbitron', monospace; font-size: 1.4rem; font-weight: 700; color: #D4AF37; margin-bottom: 10px;">RECOMEÇO MENTAL</h3>
+                        <p style="font-size: 0.9rem; color: #C8CDD4; opacity: 0.8;">3 meses de protocolo</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 30px;">
+                        <div style="display: flex; align-items: flex-start; gap: 12px; margin: 15px 0; font-size: 0.95rem; color: #E8E9EA; line-height: 1.5;">
+                            <span style="color: #D4AF37; font-size: 1rem;">✔️</span>
+                            <span>3 frascos de NooDrops</span>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 12px; margin: 15px 0; font-size: 0.95rem; color: #E8E9EA; line-height: 1.5;">
+                            <span style="color: #D4AF37; font-size: 1rem;">✔️</span>
+                            <span>Ebook "O Foco Que Você Merece"</span>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 12px; margin: 15px 0; font-size: 0.95rem; color: #E8E9EA; line-height: 1.5;">
+                            <span style="color: #D4AF37; font-size: 1rem;">✔️</span>
+                            <span>Checklist 7 dias para recomeçar</span>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 12px; margin: 15px 0; font-size: 0.95rem; color: #E8E9EA; line-height: 1.5;">
+                            <span style="color: #D4AF37; font-size: 1rem;">✔️</span>
+                            <span>Garantia de 30 dias</span>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-bottom: 25px;">
+                        <div style="font-family: 'Orbitron', monospace; font-size: 2.5rem; font-weight: 900; color: #D4AF37; text-shadow: 0 4px 16px rgba(212, 175, 55, 0.5);">R$ 350</div>
+                    </div>
+                    
+                    <a href="#" style="display: block; background: linear-gradient(135deg, #D4AF37 0%, #F4D03F 100%); color: #0B1426; padding: 18px 30px; border-radius: 50px; font-size: 1.1rem; font-weight: 700; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; text-align: center; box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3);" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 20px 40px rgba(212, 175, 55, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 30px rgba(212, 175, 55, 0.3)'">RECUPERAR MINHA MENTE</a>
+                    
+                    <p style="text-align: center; font-size: 0.9rem; color: #C8CDD4; margin-top: 20px; line-height: 1.4; opacity: 0.8;">
+                        Para quem precisa dar o primeiro passo real. Um protocolo inicial para sair do ciclo da procrastinação.
+                    </p>
+                </div>
+                
+                <!-- Combo 2: Clareza Real (6 meses) - MAIS POPULAR -->
+                <div style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0.08) 100%), rgba(11, 20, 38, 0.3); backdrop-filter: blur(60px) saturate(200%); border: 2px solid #D4AF37; border-radius: 32px; padding: 40px 35px; position: relative; overflow: hidden; box-shadow: 0 50px 100px rgba(212, 175, 55, 0.2), 0 25px 50px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.15); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); transform: scale(1.05);" onmouseover="this.style.transform='translateY(-8px) scale(1.08)'" onmouseout="this.style.transform='translateY(0) scale(1.05)'">
+                    <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #D4AF37, #F4D03F); color: #0B1426; padding: 8px 25px; border-radius: 20px; font-family: 'Orbitron', monospace; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 8px 16px rgba(212, 175, 55, 0.4);">MAIS POPULAR</div>
+                    <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #D4AF37, #F4D03F, #D4AF37); border-radius: 32px 32px 0 0;"></div>
+                    
+                    <div style="text-align: center; margin-bottom: 30px; margin-top: 15px;">
+                        <h3 style="font-family: 'Orbitron', monospace; font-size: 1.4rem; font-weight: 700; color: #D4AF37; margin-bottom: 10px;">CLAREZA REAL</h3>
+                        <p style="font-size: 0.9rem; color: #C8CDD4; opacity: 0.8;">6 meses de protocolo</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 30px;">
+                        <div style="display: flex; align-items: flex-start; gap: 12px; margin: 15px 0; font-size: 0.95rem; color: #E8E9EA; line-height: 1.5;">
+                            <span style="color: #D4AF37; font-size: 1rem;">✔️</span>
+                            <span>6 frascos de NooDrops</span>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 12px; margin: 15px 0; font-size: 0.95rem; color: #E8E9EA; line-height: 1.5;">
+                            <span style="color: #D4AF37; font-size: 1rem;">✔️</span>
+                            <span>2 ebooks completos</span>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 12px; margin: 15px 0; font-size: 0.95rem; color: #E8E9EA; line-height: 1.5;">
+                            <span style="color: #D4AF37; font-size: 1rem;">✔️</span>
+                            <span>Planner digital de produtividade</span>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 12px; margin: 15px 0; font-size: 0.95rem; color: #E8E9EA; line-height: 1.5;">
+                            <span style="color: #D4AF37; font-size: 1rem;">✔️</span>
+                            <span>Grupo privado de apoio</span>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 12px; margin: 15px 0; font-size: 0.95rem; color: #E8E9EA; line-height: 1.5;">
+                            <span style="color: #D4AF37; font-size: 1rem;">✔️</span>
+                            <span>Webinário gravado exclusivo</span>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-bottom: 25px;">
+                        <div style="font-size: 1rem; color: #FF6B6B; text-decoration: line-through; opacity: 0.7; margin-bottom: 5px;">R$ 750</div>
+                        <div style="font-family: 'Orbitron', monospace; font-size: 2.5rem; font-weight: 900; color: #D4AF37; text-shadow: 0 4px 16px rgba(212, 175, 55, 0.5);">R$ 600</div>
+                    </div>
+                    
+                    <a href="#" style="display: block; background: linear-gradient(135deg, #D4AF37 0%, #F4D03F 100%); color: #0B1426; padding: 18px 30px; border-radius: 50px; font-size: 1.1rem; font-weight: 700; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; text-align: center; box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4);" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 20px 40px rgba(212, 175, 55, 0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 30px rgba(212, 175, 55, 0.4)'">CLAREZA MENTAL AGORA</a>
+                    
+                    <p style="text-align: center; font-size: 0.9rem; color: #C8CDD4; margin-top: 20px; line-height: 1.4; opacity: 0.8;">
+                        O combo mais escolhido por quem quer manter o ritmo. Suporte contínuo para consolidar ganhos de foco e clareza.
+                    </p>
+                </div>
+                
+                <!-- Combo 3: Mente Invencível (12 meses) -->
+                <div style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%), rgba(11, 20, 38, 0.3); backdrop-filter: blur(60px) saturate(200%); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 32px; padding: 40px 35px; position: relative; overflow: hidden; box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3), 0 20px 40px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.12); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);" onmouseover="this.style.transform='translateY(-8px) scale(1.02)'" onmouseout="this.style.transform='translateY(0) scale(1)'">
+                    <div style="position: absolute; top: -15px; right: 20px; background: linear-gradient(135deg, #27AE60, #2ECC71); color: white; padding: 8px 20px; border-radius: 20px; font-family: 'Orbitron', monospace; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 8px 16px rgba(39, 174, 96, 0.3);">MELHOR VALOR</div>
+                    <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, #27AE60, transparent); border-radius: 32px 32px 0 0;"></div>
+                    
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <h3 style="font-family: 'Orbitron', monospace; font-size: 1.4rem; font-weight: 700; color: #D4AF37; margin-bottom: 10px;">MENTE INVENCÍVEL</h3>
+                        <p style="font-size: 0.9rem; color: #C8CDD4; opacity: 0.8;">12 meses de protocolo</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 30px;">
+                        <div style="display: flex; align-items: flex-start; gap: 12px; margin: 15px 0; font-size: 0.95rem; color: #E8E9EA; line-height: 1.5;">
+                            <span style="color: #D4AF37; font-size: 1rem;">✔️</span>
+                            <span>12 frascos de NooDrops</span>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 12px; margin: 15px 0; font-size: 0.95rem; color: #E8E9EA; line-height: 1.5;">
+                            <span style="color: #D4AF37; font-size: 1rem;">✔️</span>
+                            <span>Todos os ebooks + bônus</span>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 12px; margin: 15px 0; font-size: 0.95rem; color: #E8E9EA; line-height: 1.5;">
+                            <span style="color: #D4AF37; font-size: 1rem;">✔️</span>
+                            <span>Planner anual + checklist mensal</span>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 12px; margin: 15px 0; font-size: 0.95rem; color: #E8E9EA; line-height: 1.5;">
+                            <span style="color: #D4AF37; font-size: 1rem;">✔️</span>
+                            <span>Grupo privado + webinário ao vivo</span>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 12px; margin: 15px 0; font-size: 0.95rem; color: #E8E9EA; line-height: 1.5;">
+                            <span style="color: #D4AF37; font-size: 1rem;">✔️</span>
+                            <span>Garantia extendida de 60 dias</span>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-bottom: 25px;">
+                        <div style="font-size: 1rem; color: #FF6B6B; text-decoration: line-through; opacity: 0.7; margin-bottom: 5px;">R$ 1.400</div>
+                        <div style="font-family: 'Orbitron', monospace; font-size: 2.5rem; font-weight: 900; color: #D4AF37; text-shadow: 0 4px 16px rgba(212, 175, 55, 0.5);">R$ 1.100</div>
+                    </div>
+                    
+                    <a href="#" style="display: block; background: linear-gradient(135deg, #27AE60 0%, #2ECC71 100%); color: white; padding: 18px 30px; border-radius: 50px; font-size: 1.1rem; font-weight: 700; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; text-align: center; box-shadow: 0 15px 30px rgba(39, 174, 96, 0.3);" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 20px 40px rgba(39, 174, 96, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 30px rgba(39, 174, 96, 0.3)'">MENTE INVENCÍVEL AGORA</a>
+                    
+                    <p style="text-align: center; font-size: 0.9rem; color: #C8CDD4; margin-top: 20px; line-height: 1.4; opacity: 0.8;">
+                        Para quem quer ir além do suplemento e construir hábitos mentais sustentáveis. Transformação completa garantida.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Chamada especial -->
+            <div style="text-align: center; margin: 50px 0 30px 0; padding: 30px; background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%), rgba(11, 20, 38, 0.3); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 20px;">
+                <p style="font-size: 1.1rem; color: #D4AF37; font-weight: 600; line-height: 1.6; margin-bottom: 15px;">
+                    ✨ <em>Não é só suplemento. É um plano de recuperação mental.</em>
+                </p>
+                <p style="font-size: 1rem; color: #C8CDD4; opacity: 0.9;">
+                    Se você quer mais do que cápsulas, este é o lugar certo para começar.
+                </p>
+            </div>
+            
+            <!-- Garantias Dramatizadas -->
+            <div style="background: linear-gradient(135deg, rgba(39, 174, 96, 0.15) 0%, rgba(39, 174, 96, 0.08) 100%), rgba(11, 20, 38, 0.3); backdrop-filter: blur(40px); border: 2px solid #27AE60; padding: 40px 35px; border-radius: 24px; margin: 40px 0; text-align: center; box-shadow: 0 32px 64px rgba(39, 174, 96, 0.2), 0 16px 32px rgba(0, 0, 0, 0.3);">
+                <h3 style="font-family: 'Orbitron', monospace; color: #27AE60; font-size: 1.5rem; font-weight: 700; margin-bottom: 20px;">🛡️ GARANTIA BLINDADA</h3>
+                <p style="font-size: 1.2rem; font-weight: 600; line-height: 1.6; color: #E8E9EA; margin-bottom: 20px;">
+                    "Se em <strong>7 dias</strong> você não sentir sua mente mais clara e focada, devolvemos <strong>100% do seu dinheiro + R$ 50</strong> pelo seu tempo."
+                </p>
+                <p style="font-size: 1rem; color: #C8CDD4; opacity: 0.9;">
+                    Sem burocracias. Sem perguntas. Sua satisfação é nossa obsessão.
+                </p>
+            </div>
+            
+            <div class="guarantee-badges">
+                <div class="guarantee-badge">
+                    <span>🔒</span>
+                    <span>Garantia estendida</span>
+                </div>
+                <div class="guarantee-badge">
+                    <span>🚚</span>
+                    <span>Entrega 24-48h</span>
+                </div>
+                <div class="guarantee-badge">
+                    <span>💳</span>
+                    <span>Parcelamento disponível</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="disclaimer">
+            <p>© 2025 NooDrops Detox Protocol. Esta página contém informações baseadas em pesquisas científicas reais. Os resultados podem variar de pessoa para pessoa. Este produto não se destina a diagnosticar, tratar, curar ou prevenir qualquer doença. Consulte sempre um profissional de saúde antes de iniciar qualquer suplementação.</p>
+        </div>
+    </div>
+
+    <!-- POP-UP DE NOTIFICAÇÃO DE COMPRA -->
+    <div class="purchase-notification" id="purchaseNotification">
+        <div class="notification-content">
+            <div class="notification-avatar">👤</div>
+            <div class="notification-text">
+                <div class="notification-name" id="buyerName">João Silva</div>
+                <div class="notification-action" id="buyerAction">acabou de comprar o Kit Clareza Real</div>
+            </div>
+            <div class="notification-close" onclick="closePurchaseNotification()">×</div>
+        </div>
+    </div>
+
+    <script>
+        let selectedSymptoms = 0;
+        
+        function toggleSymptom(element) {
+            const checkbox = element.querySelector('.diagnostic-checkbox');
+            const isSelected = element.classList.contains('selected');
+            
+            if (isSelected) {
+                element.classList.remove('selected');
+                checkbox.textContent = '';
+                selectedSymptoms--;
+            } else {
+                element.classList.add('selected');
+                checkbox.textContent = '✓';
+                selectedSymptoms++;
+            }
+            
+            document.getElementById('symptomsCount').textContent = selectedSymptoms;
+            
+            // Mostrar diagnóstico após 2 sintomas marcados
+            if (selectedSymptoms >= 2) {
+                document.getElementById('diagnosticResult').classList.add('show');
+            } else {
+                document.getElementById('diagnosticResult').classList.remove('show');
+            }
+        }
+        
+        // Stock counter animation
+        function updateStockCounter() {
+            const counter = document.getElementById('stockCounter');
+            let currentStock = 347;
+            
+            setInterval(() => {
+                if (currentStock > 300 && Math.random() < 0.3) {
+                    currentStock--;
+                    counter.textContent = currentStock;
+                    
+                    // Add flash effect
+                    counter.style.color = '#FF6B6B';
+                    setTimeout(() => {
+                        counter.style.color = '#FF6B6B';
+                    }, 500);
+                }
+            }, 8000);
+        }
+
+        updateStockCounter();
+
+        // Enhanced scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0) scale(1)';
+                }
+            });
+        }, observerOptions);
+
+        // Apply animations to elements
+        document.querySelectorAll('.auto-diagnostic, .phase-card, .before-after-card, .testimonial-card, .pricing-section, .competitors-section, .section-separator').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(50px) scale(0.95)';
+            el.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+            observer.observe(el);
+        });
+
+        // Stagger animation for diagnostic items
+        document.querySelectorAll('.diagnostic-item').forEach((item, index) => {
+            item.style.transitionDelay = `${index * 0.1}s`;
+        });
+
+        // Stagger animation for phase cards
+        document.querySelectorAll('.phase-card').forEach((card, index) => {
+            card.style.transitionDelay = `${index * 0.3}s`;
+        });
+
+        // Stagger animation for testimonials
+        document.querySelectorAll('.testimonial-card').forEach((card, index) => {
+            card.style.transitionDelay = `${index * 0.2}s`;
+        });
+
+        // Add subtle parallax effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+            document.body.style.backgroundPosition = `center ${rate}px`;
+        });
+
+        // Adicionar keyframes para pulse
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.05); }
+                100% { transform: scale(1); }
+            }
+            @keyframes shimmerGold {
+                0%, 100% { background-position: -200% center; }
+                100% { background-position: 200% center; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
