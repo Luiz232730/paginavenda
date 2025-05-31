@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMERGÊNCIA: Seu Cérebro Está em Modo Autossabotagem</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* === CONFIGURAÇÕES BASE === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #0f3460;
+            --secondary: #e94560;
+            --danger: #d90429;
+            --warning: #ff6b35;
+            --success: #059669;
+            --dark: #1a1a2e;
+            --light: #f8f9fb;
+            --white: #fff;
+            --neon: #00f5d4;
+            --electric: #3b82f6;
+            --glass: rgba(15, 23, 42, 0.1);
+            --shadow-sm: 0 3px 10px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.12);
+            --shadow-dramatic: 0 15px 35px rgba(217, 4, 41, 0.3);
+            --glow: 0 0 20px;
+            --radius-sm: 5px;
+            --radius-md: 8px;
+            --radius-lg: 10px;
+            --radius-xl: 12px;
+            --radius-round: 50px;
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f5f5 0%, #f8fafc 100%);
+            overflow-x: hidden;
+        }
+        
+        /* === BARRA DE PROGRESSO === */
+        .read-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--danger), var(--warning), var(--neon));
+            z-index: 1000;
+            transition: width 0.2s ease;
+        }
+        
+        /* === CONTAINER PRINCIPAL === */
+        .advertorial-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: linear-gradient(145deg, var(--white), #f8fafc);
+            box-shadow: var(--shadow-lg);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* === HEADER HÍBRIDO: PROFISSIONAL + IMPACTO === */
+        .header {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 50%, #2c1a4d 100%);
+            color: var(--white);
+            padding: 40px 25px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(217, 4, 41, 0.05), transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(0, 245, 212, 0.03), transparent 50%);
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--danger), var(--warning), var(--neon), var(--danger));
+            background-size: 200% 100%;
+            animation: gradientFlow 4s ease-in-out infinite;
+        }
+        
+        @keyframes gradientFlow {
+            0%, 100% { background-position: 0% 0%; }
+            50% { background-position: 100% 0%; }
+        }
+        
+        .emergency-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(45deg, var(--danger), #ef233c);
+            color: white;
+            padding: 10px 25px;
+            border-radius: var(--radius-round);
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            box-shadow: var(--glow) rgba(217, 4, 41, 0.4);
+            animation: emergencyPulse 2s infinite;
+            position: relative;
+            z-index: 2;
+        }
+        
+        @keyframes emergencyPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+        
+        .emergency-badge::before {
+            content: '⚠️';
+            animation: shake 1s infinite;
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-1px); }
+            75% { transform: translateX(1px); }
+        }
+        
+        .header-image {
+            width: 85%;
+            max-width: 450px;
+            margin: 0 auto 30px;
+            border-radius: var(--radius-lg);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.5s ease;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header-image:hover {
+            transform: scale(1.02);
+        }
+        
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.2rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            margin-bottom: 15px;
+            color: var(--white);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            text-transform: uppercase;
+            position: relative;
+            z-index: 2;
+            line-height: 1.1;
+        }
+        
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #e6e6e6;
+            margin-bottom: 25px;
+            line-height: 1.4;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .highlight-danger {
+            color: var(--danger);
+            background: rgba(217, 4, 41, 0.15);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 800;
+        }
+        
+        .highlight-warning {
+            color: var(--warning);
+            background: rgba(255, 107, 53, 0.15);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+        
+        /* === CONTENT ÁREA === */
+        .content {
+            padding: 30px;
+        }
+        
+        /* === TESTE DE 5 SEGUNDOS (DA HÍBRIDA) === */
+        .instant-test {
+            background: linear-gradient(135deg, var(--glass), rgba(59, 130, 246, 0.05));
+            border: 2px solid var(--electric);
+            border-radius: var(--radius-lg);
+            padding: 35px;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .instant-test::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--electric), var(--neon), var(--electric));
+            animation: scanLine 2s linear infinite;
+        }
+        
+        @keyframes scanLine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .test-title {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--electric);
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-weight: 700;
+            text-align: center;
+        }
+        
+        .test-question {
+            background: rgba(217, 4, 41, 0.08);
+            padding: 25px;
+            border-left: 4px solid var(--danger);
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            position: relative;
+        }
+        
+        .test-question::before {
+            content: '#01';
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background: var(--danger);
+            color: white;
+            padding: 5px 15px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+        
+        .test-question h4 {
+            color: var(--danger);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+        
+        /* === CONTADOR DE TEMPO PERDIDO (DA HÍBRIDA) === */
+        .time-counter {
+            background: linear-gradient(135deg, rgba(0, 245, 212, 0.08), rgba(59, 130, 246, 0.05));
+            padding: 25px;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            margin: 35px 0;
+            border: 2px dashed var(--neon);
+            border-radius: var(--radius-lg);
+            position: relative;
+        }
+        
+        .time-counter::before {
+            content: '⏱️';
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .counter-number {
+            color: var(--danger);
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+        
+        /* === IDENTIFICAÇÃO EMOCIONAL (DA CLEAN) === */
+        .emotional-journey {
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            border-radius: var(--radius-lg);
+            padding: 35px;
+            margin: 40px 0;
+            border-left: 5px solid var(--primary);
+            box-shadow: var(--shadow-sm);
+            position: relative;
+        }
+        
+        .journey-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .experience-item {
+            display: flex;
+            margin-bottom: 25px;
+            align-items: flex-start;
+            transition: all 0.3s ease;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid transparent;
+        }
+        
+        .experience-item:hover {
+            transform: translateX(8px);
+            background: rgba(233, 69, 96, 0.05);
+            border-left-color: var(--secondary);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .arrow-icon {
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin-right: 15px;
+            min-width: 25px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        
+        .experience-content {
+            flex-grow: 1;
+        }
+        
+        .main-point {
+            font-size: 1.1rem;
+            margin: 0 0 5px 0;
+            color: #1a202c;
+            font-weight: 600;
+        }
+        
+        .context {
+            margin: 0;
+            color: #64748b;
+            font-size: 0.95rem;
+            padding-left: 5px;
+            border-left: 2px solid #e2e8f0;
+            font-style: italic;
+        }
+        
+        .thought-bubble {
+            background: var(--white);
+            padding: 12px 18px;
+            border-radius: 18px;
+            box-shadow: var(--shadow-sm);
+            margin: 8px 0 0 0;
+            display: inline-block;
+            font-style: italic;
+            color: var(--danger);
+            font-weight: 600;
+            position: relative;
+            border: 1px solid rgba(233, 69, 96, 0.2);
+        }
+        
+        .thought-bubble:before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 20px;
+            width: 15px;
+            height: 15px;
+            background: var(--white);
+            transform: rotate(45deg);
+            border: 1px solid rgba(233, 69, 96, 0.2);
+            border-bottom: none;
+            border-right: none;
+        }
+        
+        /* === DORES VISCERAIS (DA CLEAN) === */
+        .pain-devastation {
+            margin: 40px 0;
+        }
+        
+        .devastation-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--danger);
+            text-align: center;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+        
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .pain-card {
+            background: linear-gradient(145deg, var(--white), #f8fafc);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            border-left: 5px solid var(--danger);
+            box-shadow: var(--shadow-md);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pain-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--danger);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+        
+        .pain-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .pain-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-dramatic);
+            border-left-color: var(--warning);
+        }
+        
+        .pain-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--danger), #ef233c);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            box-shadow: var(--glow) rgba(217, 4, 41, 0.3);
+        }
+        
+        .pain-icon i {
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .pain-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--danger);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .pain-description {
+            color: #2d3748;
+            font-size: 1rem;
+            line-height: 1.6;
+            font-style: italic;
+        }
+        
+        /* === REVELAÇÃO CIENTÍFICA === */
+        .scientific-revelation {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+            border-radius: var(--radius-lg);
+            padding: 40px 30px;
+            margin: 50px 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        .scientific-revelation::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(233, 69, 96, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .revelation-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--danger);
+            color: white;
+            font-weight: 700;
+            font-size: 14px;
+            padding: 8px 20px;
+            border-radius: 50px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .revelation-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 25px;
+            color: var(--warning);
+            position: relative;
+            z-index: 1;
+            text-transform: uppercase;
+        }
+        
+        .revelation-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: #e2e8f0;
+        }
+        
+        .revelation-highlight {
+            color: var(--danger);
+            font-weight: 800;
+            background: rgba(217, 4, 41, 0.2);
+            padding: 3px 10px;
+            border-radius: 6px;
+            text-transform: uppercase;
+        }
+        
+        /* === ESTATÍSTICA CIENTÍFICA === */
+        .stat-highlight {
+            background: linear-gradient(135deg, var(--dark), #1e293b);
+            color: white;
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid var(--danger);
+            box-shadow: var(--glow) rgba(217, 4, 41, 0.3);
+        }
+        
+        .stat-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--danger);
+            margin-bottom: 15px;
+            text-shadow: var(--glow) var(--danger);
+            animation: statPulse 2s infinite;
+        }
+        
+        @keyframes statPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .stat-description {
+            font-size: 1.2rem;
+            color: #e2e8f0;
+            font-weight: 600;
+        }
+        
+        /* === TESTIMONIALS (DA CLEAN) === */
+        .testimonials {
+            margin: 50px 0;
+        }
+        
+        .testimonials-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--danger);
+            text-align: center;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+        
+        .testimonial {
+            background: linear-gradient(145deg, var(--white), #f8fafc);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            margin-bottom: 25px;
+            border-left: 5px solid var(--primary);
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .testimonial::before {
+            content: '"';
+            position: absolute;
+            top: -5px;
+            left: 15px;
+            font-size: 3rem;
+            color: rgba(15, 52, 96, 0.1);
+            font-family: serif;
+            line-height: 1;
+        }
+        
+        .testimonial:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-dramatic);
+        }
+        
+        .testimonial-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        
+        .testimonial-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--primary);
+            box-shadow: var(--shadow-sm);
+            flex-shrink: 0;
+        }
+        
+        .testimonial-text {
+            flex-grow: 1;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-quote {
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #2d3748;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--danger);
+            font-size: 1rem;
+        }
+        
+        /* === PROTOCOLO CIENTÍFICO === */
+        .protocol-section {
+            background: linear-gradient(135deg, #f0f5ff, #e0f2fe);
+            border-left: 5px solid var(--electric);
+            border-radius: var(--radius-lg);
+            padding: 35px;
+            margin: 40px 0;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .protocol-title {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+        
+        .protocol-description {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            color: #334155;
+        }
+        
+        .protocol-steps {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .protocol-steps li {
+            position: relative;
+            padding: 12px 0 12px 40px;
+            color: #1e293b;
+            font-weight: 500;
+            font-size: 1.05rem;
+            margin-bottom: 10px;
+        }
+        
+        .protocol-steps li::before {
+            content: "🧠";
+            position: absolute;
+            left: 0;
+            top: 12px;
+        }
+        
+        /* === INGREDIENTES === */
+        .ingredients {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 40px 0;
+            gap: 20px;
+        }
+        
+        .ingredient {
+            flex-basis: calc(33.33% - 20px);
+            background: var(--white);
+            padding: 25px 15px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .ingredient:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-dramatic);
+            border-color: var(--primary);
+        }
+        
+        .ingredient i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: block;
+            transition: var(--transition);
+        }
+        
+        .ingredient:hover i {
+            transform: rotateY(180deg);
+            color: var(--danger);
+        }
+        
+        .ingredient p:first-of-type {
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        
+        .ingredient p:last-of-type {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+            color: #64748b;
+            line-height: 1.4;
+        }
+        
+        /* === BADGES DE CREDIBILIDADE === */
+        .credibility-badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .badge {
+            background: linear-gradient(135deg, var(--light), #e2e8f0);
+            border: 1px solid #cbd5e0;
+            border-radius: var(--radius-round);
+            padding: 8px 15px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+        
+        .badge:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            background: linear-gradient(135deg, var(--white), var(--light));
+        }
+        
+        .badge i {
+            margin-right: 8px;
+            color: var(--success);
+        }
+        
+        /* === GARANTIA === */
+        .guarantee-seal {
+            text-align: center;
+            margin: 35px auto 20px;
+            max-width: 280px;
+        }
+        
+        .guarantee-seal img {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+            transition: var(--transition);
+        }
+        
+        .guarantee-seal img:hover {
+            transform: scale(1.05);
+        }
+        
+        .guarantee {
+            background: linear-gradient(135deg, #eefbf5, #d1fae5);
+            border: 2px solid #a7f3d0;
+            border-radius: var(--radius-lg);
+            padding: 25px;
+            margin: 35px 0;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .guarantee p {
+            font-weight: 500;
+            color: #064e3b;
+            font-size: 1.1rem;
+            margin: 0;
+        }
+        
+        .emphasis {
+            font-weight: 700;
+            border-bottom: 2px dotted #059669;
+            padding-bottom: 2px;
+        }
+        
+        /* === CTA FINAL HÍBRIDO === */
+        .ultimate-cta {
+            background: linear-gradient(135deg, var(--danger), #ef233c);
+            border-radius: var(--radius-lg);
+            padding: 50px;
+            text-align: center;
+            margin: 50px 0 30px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-dramatic);
+            border: 3px solid var(--warning);
+        }
+        
+        .ultimate-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: sweep 3s infinite;
+        }
+        
+        @keyframes sweep {
+            0% { left: -100%; }
+            50% { left: 100%; }
+            100% { left: 100%; }
+        }
+        
+        .cta-urgency {
+            display: inline-block;
+            background: var(--warning);
+            color: white;
+            padding: 8px 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 20px;
+            animation: shake 2s infinite;
+        }
+        
+        .cta-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .cta-description {
+            font-size: 1.2rem;
+            margin-bottom: 35px;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--warning), #ff8500);
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 800;
+            padding: 20px 40px;
+            border-radius: var(--radius-round);
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.4);
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 3px solid white;
+        }
+        
+        .cta-button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: 0.5s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(255, 107, 53, 0.6);
+        }
+        
+        .cta-button:hover:before {
+            left: 100%;
+        }
+        
+        .cta-warning {
+            font-size: 1rem;
+            margin-top: 20px;
+            opacity: 0.9;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        
+        /* === ELEMENTOS VISUAIS MODERNOS === */
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--danger), transparent);
+            margin: 50px 0;
+            position: relative;
+        }
+        
+        .section-divider:before {
+            content: '⚡';
+            position: absolute;
+            background: white;
+            color: var(--danger);
+            font-size: 1.5rem;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 5px 10px;
+            border-radius: 50%;
+            box-shadow: 0 0 0 5px rgba(217, 4, 41, 0.1);
+        }
+        
+        /* === RESPONSIVIDADE === */
+        @media (max-width: 768px) {
+            .advertorial-container {
+                margin: 0 10px;
+            }
+            
+            .content {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.2rem;
+            }
+            
+            .pain-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .testimonial-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .cta-button {
+                padding: 18px 30px;
+                font-size: 1.1rem;
+                width: 100%;
+                max-width: 350px;
+            }
+            
+            .ingredients {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+            
+            .ingredient {
+                flex-basis: auto;
+                max-width: 300px;
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .instant-test,
+            .emotional-journey,
+            .scientific-revelation,
+            .ultimate-cta {
+                padding: 25px;
+            }
+            
+            .pain-card {
+                padding: 25px;
+            }
+            
+            .stat-number {
+                font-size: 3rem;
+            }
+            
+            .cta-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de progresso de leitura -->
+    <div class="read-progress"></div>
+    
+    <div class="advertorial-container">
+        <!-- Header Híbrido: Profissional + Impacto -->
+        <div class="header">
+            <div class="emergency-badge">EMERGÊNCIA COGNITIVA DETECTADA</div>
+            <img src="https://noodrops.com.br/wp-content/uploads/2025/05/Head3.png" alt="Cérebro aprisionado" class="header-image">
+            <h1>SEU CÉREBRO ESTÁ EM <span class="highlight-danger">AUTOSSABOTAGEM</span></h1>
+            <h2>E a ciência descobriu <span class="highlight-warning">EXATAMENTE</span> como isso está destruindo sua vida em todas as áreas. A boa notícia? Existe um protocolo neurológico que reverte isso em 72 horas.</h2>
+        </div>
+        
+        <div class="content">
+            <!-- Teste de 5 Segundos - DA HÍBRIDA -->
+            <div class="instant-test">
+                <h3 class="test-title">TESTE DE EMERGÊNCIA: 5 SEGUNDOS</h3>
+                <p style="margin-bottom: 25px; color: #64748b; text-align: center;">Feche os olhos agora e responda com TOTAL honestidade:</p>
+                
+                <div class="test-question">
+                    <h4>QUAL FOI O ÚLTIMO DIA QUE VOCÊ FOI 100% PRODUTIVO?</h4>
+                    <p>Se a resposta não veio imediatamente, ou se você pensou "não lembro"... seu problema é mais grave do que imaginava.</p>
+                </div>
+            </div>
+            
+            <!-- Contador de Tempo Perdido - DA HÍBRIDA -->
+            <div class="time-counter">
+                <p>TEMPO PERDIDO HOJE: <span class="counter-number" id="minutes">00</span>:<span class="counter-number" id="seconds">00</span></p>
+                <p style="font-size: 0.9rem; color: #94a3b8; margin-top: 5px;">(Enquanto você lê isso, seu cérebro já sabotou 3 oportunidades)</p>
+            </div>
+            
+            <!-- Identificação Emocional - DA CLEAN -->
+            <div class="emotional-journey">
+                <h3 class="journey-title">RECONHECE ESSES MOMENTOS?</h3>
+                
+                <div class="experience-item">
+                    <div class="arrow-icon">→</div>
+                    <div class="experience-content">
+                        <p class="main-point">Você <strong>finge que está "produtivo"</strong></p>
+                        <p class="context">quando alguém pergunta como estão os estudos ou trabalho</p>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="arrow-icon">→</div>
+                    <div class="experience-content">
+                        <p class="main-point">No silêncio da madrugada, se pergunta:</p>
+                        <p class="thought-bubble">"Por que todo mundo consegue e eu não?"</p>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="arrow-icon">→</div>
+                    <div class="experience-content">
+                        <p class="main-point">Seu celular vibra: <strong>mais alguém celebrando aprovação</strong></p>
+                        <p class="context">enquanto você ainda está "tentando"</p>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="arrow-icon">→</div>
+                    <div class="experience-content">
+                        <p class="main-point"><strong>Seus dedos tremem</strong> ao digitar: "Parabéns!"</p>
+                        <p class="context">enquanto por dentro você se pergunta quando será sua vez</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section-divider"></div>
+            
+            <!-- Dores Viscerais - DA CLEAN -->
+            <div class="pain-devastation">
+                <h2 class="devastation-title">O QUE SEU CÉREBRO JÁ DESTRUIU:</h2>
+                
+                <div class="pain-grid">
+                    <div class="pain-card">
+                        <div class="pain-icon">
+                            <i class="fas fa-heart-broken"></i>
+                        </div>
+                        <h3 class="pain-title">RELACIONAMENTOS ARRUINADOS</h3>
+                        <p class="pain-description">"Quantos aniversários você esqueceu? Quantas promessas você quebrou por 'falta de atenção'? Seu parceiro(a) já disse que você 'nunca está presente'?"</p>
+                    </div>
+                    
+                    <div class="pain-card">
+                        <div class="pain-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="pain-title">CONCURSOS PERDIDOS</h3>
+                        <p class="pain-description">"Deu 'branco' na prova que mais estudou? Passou 6 meses estudando para esquecer TUDO na hora H? Seu cérebro te traiu no momento decisivo."</p>
+                    </div>
+                    
+                    <div class="pain-card">
+                        <div class="pain-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3 class="pain-title">PROMOÇÕES PERDIDAS</h3>
+                        <p class="pain-description">"Colegas 'menos qualificados' passaram na sua frente? Você trava em reuniões importantes? Esquece nomes de clientes cruciais?"</p>
+                    </div>
+                    
+                    <div class="pain-card">
+                        <div class="pain-icon">
+                            <i class="fas fa-sad-tear"></i>
+                        </div>
+                        <h3 class="pain-title">AUTOESTIMA DESTRUÍDA</h3>
+                        <p class="pain-description">"Toda noite você se pergunta 'por que EU não consigo?' enquanto vê todo mundo ao seu redor conquistando seus objetivos."</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Revelação Científica -->
+            <div class="scientific-revelation">
+                <div class="revelation-badge">
+                    🧬 DESCOBERTA CIENTÍFICA CHOCANTE
+                </div>
+                <h2 class="revelation-title">ISSO NÃO É SUA CULPA!</h2>
+                <div class="revelation-content">
+                    <p>Pesquisas neurológicas recentes identificaram o <span class="revelation-highlight">verdadeiro vilão</span> por trás da sua falta de foco:</p>
+                    <br>
+                    <p><strong>SEU CÉREBRO ESTÁ EM MODO AUTOSSABOTAGEM</strong></p>
+                    <br>
+                    <p>E o pior: <span class="revelation-highlight">ele não te avisou</span>.</p>
+                </div>
+            </div>
+            
+            <!-- Estatística Científica -->
+            <div class="stat-highlight">
+                <div class="stat-number">10.287</div>
+                <p class="stat-description">pessoas já desativaram esse modo em 72 horas usando protocolo neurológico</p>
+            </div>
+            
+            <!-- Testimonials - DA CLEAN -->
+            <div class="testimonials">
+                <h3 class="testimonials-title">VEJA QUEM JÁ SALVOU O PRÓPRIO CÉREBRO:</h3>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="testimonial-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Marina L." />
+                        </div>
+                        <div class="testimonial-text">
+                            <p class="testimonial-quote">"Perdi 3 concursos por 'branco' na prova. Em 72 horas com esse protocolo, meu cérebro virou outro. Hoje sou servidora da Receita Federal."</p>
+                            <p class="testimonial-author">- Marina L., 28 anos, Aprovada em 1º lugar</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="testimonial-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Carlos R." />
+                        </div>
+                        <div class="testimonial-text">
+                            <p class="testimonial-quote">"Minha ex-namorada dizia que eu nunca prestava atenção nela. Com o protocolo, consegui focar totalmente. Hoje somos casados."</p>
+                            <p class="testimonial-author">- Carlos R., 34 anos, Relacionamento salvo</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="testimonial-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Ricardo M." />
+                        </div>
+                        <div class="testimonial-text">
+                            <p class="testimonial-quote">"Deixei de fingir que entendia em reuniões. Minha concentração estava REAL. Em 3 meses: promoção que esperava há 2 anos."</p>
+                            <p class="testimonial-author">- Ricardo M., 38 anos, Gerente de Projetos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Protocolo Científico -->
+            <div class="protocol-section">
+                <h3 class="protocol-title">PROTOCOLO NEUROLÓGICO DE EMERGÊNCIA</h3>
+                <p class="protocol-description">O ÚNICO que rompe este ciclo de autodestruição cerebral em 72h. Composto pelo uso de 5 ingredientes que em conjunto:</p>
+                
+                <ul class="protocol-steps">
+                    <li>Desligam o modo "sabotagem" do seu cérebro</li>
+                    <li>Restauram o seu HIPERFOCO e memória</li>
+                    <li>Reduzem esquecimentos e chances de brancos em provas</li>
+                </ul>
+            </div>
+            
+            <!-- Ingredientes -->
+            <div class="ingredients">
+                <div class="ingredient">
+                    <i class="fas fa-brain"></i>
+                    <p>DHA</p>
+                    <p>Reconecta os neurônios danificados pelo estresse - você volta a lembrar do que estuda</p>
+                </div>
+                <div class="ingredient">
+                    <i class="fas fa-bolt"></i>
+                    <p>Inositol</p>
+                    <p>Desliga a ansiedade que apaga sua memória na hora da prova</p>
+                </div>
+                <div class="ingredient">
+                    <i class="fas fa-dna"></i>
+                    <p>Vitaminas B6 e B12</p>
+                    <p>Aumenta sua energia mental em 63% - estuda por horas sem cansar</p>
+                </div>
+            </div>
+            
+            <!-- Badges de Credibilidade -->
+            <div class="credibility-badges">
+                <span class="badge"><i class="fas fa-check-circle"></i> Testado Cientificamente</span>
+                <span class="badge"><i class="fas fa-certificate"></i> Aprovado pela ANVISA</span>
+                <span class="badge"><i class="fas fa-star"></i> Recomendado por Especialistas</span>
+            </div>
+            
+            <!-- Selo de Garantia -->
+            <div class="guarantee-seal">
+                <img src="https://noodrops.com.br/wp-content/uploads/2025/05/Selo-30.jpg" alt="Garantia de 30 dias">
+            </div>
+            
+            <div class="guarantee">
+                <p><strong>GARANTIA TRIPLA DE SATISFAÇÃO:</strong> Se em 30 dias você não sentir seu cérebro finalmente respondendo como deveria, devolvemos cada centavo. <span class="emphasis">Sem perguntas. Sem burocracia. Sem julgamentos.</span></p>
+            </div>
+            
+            <!-- CTA Final Híbrido -->
+            <div class="ultimate-cta">
+                <div class="cta-urgency">⏰ ÚLTIMAS HORAS</div>
+                <h3 class="cta-title">VOCÊ TEM DUAS ESCOLHAS:</h3>
+                <p class="cta-description">
+                    Continuar sendo <strong>REFÉM</strong> de um cérebro que te sabota... ou descobrir o protocolo neurológico que já salvou <strong>10.287 vidas</strong>.
+                </p>
+                
+                <a href="#descobrir" class="cta-button">
+                    DESCOBRIR O PROTOCOLO DE 72 HORAS
+                </a>
+                
+                <p class="cta-warning">
+                    ⚠️ Apenas <strong>89 unidades</strong> disponíveis hoje
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script>
+        // Contador de tempo perdido
+        let seconds = 0;
+        const minutesEl = document.getElementById('minutes');
+        const secondsEl = document.getElementById('seconds');
+        
+        setInterval(() => {
+            seconds++;
+            const mins = Math.floor(seconds / 60).toString().padStart(2, '0');
+            const secs = (seconds % 60).toString().padStart(2, '0');
+            minutesEl.textContent = mins;
+            secondsEl.textContent = secs;
+        }, 1000);
+        
+        // Função para atualizar a barra de progresso de leitura
+        function updateReadProgress() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.querySelector(".read-progress").style.width = scrolled + "%";
+        }
+        
+        // Animações de entrada
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        // Aplica animações nos elementos principais
+        document.querySelectorAll('.pain-card, .testimonial, .scientific-revelation').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(el);
+        });
+        
+        // Inicialização
+        window.addEventListener('load', function() {
+            window.addEventListener('scroll', updateReadProgress);
+        });
+        
+        // Pop-up de saída
+        window.onbeforeunload = function() {
+            return "Você realmente quer desistir? Amanhã será igual a hoje.";
+        };
+    </script>
+</body>
+</html>
