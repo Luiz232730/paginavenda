@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMERGÊNCIA: Seu Cérebro Está em Autossabotagem - Protocolo de Resgate em 72h</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* === SISTEMA DE DESIGN UNIFICADO === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            /* Cores Principais */
+            --primary: #0f3460;
+            --secondary: #e94560;
+            --danger: #d90429;
+            --warning: #ff6b35;
+            --success: #059669;
+            --neon: #00f5d4;
+            --electric: #3b82f6;
+            
+            /* Neutros */
+            --dark: #0f172a;
+            --dark-glass: rgba(15, 23, 42, 0.95);
+            --light: #f8fafc;
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-500: #64748b;
+            --gray-900: #0f172a;
+            
+            /* Sombras e Efeitos */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --shadow-dramatic: 0 25px 50px rgba(233, 69, 96, 0.15);
+            --glow-danger: 0 0 20px rgba(217, 4, 41, 0.4);
+            --glow-electric: 0 0 20px rgba(59, 130, 246, 0.4);
+            
+            /* Bordas */
+            --radius-sm: 6px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 16px;
+            --radius-2xl: 20px;
+            --radius-full: 9999px;
+            
+            /* Transições */
+            --transition-fast: 0.15s ease;
+            --transition-base: 0.3s ease;
+            --transition-slow: 0.5s ease;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--gray-900);
+            background: linear-gradient(135deg, var(--gray-50) 0%, var(--gray-100) 100%);
+            overflow-x: hidden;
+        }
+        
+        /* === BARRA DE PROGRESSO DE LEITURA === */
+        .read-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--danger), var(--warning), var(--neon));
+            z-index: 1000;
+            transition: width 0.25s ease;
+        }
+        
+        /* === CONTAINER PRINCIPAL === */
+        .advertorial-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: linear-gradient(145deg, var(--white), var(--gray-50));
+            box-shadow: var(--shadow-xl);
+            border-radius: var(--radius-2xl);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* === HEADER PROFISSIONAL + IMPACTO === */
+        .header {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 50%, #1e3a8a 100%);
+            color: var(--white);
+            padding: 50px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 20%, rgba(217, 4, 41, 0.08), transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(0, 245, 212, 0.05), transparent 50%);
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--danger), var(--warning), var(--neon), var(--danger));
+            background-size: 200% 100%;
+            animation: gradientFlow 6s ease-in-out infinite;
+        }
+        
+        @keyframes gradientFlow {
+            0%, 100% { background-position: 0% 0%; }
+            50% { background-position: 100% 0%; }
+        }
+        
+        .emergency-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(45deg, var(--danger), #ef4444);
+            color: white;
+            padding: 12px 28px;
+            border-radius: var(--radius-full);
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 25px;
+            box-shadow: var(--glow-danger);
+            animation: emergencyPulse 2.5s ease-in-out infinite;
+            position: relative;
+            z-index: 2;
+        }
+        
+        @keyframes emergencyPulse {
+            0%, 100% { 
+                transform: scale(1); 
+                box-shadow: var(--glow-danger);
+            }
+            50% { 
+                transform: scale(1.05); 
+                box-shadow: 0 0 30px rgba(217, 4, 41, 0.6);
+            }
+        }
+        
+        .emergency-badge::before {
+            content: '⚠️';
+            animation: urgentShake 1.5s infinite;
+        }
+        
+        @keyframes urgentShake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-2px) rotate(-2deg); }
+            75% { transform: translateX(2px) rotate(2deg); }
+        }
+        
+        .header-image {
+            width: 85%;
+            max-width: 480px;
+            margin: 0 auto 35px;
+            border-radius: var(--radius-lg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transition: transform var(--transition-slow);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header-image:hover {
+            transform: scale(1.02) translateY(-5px);
+        }
+        
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 900;
+            letter-spacing: -1.5px;
+            margin-bottom: 20px;
+            color: var(--white);
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            text-transform: uppercase;
+            position: relative;
+            z-index: 2;
+            line-height: 1.1;
+        }
+        
+        h2 {
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 30px;
+            line-height: 1.5;
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .highlight-danger {
+            color: var(--danger);
+            background: rgba(217, 4, 41, 0.15);
+            padding: 4px 10px;
+            border-radius: var(--radius-sm);
+            font-weight: 800;
+        }
+        
+        .highlight-warning {
+            color: var(--warning);
+            background: rgba(255, 107, 53, 0.15);
+            padding: 4px 10px;
+            border-radius: var(--radius-sm);
+            font-weight: 700;
+        }
+        
+        /* === ÁREA DE CONTEÚDO === */
+        .content {
+            padding: 40px 30px;
+        }
+        
+        /* === TESTE DE 5 SEGUNDOS (ELEMENTO MATADOR) === */
+        .instant-test {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(0, 245, 212, 0.03));
+            border: 2px solid var(--electric);
+            border-radius: var(--radius-xl);
+            padding: 40px;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            transition: all var(--transition-base);
+        }
+        
+        .instant-test:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl), var(--glow-electric);
+        }
+        
+        .instant-test::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--electric), var(--neon), var(--electric));
+            animation: scanLine 3s linear infinite;
+        }
+        
+        @keyframes scanLine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .test-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .test-title {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--electric);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        
+        .test-subtitle {
+            color: var(--gray-500);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        .test-question {
+            background: rgba(217, 4, 41, 0.08);
+            padding: 30px;
+            border-left: 5px solid var(--danger);
+            margin: 25px 0;
+            border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+            position: relative;
+            transition: all var(--transition-base);
+        }
+        
+        .test-question:hover {
+            transform: translateX(5px);
+            background: rgba(217, 4, 41, 0.12);
+        }
+        
+        .test-question::before {
+            content: 'TESTE #01';
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: var(--danger);
+            color: white;
+            padding: 8px 16px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            border-radius: var(--radius-sm);
+            letter-spacing: 0.5px;
+        }
+        
+        .test-question h4 {
+            color: var(--danger);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .test-answer {
+            color: var(--gray-900);
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+        
+        /* === CONTADOR DE TEMPO PERDIDO (URGÊNCIA VISUAL) === */
+        .time-counter {
+            background: linear-gradient(135deg, rgba(0, 245, 212, 0.08), rgba(59, 130, 246, 0.05));
+            padding: 30px;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            margin: 40px 0;
+            border: 2px dashed var(--neon);
+            border-radius: var(--radius-xl);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .time-counter::before {
+            content: '⏱️';
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.8rem;
+            animation: tickTock 1s infinite;
+        }
+        
+        @keyframes tickTock {
+            0%, 50% { transform: rotate(0deg); }
+            25% { transform: rotate(10deg); }
+            75% { transform: rotate(-10deg); }
+        }
+        
+        .counter-display {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        
+        .counter-number {
+            color: var(--danger);
+            font-weight: 900;
+            font-size: 1.6rem;
+            text-shadow: 0 2px 4px rgba(217, 4, 41, 0.3);
+        }
+        
+        .counter-subtitle {
+            font-size: 0.95rem;
+            color: var(--gray-500);
+            font-style: italic;
+        }
+        
+        /* === IDENTIFICAÇÃO EMOCIONAL PROFUNDA === */
+        .emotional-journey {
+            background: linear-gradient(135deg, var(--gray-50), var(--gray-100));
+            border-radius: var(--radius-xl);
+            padding: 40px;
+            margin: 50px 0;
+            border-left: 6px solid var(--primary);
+            box-shadow: var(--shadow-lg);
+            position: relative;
+        }
+        
+        .journey-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 35px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+        }
+        
+        .journey-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        .experience-item {
+            display: flex;
+            margin-bottom: 30px;
+            align-items: flex-start;
+            transition: all var(--transition-base);
+            padding: 20px;
+            border-radius: var(--radius-lg);
+            border-left: 4px solid transparent;
+        }
+        
+        .experience-item:hover {
+            transform: translateX(10px);
+            background: rgba(233, 69, 96, 0.05);
+            border-left-color: var(--secondary);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .arrow-icon {
+            color: var(--primary);
+            font-weight: 800;
+            font-size: 1.4rem;
+            margin-right: 20px;
+            min-width: 30px;
+            text-align: center;
+            flex-shrink: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .experience-content {
+            flex-grow: 1;
+        }
+        
+        .main-point {
+            font-size: 1.15rem;
+            margin: 0 0 8px 0;
+            color: var(--gray-900);
+            font-weight: 600;
+            line-height: 1.4;
+        }
+        
+        .context {
+            margin: 0;
+            color: var(--gray-500);
+            font-size: 1rem;
+            padding-left: 15px;
+            border-left: 3px solid #e2e8f0;
+            font-style: italic;
+        }
+        
+        .thought-bubble {
+            background: var(--white);
+            padding: 15px 22px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+            margin: 12px 0 0 0;
+            display: inline-block;
+            font-style: italic;
+            color: var(--danger);
+            font-weight: 600;
+            position: relative;
+            border: 2px solid rgba(233, 69, 96, 0.2);
+            max-width: 90%;
+        }
+        
+        .thought-bubble::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 25px;
+            width: 18px;
+            height: 18px;
+            background: var(--white);
+            transform: rotate(45deg);
+            border: 2px solid rgba(233, 69, 96, 0.2);
+            border-bottom: none;
+            border-right: none;
+        }
+        
+        /* === SEÇÃO DE DEVASTAÇÃO === */
+        .devastation-section {
+            margin: 60px 0;
+            text-align: center;
+        }
+        
+        .devastation-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 2.2rem);
+            font-weight: 900;
+            color: var(--danger);
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            text-shadow: 0 2px 4px rgba(217, 4, 41, 0.2);
+        }
+        
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .pain-card {
+            background: linear-gradient(145deg, var(--white), var(--gray-50));
+            border-radius: var(--radius-xl);
+            padding: 35px;
+            border-left: 6px solid var(--danger);
+            box-shadow: var(--shadow-lg);
+            transition: all var(--transition-slow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pain-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--danger), var(--warning));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform var(--transition-slow);
+        }
+        
+        .pain-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .pain-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-dramatic);
+            border-left-color: var(--warning);
+        }
+        
+        .pain-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--danger), #ef4444);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            box-shadow: var(--glow-danger);
+            transition: all var(--transition-base);
+        }
+        
+        .pain-card:hover .pain-icon {
+            transform: rotateY(180deg) scale(1.1);
+        }
+        
+        .pain-icon i {
+            font-size: 1.8rem;
+            color: white;
+        }
+        
+        .pain-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--danger);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-align: center;
+        }
+        
+        .pain-description {
+            color: var(--gray-900);
+            font-size: 1.05rem;
+            line-height: 1.6;
+            font-style: italic;
+            text-align: center;
+        }
+        
+        /* === REVELAÇÃO CIENTÍFICA === */
+        .scientific-revelation {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+            border-radius: var(--radius-xl);
+            padding: 50px 40px;
+            margin: 60px 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        .scientific-revelation::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(233, 69, 96, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 15s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        .revelation-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--danger);
+            color: white;
+            font-weight: 700;
+            font-size: 14px;
+            padding: 10px 24px;
+            border-radius: var(--radius-full);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
+            box-shadow: var(--glow-danger);
+        }
+        
+        .revelation-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--warning);
+            position: relative;
+            z-index: 1;
+            text-transform: uppercase;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .revelation-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            font-size: 1.25rem;
+            line-height: 1.7;
+            color: #e2e8f0;
+        }
+        
+        .revelation-highlight {
+            color: var(--danger);
+            font-weight: 800;
+            background: rgba(217, 4, 41, 0.2);
+            padding: 4px 12px;
+            border-radius: var(--radius-sm);
+            text-transform: uppercase;
+        }
+        
+        /* === ESTATÍSTICA IMPACTANTE === */
+        .stat-showcase {
+            background: linear-gradient(135deg, var(--dark), #1e293b);
+            color: white;
+            padding: 50px 40px;
+            border-radius: var(--radius-xl);
+            text-align: center;
+            margin: 50px 0;
+            position: relative;
+            overflow: hidden;
+            border: 3px solid var(--danger);
+            box-shadow: var(--glow-danger);
+        }
+        
+        .stat-showcase::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.05) 0%, transparent 60%);
+        }
+        
+        .stat-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(3rem, 8vw, 4.5rem);
+            font-weight: 900;
+            color: var(--danger);
+            margin-bottom: 20px;
+            text-shadow: var(--glow-danger);
+            animation: statPulse 3s ease-in-out infinite;
+            position: relative;
+            z-index: 1;
+        }
+        
+        @keyframes statPulse {
+            0%, 100% { 
+                transform: scale(1); 
+                text-shadow: var(--glow-danger);
+            }
+            50% { 
+                transform: scale(1.05); 
+                text-shadow: 0 0 30px rgba(217, 4, 41, 0.8);
+            }
+        }
+        
+        .stat-description {
+            font-size: 1.3rem;
+            color: #e2e8f0;
+            font-weight: 600;
+            line-height: 1.5;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* === TESTIMONIALS === */
+        .testimonials-section {
+            margin: 60px 0;
+        }
+        
+        .testimonials-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--danger);
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .testimonial {
+            background: linear-gradient(145deg, var(--white), var(--gray-50));
+            border-radius: var(--radius-xl);
+            padding: 35px;
+            margin-bottom: 30px;
+            border-left: 6px solid var(--primary);
+            box-shadow: var(--shadow-lg);
+            transition: all var(--transition-base);
+            position: relative;
+        }
+        
+        .testimonial::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: rgba(15, 52, 96, 0.1);
+            font-family: serif;
+            line-height: 1;
+        }
+        
+        .testimonial:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-dramatic);
+        }
+        
+        .testimonial-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 25px;
+        }
+        
+        .testimonial-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--primary);
+            box-shadow: var(--shadow-md);
+            flex-shrink: 0;
+        }
+        
+        .testimonial-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .testimonial-text {
+            flex-grow: 1;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-quote {
+            font-style: italic;
+            font-size: 1.15rem;
+            color: var(--gray-900);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--danger);
+            font-size: 1.05rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        /* === PROTOCOLO CIENTÍFICO === */
+        .protocol-section {
+            background: linear-gradient(135deg, #f0f9ff, #dbeafe);
+            border-left: 6px solid var(--electric);
+            border-radius: var(--radius-xl);
+            padding: 40px;
+            margin: 50px 0;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+        }
+        
+        .protocol-title {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary);
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+        
+        .protocol-description {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--gray-900);
+            text-align: center;
+            font-weight: 500;
+        }
+        
+        .protocol-steps {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .protocol-steps li {
+            position: relative;
+            padding: 18px 0 18px 60px;
+            color: var(--gray-900);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            transition: all var(--transition-base);
+            border-radius: var(--radius-lg);
+        }
+        
+        .protocol-steps li:hover {
+            transform: translateX(10px);
+            background: rgba(59, 130, 246, 0.05);
+            padding-left: 70px;
+        }
+        
+        .protocol-steps li::before {
+            content: "🧠";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.8rem;
+            width: 45px;
+            text-align: center;
+        }
+        
+        /* === INGREDIENTES === */
+        .ingredients-section {
+            margin: 60px 0;
+        }
+        
+        .ingredients-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+        
+        .ingredients {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .ingredient {
+            background: var(--white);
+            padding: 30px 20px;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+            transition: all var(--transition-base);
+            border: 2px solid transparent;
+        }
+        
+        .ingredient:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-dramatic);
+            border-color: var(--primary);
+        }
+        
+        .ingredient i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: block;
+            transition: all var(--transition-base);
+        }
+        
+        .ingredient:hover i {
+            transform: rotateY(180deg) scale(1.1);
+            color: var(--danger);
+        }
+        
+        .ingredient-name {
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .ingredient-benefit {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+            color: var(--gray-500);
+            line-height: 1.5;
+        }
+        
+        /* === BADGES DE CREDIBILIDADE === */
+        .credibility-badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .badge {
+            background: linear-gradient(135deg, var(--gray-50), #e2e8f0);
+            border: 2px solid #cbd5e0;
+            border-radius: var(--radius-full);
+            padding: 12px 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-base);
+        }
+        
+        .badge:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+            background: linear-gradient(135deg, var(--white), var(--gray-50));
+            border-color: var(--primary);
+        }
+        
+        .badge i {
+            margin-right: 10px;
+            color: var(--success);
+            font-size: 1.1rem;
+        }
+        
+        /* === GARANTIA === */
+        .guarantee-section {
+            text-align: center;
+            margin: 60px 0;
+        }
+        
+        .guarantee-seal {
+            max-width: 300px;
+            margin: 0 auto 30px;
+        }
+        
+        .guarantee-seal img {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.2));
+            transition: all var(--transition-base);
+        }
+        
+        .guarantee-seal:hover img {
+            transform: scale(1.05);
+        }
+        
+        .guarantee {
+            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+            border: 3px solid #a7f3d0;
+            border-radius: var(--radius-xl);
+            padding: 30px;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .guarantee p {
+            font-weight: 600;
+            color: #064e3b;
+            font-size: 1.2rem;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .emphasis {
+            font-weight: 800;
+            border-bottom: 3px dotted #059669;
+            padding-bottom: 2px;
+        }
+        
+        /* === CTA FINAL ULTIMATE === */
+        .ultimate-cta {
+            background: linear-gradient(135deg, var(--danger), #ef4444);
+            border-radius: var(--radius-xl);
+            padding: 60px 40px;
+            text-align: center;
+            margin: 60px 0 40px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-dramatic);
+            border: 4px solid var(--warning);
+        }
+        
+        .ultimate-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: ctaSweep 4s infinite;
+        }
+        
+        @keyframes ctaSweep {
+            0% { left: -100%; }
+            50% { left: 100%; }
+            100% { left: 100%; }
+        }
+        
+        .cta-urgency {
+            display: inline-block;
+            background: var(--warning);
+            color: white;
+            padding: 10px 25px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: var(--radius-full);
+            animation: urgentBounce 2s infinite;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+        }
+        
+        @keyframes urgentBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        .cta-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            font-weight: 900;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            line-height: 1.2;
+        }
+        
+        .cta-description {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--warning), #fb923c);
+            color: white;
+            font-size: 1.4rem;
+            font-weight: 800;
+            padding: 25px 50px;
+            border-radius: var(--radius-full);
+            text-decoration: none;
+            transition: all var(--transition-base);
+            box-shadow: 0 15px 35px rgba(255, 107, 53, 0.4);
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 4px solid white;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: var(--transition-slow);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 45px rgba(255, 107, 53, 0.6);
+            border-color: var(--neon);
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .cta-warning {
+            font-size: 1.1rem;
+            margin-top: 25px;
+            opacity: 0.9;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 25px;
+            border-radius: var(--radius-lg);
+            display: inline-block;
+            backdrop-filter: blur(10px);
+        }
+        
+        /* === ELEMENTOS VISUAIS === */
+        .section-divider {
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--danger), transparent);
+            margin: 60px 0;
+            position: relative;
+            border-radius: 2px;
+        }
+        
+        .section-divider::before {
+            content: '⚡';
+            position: absolute;
+            background: var(--white);
+            color: var(--danger);
+            font-size: 1.8rem;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 8px 12px;
+            border-radius: 50%;
+            box-shadow: 0 0 0 8px rgba(217, 4, 41, 0.1);
+        }
+        
+        /* === RESPONSIVIDADE === */
+        @media (max-width: 768px) {
+            .advertorial-container {
+                margin: 0 15px;
+                border-radius: var(--radius-xl);
+            }
+            
+            .header {
+                padding: 40px 25px;
+            }
+            
+            .content {
+                padding: 30px 25px;
+            }
+            
+            .pain-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .testimonial-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .ingredients {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .instant-test,
+            .emotional-journey,
+            .scientific-revelation,
+            .protocol-section,
+            .ultimate-cta {
+                padding: 30px 25px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .content {
+                padding: 25px 20px;
+            }
+            
+            .pain-card,
+            .testimonial {
+                padding: 25px;
+            }
+            
+            .cta-button {
+                padding: 20px 30px;
+                font-size: 1.2rem;
+                width: 100%;
+                max-width: 350px;
+            }
+            
+            .instant-test,
+            .emotional-journey,
+            .scientific-revelation,
+            .protocol-section,
+            .ultimate-cta {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de Progresso de Leitura -->
+    <div class="read-progress"></div>
+    
+    <div class="advertorial-container">
+        <!-- Header Profissional + Impacto Emocional -->
+        <div class="header">
+            <div class="emergency-badge">EMERGÊNCIA COGNITIVA DETECTADA</div>
+            <img src="https://noodrops.com.br/wp-content/uploads/2025/05/Head3.png" alt="Cérebro aprisionado" class="header-image">
+            <h1>SEU CÉREBRO ESTÁ EM <span class="highlight-danger">AUTOSSABOTAGEM</span></h1>
+            <h2>E a ciência descobriu <span class="highlight-warning">EXATAMENTE</span> como isso está destruindo sua vida. A boa notícia? Existe um protocolo neurológico que reverte isso em 72 horas.</h2>
+        </div>
+        
+        <div class="content">
+            <!-- Teste de 5 Segundos - ELEMENTO MATADOR -->
+            <div class="instant-test">
+                <div class="test-header">
+                    <h3 class="test-title">TESTE DE EMERGÊNCIA: 5 SEGUNDOS</h3>
+                    <p class="test-subtitle">Feche os olhos agora e responda com TOTAL honestidade:</p>
+                </div>
+                
+                <div class="test-question">
+                    <h4>QUAL FOI O ÚLTIMO DIA QUE VOCÊ FOI 100% PRODUTIVO?</h4>
+                    <p class="test-answer">Se a resposta não veio imediatamente, ou se você pensou "não lembro"... seu problema é mais grave do que imaginava.</p>
+                </div>
+            </div>
+            
+            <!-- Contador de Tempo Perdido - URGÊNCIA VISUAL -->
+            <div class="time-counter">
+                <div class="counter-display">
+                    TEMPO PERDIDO HOJE: <span class="counter-number" id="minutes">00</span>:<span class="counter-number" id="seconds">00</span>
+                </div>
+                <p class="counter-subtitle">(Enquanto você lê isso, seu cérebro já sabotou 3 oportunidades)</p>
+            </div>
+            
+            <!-- Identificação Emocional Profunda -->
+            <div class="emotional-journey">
+                <h3 class="journey-title">RECONHECE ESSES MOMENTOS?</h3>
+                
+                <div class="experience-item">
+                    <div class="arrow-icon">→</div>
+                    <div class="experience-content">
+                        <p class="main-point">Você <strong>finge que está "produtivo"</strong></p>
+                        <p class="context">quando alguém pergunta como estão os estudos ou trabalho</p>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="arrow-icon">→</div>
+                    <div class="experience-content">
+                        <p class="main-point"><strong>Morre de vergonha</strong></p>
+                        <p class="context">quando perguntam sobre seus projetos ou metas</p>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="arrow-icon">→</div>
+                    <div class="experience-content">
+                        <p class="main-point">No silêncio da madrugada, se pergunta:</p>
+                        <p class="thought-bubble">"Por que todo mundo consegue e eu não?"</p>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="arrow-icon">→</div>
+                    <div class="experience-content">
+                        <p class="main-point">Seu celular vibra: <strong>mais alguém celebrando</strong></p>
+                        <p class="context">uma conquista enquanto você ainda está "tentando"</p>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="arrow-icon">→</div>
+                    <div class="experience-content">
+                        <p class="main-point"><strong>Seus dedos tremem</strong> ao digitar:</p>
+                        <p class="thought-bubble">"Parabéns, merecido!"</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section-divider"></div>
+            
+            <!-- Seção de Devastação -->
+            <div class="devastation-section">
+                <h2 class="devastation-title">O PREÇO QUE VOCÊ PAGA</h2>
+                
+                <div class="pain-grid">
+                    <div class="pain-card">
+                        <div class="pain-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="pain-title">Vida de Estudante</h3>
+                        <p class="pain-description">Ler a mesma página 5 vezes e não saber do que se trata. Dar "branco total" na prova mesmo sabendo a matéria.</p>
+                    </div>
+                    
+                    <div class="pain-card">
+                        <div class="pain-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3 class="pain-title">Vida Profissional</h3>
+                        <p class="pain-description">Fingir que entendeu algo importante em reuniões. Ser passado para trás por colegas "menos qualificados".</p>
+                    </div>
+                    
+                    <div class="pain-card">
+                        <div class="pain-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3 class="pain-title">Vida Pessoal</h3>
+                        <p class="pain-description">Esquecer aniversários e compromissos com quem ama. Seu parceiro(a) reclamar que você "nunca está presente".</p>
+                    </div>
+                    
+                    <div class="pain-card">
+                        <div class="pain-icon">
+                            <i class="fas fa-sad-tear"></i>
+                        </div>
+                        <h3 class="pain-title">Autoestima</h3>
+                        <p class="pain-description">Uma vida inteira se sentindo inadequado, incompetente e limitado. Vendo outros conquistarem as oportunidades que deveriam ser suas.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Revelação Científica -->
+            <div class="scientific-revelation">
+                <div class="revelation-badge">
+                    🧬 DESCOBERTA CIENTÍFICA CHOCANTE
+                </div>
+                <h2 class="revelation-title">ISSO NÃO É SUA CULPA!</h2>
+                <div class="revelation-content">
+                    <p>Pesquisas neurológicas recentes identificaram o <span class="revelation-highlight">verdadeiro vilão</span> por trás da sua falta de foco:</p>
+                    <br>
+                    <p><strong>SEU CÉREBRO ESTÁ EM MODO AUTOSSABOTAGEM</strong></p>
+                    <br>
+                    <p>E o pior: <span class="revelation-highlight">ele não te avisou</span>.</p>
+                </div>
+            </div>
+            
+            <!-- Estatística Impactante -->
+            <div class="stat-showcase">
+                <div class="stat-number">10.287</div>
+                <p class="stat-description">pessoas já desbloquearam seus cérebros com protocolo comprovadamente eficaz</p>
+            </div>
+            
+            <!-- Testimonials -->
+            <div class="testimonials-section">
+                <h3 class="testimonials-title">VEJA QUEM JÁ DESBLOQUEOU O CÉREBRO:</h3>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="testimonial-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Marina L." />
+                        </div>
+                        <div class="testimonial-text">
+                            <p class="testimonial-quote">"Em 72 horas meu cérebro virou outro. Não consigo nem explicar... é como se uma névoa tivesse saído da minha mente. Pela primeira vez em anos, EU CONSEGUI estudar 6 horas seguidas."</p>
+                            <p class="testimonial-author">- Marina L., aprovada na Receita Federal</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="testimonial-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Carlos R." />
+                        </div>
+                        <div class="testimonial-text">
+                            <p class="testimonial-quote">"Chorei na primeira semana. Meu cérebro finalmente obedecia. 8 anos tentando passar em concurso e NADA. Em 2 meses com esse protocolo: aprovação no TRT."</p>
+                            <p class="testimonial-author">- Carlos R., 34 anos, Técnico Judiciário</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="testimonial-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Ricardo M." />
+                        </div>
+                        <div class="testimonial-text">
+                            <p class="testimonial-quote">"Deixei de fingir que entendia nas reuniões. Minha concentração estava REAL. Em 3 meses recebi a promoção que esperava há 2 anos. Meu chefe notou a diferença na primeira semana."</p>
+                            <p class="testimonial-author">- Ricardo M., 38 anos, Gerente de Projetos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Protocolo Científico -->
+            <div class="protocol-section">
+                <h3 class="protocol-title">PROTOCOLO NEUROLÓGICO DE EMERGÊNCIA</h3>
+                <p class="protocol-description">O ÚNICO que rompe este ciclo de autodestruição cerebral em 72h. Composto pelo uso de 5 ingredientes que em conjunto:</p>
+                
+                <ul class="protocol-steps">
+                    <li>Desligam o modo "sabotagem" do seu cérebro</li>
+                    <li>Restauram o seu HIPERFOCO e memória</li>
+                    <li>Reduzem esquecimentos e chances de brancos em provas e apresentações</li>
+                </ul>
+            </div>
+            
+            <!-- Ingredientes -->
+            <div class="ingredients-section">
+                <h3 class="ingredients-title">OS 5 COMPOSTOS NEUROTROPICOS</h3>
+                
+                <div class="ingredients">
+                    <div class="ingredient">
+                        <i class="fas fa-brain"></i>
+                        <p class="ingredient-name">DHA</p>
+                        <p class="ingredient-benefit">Reconecta os neurônios danificados pelo estresse - você volta a lembrar do que estuda</p>
+                    </div>
+                    <div class="ingredient">
+                        <i class="fas fa-bolt"></i>
+                        <p class="ingredient-name">Inositol</p>
+                        <p class="ingredient-benefit">Desliga a ansiedade que apaga sua memória na hora da prova</p>
+                    </div>
+                    <div class="ingredient">
+                        <i class="fas fa-dna"></i>
+                        <p class="ingredient-name">Vitaminas B6 e B12</p>
+                        <p class="ingredient-benefit">Aumenta sua energia mental em 63% - estuda por horas sem cansar</p>
+                    </div>
+                    <div class="ingredient">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <p class="ingredient-name">Cafeína</p>
+                        <p class="ingredient-benefit">Liberação gradual que mantém níveis ótimos de vigilância neural</p>
+                    </div>
+                    <div class="ingredient">
+                        <i class="fas fa-leaf"></i>
+                        <p class="ingredient-name">Paullinia Cupana</p>
+                        <p class="ingredient-benefit">Composto amazônico que amplifica a neurotransmissão</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Badges de Credibilidade -->
+            <div class="credibility-badges">
+                <span class="badge"><i class="fas fa-check-circle"></i> Testado Cientificamente</span>
+                <span class="badge"><i class="fas fa-certificate"></i> Aprovado pela ANVISA</span>
+                <span class="badge"><i class="fas fa-star"></i> Recomendado por Especialistas</span>
+            </div>
+            
+            <div class="section-divider"></div>
+            
+            <!-- Garantia -->
+            <div class="guarantee-section">
+                <div class="guarantee-seal">
+                    <img src="https://noodrops.com.br/wp-content/uploads/2025/05/Selo-30.jpg" alt="Garantia de 30 dias">
+                </div>
+                
+                <div class="guarantee">
+                    <p><strong>GARANTIA TRIPLA DE SATISFAÇÃO:</strong> Se em 30 dias você não sentir seu cérebro finalmente respondendo como deveria, devolvemos cada centavo. <span class="emphasis">Sem perguntas. Sem burocracia. Sem julgamentos.</span></p>
+                </div>
+            </div>
+            
+            <!-- CTA Final Ultimate -->
+            <div class="ultimate-cta">
+                <div class="cta-urgency">⏰ PROTOCOLO DE EMERGÊNCIA</div>
+                <h3 class="cta-title">VOCÊ TEM DUAS ESCOLHAS:</h3>
+                <p class="cta-description">
+                    Continuar sendo <strong>REFÉM</strong> de um cérebro que te sabota... ou descobrir o protocolo neurológico que já salvou <strong>10.287 vidas</strong>.
+                </p>
+                
+                <a href="#descobrir" class="cta-button">
+                    DESCOBRIR O PROTOCOLO DE 72 HORAS
+                </a>
+                
+                <p class="cta-warning">
+                    ⚠️ Devido à alta demanda, restam apenas <strong>89 unidades</strong> disponíveis hoje
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script>
+        // === CONTADOR DE TEMPO PERDIDO ===
+        let secondsLost = 0;
+        const minutesEl = document.getElementById('minutes');
+        const secondsEl = document.getElementById('seconds');
+        
+        function updateTimeCounter() {
+            secondsLost++;
+            const mins = Math.floor(secondsLost / 60).toString().padStart(2, '0');
+            const secs = (secondsLost % 60).toString().padStart(2, '0');
+            
+            if (minutesEl && secondsEl) {
+                minutesEl.textContent = mins;
+                secondsEl.textContent = secs;
+            }
+        }
+        
+        setInterval(updateTimeCounter, 1000);
+        
+        // === BARRA DE PROGRESSO DE LEITURA ===
+        function updateReadProgress() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            
+            const progressBar = document.querySelector('.read-progress');
+            if (progressBar) {
+                progressBar.style.width = scrolled + '%';
+            }
+        }
+        
+        // === ANIMAÇÕES DE ENTRADA ===
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // === ELEMENTOS PARA ANIMAR ===
+        function initializeAnimations() {
+            const elementsToAnimate = document.querySelectorAll(`
+                .pain-card, 
+                .testimonial, 
+                .scientific-revelation, 
+                .stat-showcase,
+                .ingredient,
+                .protocol-section
+            `);
+            
+            elementsToAnimate.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                observer.observe(el);
+            });
+        }
+        
+        // === EFEITOS DE HOVER AVANÇADOS ===
+        function addAdvancedHoverEffects() {
+            // Efeito parallax sutil no header
+            const header = document.querySelector('.header');
+            if (header) {
+                window.addEventListener('scroll', () => {
+                    const scrolled = window.pageYOffset;
+                    const rate = scrolled * -0.5;
+                    header.style.transform = `translateY(${rate}px)`;
+                });
+            }
+            
+            // Efeito de cursor nos CTAs
+            const ctaButtons = document.querySelectorAll('.cta-button');
+            ctaButtons.forEach(button => {
+                button.addEventListener('mousemove', (e) => {
+                    const rect = button.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    button.style.transform = `translateY(-8px) rotateX(${(y - rect.height/2) * 0.1}deg) rotateY(${(x - rect.width/2) * 0.1}deg)`;
+                });
+                
+                button.addEventListener('mouseleave', () => {
+                    button.style.transform = 'translateY(-8px) rotateX(0) rotateY(0)';
+                });
+            });
+        }
+        
+        // === PERFORMANCE OPTIMIZATIONS ===
+        function optimizePerformance() {
+            // Lazy loading para imagens
+            if ('IntersectionObserver' in window) {
+                const images = document.querySelectorAll('img[data-src]');
+                const imageObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                            imageObserver.unobserve(img);
+                        }
+                    });
+                });
+                
+                images.forEach(img => imageObserver.observe(img));
+            }
+            
+            // Debounce para scroll events
+            let ticking = false;
+            function requestTick() {
+                if (!ticking) {
+                    requestAnimationFrame(updateReadProgress);
+                    ticking = true;
+                }
+            }
+            
+            window.addEventListener('scroll', () => {
+                requestTick();
+                ticking = false;
+            });
+        }
+        
+        // === INICIALIZAÇÃO ===
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeAnimations();
+            addAdvancedHoverEffects();
+            optimizePerformance();
+        });
+        
+        // === POPUP DE SAÍDA ===
+        let exitIntentShown = false;
+        document.addEventListener('mouseleave', (e) => {
+            if (e.clientY < 0 && !exitIntentShown) {
+                exitIntentShown = true;
+                // Implementar popup de saída aqui se necessário
+            }
+        });
+        
+        // === PREVENÇÃO DE SAÍDA ===
+        window.addEventListener('beforeunload', (e) => {
+            const message = "Você realmente quer sair? Seu cérebro continuará em modo autossabotagem...";
+            e.returnValue = message;
+            return message;
+        });
+    </script>
+</body>
+</html>
