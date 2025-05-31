@@ -1,0 +1,6036 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noodrops - Recupere o controle do seu cérebro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset e Configurações Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #0f3460;
+            --secondary: #e94560;
+            --dark: #1a1a2e;
+            --light: #f8f9fb;
+            --white: #fff;
+            --gray: #555;
+            --shadow-sm: 0 3px 10px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.12);
+            --radius-sm: 5px;
+            --radius-md: 8px;
+            --radius-lg: 10px;
+            --radius-xl: 12px;
+            --radius-round: 50px;
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: var(--radius-md);
+        }
+        
+        /* Barra de Progresso de Leitura */
+        .read-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            z-index: 1000;
+            transition: width 0.2s ease;
+        }
+        
+        /* Container Principal */
+        .advertorial-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--white);
+            box-shadow: var(--shadow-lg);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--dark), var(--primary), #2c1a4d);
+            color: var(--white);
+            padding: 35px 25px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--primary));
+        }
+        
+        .header-image {
+            width: 85%;
+            max-width: 450px;
+            margin: 0 auto 30px;
+            border-radius: var(--radius-lg);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.5s ease;
+        }
+        
+        .header-image:hover {
+            transform: scale(1.02);
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.3;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 15px;
+            color: var(--white);
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #e6e6e6;
+            margin-bottom: 25px;
+            line-height: 1.4;
+        }
+        
+        h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin: 35px 0 20px;
+            padding-bottom: 10px;
+            position: relative;
+        }
+        
+        h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        
+        .highlight-text {
+            color: var(--secondary);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .highlight-text:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: rgba(233, 69, 96, 0.3);
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        /* Parágrafos e Texto */
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 18px;
+            color: #2d3748;
+            line-height: 1.7;
+        }
+        
+        strong {
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        /* Estatísticas destacadas */
+        .stat {
+            font-weight: 700;
+            color: var(--secondary);
+            font-size: 1.1em;
+        }
+        
+        /* Frase de transição */
+        .transition-text {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin: 30px 0;
+            text-align: center;
+            font-style: italic;
+            position: relative;
+        }
+        
+        .transition-text:before,
+        .transition-text:after {
+            content: '';
+            position: absolute;
+            height: 2px;
+            width: 60px;
+            top: 50%;
+        }
+        
+        .transition-text:before {
+            left: 20px;
+            transform: translateX(-100%);
+            background: linear-gradient(90deg, transparent, var(--primary));
+        }
+        
+        .transition-text:after {
+            right: 20px;
+            transform: translateX(100%);
+            background: linear-gradient(90deg, var(--primary), transparent);
+        }
+        
+        /* Elementos de Destaque */
+        .pain-points {
+            background-color: var(--light);
+            border-radius: var(--radius-lg);
+            padding: 25px;
+            margin: 25px 0;
+            border-left: 4px solid var(--secondary);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .pain-points p {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 30px;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+        
+        .pain-points p:hover {
+            background-color: #f8e9ed;
+            transform: translateX(5px);
+            padding: 5px 5px 5px 30px;
+            border-radius: var(--radius-sm);
+        }
+        
+        .pain-points p:before {
+            content: "\f058";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+        }
+        
+        .highlight-box {
+            background-color: #f2f7ff;
+            border: 1px solid #d1e3ff;
+            border-radius: var(--radius-lg);
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        /* Imagens comuns */
+        .content-image {
+            margin: 30px 0;
+            box-shadow: var(--shadow-lg);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .content-image:hover {
+            transform: translateY(-5px);
+        }
+        
+        .product-image {
+            text-align: center;
+            margin: 40px auto;
+            max-width: 70%;
+            position: relative;
+        }
+        
+        .product-image:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(15, 52, 96, 0.1) 0%, transparent 70%);
+            z-index: -1;
+            border-radius: 50%;
+        }
+        
+        .product-image img {
+            box-shadow: 0 15px 30px rgba(15, 52, 96, 0.15);
+            border-radius: var(--radius-xl);
+            transition: var(--transition);
+        }
+        
+        .product-image img:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Badges de credibilidade */
+        .credibility-badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 25px 0;
+        }
+        
+        .badge {
+            background-color: var(--light);
+            border: 1px solid #e1e5ee;
+            border-radius: var(--radius-round);
+            padding: 8px 15px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .badge i {
+            margin-right: 8px;
+            color: var(--primary);
+        }
+        
+        /* Ciclo Cerebral */
+        .brain-cycle {
+            background-color: #f0f5ff;
+            border-left: 5px solid var(--primary);
+            border-radius: var(--radius-md);
+            padding: 25px;
+            margin: 25px 0 35px;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .brain-cycle p {
+            margin-bottom: 15px;
+            font-size: 1.15rem;
+            font-weight: 500;
+            padding-left: 35px;
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        .brain-cycle p:hover {
+            transform: translateX(5px);
+        }
+        
+        .brain-cycle p:before {
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--primary);
+        }
+        
+        .brain-cycle p:nth-child(1):before {
+            content: "\f5dc"; /* ícone de cérebro */
+        }
+        
+        .brain-cycle p:nth-child(2):before {
+            content: "\f071"; /* ícone de alerta */
+            color: var(--secondary);
+        }
+        
+        .brain-cycle p:nth-child(3):before {
+            content: "\f021"; /* ícone de ciclo */
+        }
+        
+        /* Ingredientes */
+        .ingredients {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 30px 0;
+            gap: 20px;
+        }
+        
+        .ingredient {
+            flex-basis: calc(33.33% - 20px);
+            background: var(--white);
+            padding: 20px 15px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .ingredient:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .ingredient i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: block;
+            transition: var(--transition);
+        }
+        
+        .ingredient:hover i {
+            transform: rotateY(180deg);
+        }
+        
+        .ingredient p:first-of-type {
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        
+        .ingredient p:last-of-type {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+            color: var(--gray);
+        }
+        
+        /* Depoimentos */
+        .testimonial {
+            background-color: var(--light);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            margin: 35px 0;
+            position: relative;
+            box-shadow: var(--shadow-md);
+            border-left: 5px solid var(--primary);
+            transition: var(--transition);
+        }
+        
+        .testimonial:hover {
+            transform: translateY(-5px);
+        }
+        
+        .testimonial:before {
+            content: """;
+            font-family: Georgia, serif;
+            font-size: 5rem;
+            color: rgba(15, 52, 96, 0.1);
+            position: absolute;
+            top: -15px;
+            left: 15px;
+            line-height: 1;
+        }
+        
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            float: left;
+            margin-right: 15px;
+            margin-bottom: 10px;
+            border: 3px solid var(--white);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .quote {
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #2d3748;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .author {
+            font-weight: 600;
+            text-align: right;
+            margin-top: 20px;
+            color: var(--primary);
+            font-size: 1rem;
+        }
+        
+        /* Divisores */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.1), transparent);
+            margin: 45px 0;
+            position: relative;
+        }
+        
+        .section-divider:before {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: var(--primary);
+            border-radius: 50%;
+            top: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 0 5px rgba(15, 52, 96, 0.1);
+        }
+        
+        /* Prova Social */
+        .social-proof {
+            background-color: var(--light);
+            border-radius: var(--radius-md);
+            padding: 15px;
+            margin: 20px 0;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .social-proof p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .social-proof i {
+            margin-right: 5px;
+            color: var(--secondary);
+        }
+        
+        /* Alerta de Estoque */
+        .stock-alert {
+            margin: 25px 0;
+            padding: 15px;
+            background-color: #fff8f8;
+            border-radius: var(--radius-md);
+            border: 1px dashed var(--secondary);
+        }
+        
+        .stock-meter {
+            height: 10px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+        
+        .stock-level {
+            height: 100%;
+            background-color: var(--secondary);
+            border-radius: 5px;
+        }
+        
+        .stock-alert p {
+            margin: 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--secondary);
+        }
+        
+        /* Selo e Garantia */
+        .guarantee-seal {
+            text-align: center;
+            margin: 35px auto 20px;
+            max-width: 180px;
+        }
+        
+        .guarantee-seal img {
+            filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.2));
+            transition: var(--transition);
+        }
+        
+        .guarantee-seal img:hover {
+            transform: scale(1.05);
+        }
+        
+        .guarantee {
+            background-color: #eefbf5;
+            border: 1px solid #c3e6cb;
+            border-radius: var(--radius-lg);
+            padding: 25px;
+            margin: 35px 0;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .guarantee p {
+            font-weight: 500;
+            color: #155724;
+            font-size: 1.15rem;
+        }
+        
+        .emphasis {
+            font-weight: 700;
+            border-bottom: 2px dotted #155724;
+            padding-bottom: 2px;
+        }
+        
+        /* CTA */
+        .final-cta {
+            text-align: center;
+            margin: 45px 0 30px;
+            padding: 30px;
+            background: linear-gradient(135deg, #f8f9fa, #eef1f5);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .final-cta p {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: var(--dark);
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--dark), var(--primary));
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 700;
+            padding: 18px 35px;
+            border-radius: var(--radius-round);
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 8px 20px rgba(15, 52, 96, 0.3);
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+            animation: pulse 2s infinite;
+        }
+        
+        .cta-button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(15, 52, 96, 0.4);
+        }
+        
+        .cta-button:hover:before {
+            left: 100%;
+        }
+        
+        .security-trust {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin: 15px 0;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .security-trust i {
+            margin-right: 5px;
+            color: var(--primary);
+        }
+        
+        .urgency {
+            font-size: 0.95rem;
+            color: var(--secondary);
+            margin-top: 18px;
+            font-weight: 600;
+        }
+        
+        .pps {
+            font-size: 0.95rem;
+            color: var(--primary);
+            margin-top: 25px;
+            padding: 15px;
+            background-color: var(--light);
+            border-radius: var(--radius-md);
+            font-style: italic;
+        }
+        
+        /* Popup de saída */
+        .exit-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .popup-content {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: var(--radius-lg);
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .close-popup {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #777;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .advertorial-container {
+                margin: 0 10px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.2rem;
+            }
+            
+            h3 {
+                font-size: 1.4rem;
+            }
+            
+            .ingredient {
+                flex-basis: calc(50% - 15px);
+            }
+            
+            .cta-button {
+                padding: 15px 25px;
+                font-size: 1.1rem;
+                width: 100%;
+            }
+            
+            .testimonial, .pain-points, .highlight-box, .brain-cycle {
+                padding: 20px;
+            }
+            
+            .badge {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .content {
+                padding: 15px;
+            }
+            
+            .ingredient {
+                flex-basis: 100%;
+            }
+            
+            .header-image {
+                width: 95%;
+            }
+            
+            .testimonial:before {
+                font-size: 3.5rem;
+            }
+            
+            .cta-button {
+                position: sticky;
+                bottom: 15px;
+                z-index: 100;
+                width: 90%;
+                margin: 0 auto;
+                box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            }
+            
+            .credibility-badges {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+        }
+    /* Ajuste da imagem de garantia */
+.guarantee-seal {
+    max-width: 280px !important;
+}
+
+.guarantee-seal img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+}
+
+    </style>
+</head>
+<body>
+    <!-- Barra de progresso de leitura -->
+    <div class="read-progress"></div>
+    
+    <div class="advertorial-container">
+        <!-- Cabeçalho -->
+        <div class="header">
+            <img src="https://noodrops.com.br/wp-content/uploads/2025/05/Head3.png" alt="Cérebro aprisionado" class="header-image">
+            <h1>SEU CÉREBRO ESTA PROGRAMADO PARA <span class="highlight-text">TRAVAR</span></h1>
+            <h2>Você não é preguiçoso, desorganizado, muito menos burro. Seu cérebro tem um modo de autodestruição que apaga 70% do que você estuda, produz e memoriza no seu dia. A boa notícia? Dá para desativar isso em 72 horas.</h2>
+        </div>
+        
+        <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentimentos Diários - Versão Atualizada</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f7fa;
+            padding: 2rem;
+            color: #1f2937;
+        }
+
+        .emotional-journey {
+            font-family: 'Inter', sans-serif;
+            max-width: 650px;
+            margin: 30px auto;
+            padding: 0;
+            color: #2d3748;
+            line-height: 1.5;
+        }
+        
+        .experience-block, .comparison-block {
+            background-color: #f8fafc;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 4px solid #0f3460;
+            position: relative;
+        }
+        
+        .comparison-block {
+            border-left: 4px solid #e94560;
+        }
+        
+        .experience-heading, .comparison-heading {
+            margin: 0 0 20px 0;
+            color: #718096;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        
+        .comparison-heading {
+            color: #64748b;
+        }
+        
+        .experience-item, .comparison-item, .reaction-block {
+            display: flex;
+            margin-bottom: 20px;
+            align-items: flex-start;
+            transition: transform 0.2s ease;
+        }
+        
+        .experience-item:hover, .comparison-item:hover, .reaction-block:hover {
+            transform: translateX(5px);
+        }
+        
+        .arrow-icon {
+            color: #0f3460;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-right: 15px;
+            min-width: 20px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        
+        .comparison-block .arrow-icon {
+            color: #e94560;
+        }
+        
+        .experience-content, .comparison-content, .reaction-content {
+            flex-grow: 1;
+        }
+        
+        .main-point {
+            font-size: 1.1rem;
+            margin: 0 0 5px 0;
+            color: #1a202c;
+        }
+        
+        .context {
+            margin: 0;
+            color: #718096;
+            font-size: 0.95rem;
+            padding-left: 5px;
+            border-left: 2px solid #e2e8f0;
+        }
+        
+        .thought-bubble {
+            background-color: white;
+            padding: 12px 18px;
+            border-radius: 18px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            margin: 8px 0 0 0;
+            display: inline-block;
+            font-style: italic;
+            color: #4a5568;
+            position: relative;
+        }
+        
+        .thought-bubble:before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 20px;
+            width: 15px;
+            height: 15px;
+            background-color: white;
+            transform: rotate(45deg);
+            box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.03);
+        }
+        
+        .message-bubble {
+            background-color: white;
+            padding: 12px 18px;
+            border-radius: 18px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            margin: 8px 0 0 0;
+            display: inline-block;
+            font-style: italic;
+            color: #4a5568;
+        }
+        
+        .highlight-fraction {
+            color: #e94560;
+            font-weight: 800;
+        }
+        
+        .reaction-block {
+            padding: 20px;
+            background-color: #f8fafc;
+            border-radius: 12px;
+            border-left: 4px solid #0f3460;
+            margin-bottom: 30px;
+        }
+        
+        .finale {
+            text-align: center;
+            font-size: 1.1rem;
+            margin: 30px 0;
+            padding: 15px;
+            line-height: 1.6;
+        }
+        
+        .dramatic-highlight {
+            color: #e94560;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 2px;
+        }
+        
+        .dramatic-highlight:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: rgba(233, 69, 96, 0.3);
+        }
+        
+        strong {
+            color: #1a365d;
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .emotional-journey {
+                margin: 20px auto;
+                padding: 0 10px;
+            }
+            
+            .experience-block, .comparison-block {
+                padding: 20px;
+                margin-bottom: 25px;
+            }
+            
+            .main-point {
+                font-size: 1rem;
+            }
+            
+            .context {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .experience-block, .comparison-block {
+                padding: 18px;
+            }
+            
+            .arrow-icon {
+                font-size: 1rem;
+                margin-right: 12px;
+            }
+            
+            .main-point {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="emotional-journey">
+        <div class="experience-block">
+            <h3 class="experience-heading">SEUS SENTIMENTOS DIÁRIOS:</h3>
+            
+            <div class="experience-item">
+                <div class="arrow-icon">→</div>
+                <div class="experience-content">
+                    <p class="main-point">Você <strong>finge que está "produtivo"</strong></p>
+                    <p class="context">quando alguém te pergunta como está o trabalho ou os estudos</p>
+                </div>
+            </div>
+            
+            <div class="experience-item">
+                <div class="arrow-icon">→</div>
+                <div class="experience-content">
+                    <p class="main-point"><strong>Morre de vergonha</strong></p>
+                    <p class="context">quando perguntam sobre seus projetos ou metas</p>
+                </div>
+            </div>
+            
+            <div class="experience-item">
+                <div class="arrow-icon">→</div>
+                <div class="experience-content">
+                    <p class="main-point">No silêncio da madrugada, se pergunta:</p>
+                    <p class="thought-bubble">"Por que todo mundo consegue e eu não?"</p>
+                </div>
+            </div>
+            
+            <div class="experience-item">
+                <div class="arrow-icon">→</div>
+                <div class="experience-content">
+                    <p class="main-point">Seu celular vibra: <strong>mais alguém celebrando</strong></p>
+                    <p class="context">uma conquista enquanto você ainda está "tentando"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="comparison-block">
+            <h3 class="comparison-heading">ENQUANTO ISSO, ESSA PESSOA:</h3>
+            
+            <div class="comparison-item">
+                <div class="arrow-icon">→</div>
+                <div class="comparison-content">
+                    <p class="main-point"><strong>Parece menos estressada</strong></p>
+                    <p class="context">enquanto você vive ansioso e sobrecarregado</p>
+                </div>
+            </div>
+            
+            <div class="comparison-item">
+                <div class="arrow-icon">→</div>
+                <div class="comparison-content">
+                    <p class="main-point"><strong>Trabalha/estuda menos horas</strong></p>
+                    <p class="context">enquanto você vira noites sem dormir direito</p>
+                </div>
+            </div>
+            
+            <div class="comparison-item">
+                <div class="arrow-icon">→</div>
+                <div class="comparison-content">
+                    <p class="main-point"><strong>Consegue equilibrar vida pessoal</strong></p>
+                    <p class="context">enquanto você sacrifica tudo pelos objetivos</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="reaction-block">
+            <div class="arrow-icon">→</div>
+            <div class="reaction-content">
+                <p class="main-point"><strong>Seus dedos tremem</strong> ao digitar:</p>
+                <p class="message-bubble">"Parabéns, merecido!"</p>
+            </div>
+        </div>
+        
+        <p class="finale">No seu histórico: Uma lista infinita de "vou começar amanhã". <span class="dramatic-highlight">Muita promessa, POUCOS RESULTADOS</span>.</p>
+    </div>
+</body>
+</html>
+
+<style>
+    .emotional-journey {
+        font-family: 'Inter', sans-serif;
+        max-width: 650px;
+        margin: 30px auto;
+        padding: 0;
+        color: #2d3748;
+        line-height: 1.5;
+    }
+    
+    .experience-block, .comparison-block {
+        background-color: #f8fafc;
+        border-radius: 12px;
+        padding: 25px;
+        margin-bottom: 30px;
+        border-left: 4px solid #0f3460;
+        position: relative;
+    }
+    
+    .comparison-block {
+        border-left: 4px solid #e94560;
+    }
+    
+    .experience-heading, .comparison-heading {
+        margin: 0 0 20px 0;
+        color: #718096;
+        font-size: 0.9rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+    
+    .comparison-heading {
+        color: #64748b;
+    }
+    
+    .experience-item, .comparison-item, .reaction-block {
+        display: flex;
+        margin-bottom: 20px;
+        align-items: flex-start;
+        transition: transform 0.2s ease;
+    }
+    
+    .experience-item:hover, .comparison-item:hover, .reaction-block:hover {
+        transform: translateX(5px);
+    }
+    
+    .arrow-icon {
+        color: #0f3460;
+        font-weight: bold;
+        font-size: 1.2rem;
+        margin-right: 15px;
+        min-width: 20px;
+        text-align: center;
+        flex-shrink: 0;
+    }
+    
+    .comparison-block .arrow-icon {
+        color: #e94560;
+    }
+    
+    .experience-content, .comparison-content, .reaction-content {
+        flex-grow: 1;
+    }
+    
+    .main-point {
+        font-size: 1.1rem;
+        margin: 0 0 5px 0;
+        color: #1a202c;
+    }
+    
+    .context {
+        margin: 0;
+        color: #718096;
+        font-size: 0.95rem;
+        padding-left: 5px;
+        border-left: 2px solid #e2e8f0;
+    }
+    
+    .thought-bubble {
+        background-color: white;
+        padding: 12px 18px;
+        border-radius: 18px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        margin: 8px 0 0 0;
+        display: inline-block;
+        font-style: italic;
+        color: #4a5568;
+        position: relative;
+    }
+    
+    .thought-bubble:before {
+        content: '';
+        position: absolute;
+        top: -8px;
+        left: 20px;
+        width: 15px;
+        height: 15px;
+        background-color: white;
+        transform: rotate(45deg);
+        box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.03);
+    }
+    
+    .message-bubble {
+        background-color: white;
+        padding: 12px 18px;
+        border-radius: 18px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        margin: 8px 0 0 0;
+        display: inline-block;
+        font-style: italic;
+        color: #4a5568;
+    }
+    
+    .highlight-fraction {
+        color: #e94560;
+        font-weight: 800;
+    }
+    
+    .reaction-block {
+        padding: 20px;
+        background-color: #f8fafc;
+        border-radius: 12px;
+        border-left: 4px solid #0f3460;
+        margin-bottom: 30px;
+    }
+    
+    .finale {
+        text-align: center;
+        font-size: 1.1rem;
+        margin: 30px 0;
+        padding: 15px;
+        line-height: 1.6;
+    }
+    
+    .dramatic-highlight {
+        color: #e94560;
+        font-weight: 700;
+        position: relative;
+        padding-bottom: 2px;
+    }
+    
+    .dramatic-highlight:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: rgba(233, 69, 96, 0.3);
+    }
+    
+    strong {
+        color: #1a365d;
+        font-weight: 700;
+    }
+</style>
+            
+            <!-- Imagem de Identificação -->
+            <div class="content-image">
+                <img src="https://noodrops.com.br/wp-content/uploads/2025/05/desesperado1.png" alt="Estudante em desespero" width="100%">
+            </div>
+            
+            <div class="section-divider"></div>
+            
+            <!-- Checklist de Identificação -->
+            <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consequências da Falta de Foco</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            padding: 2rem;
+            color: #1f2937;
+            min-height: 100vh;
+        }
+
+        .focus-pain-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: linear-gradient(145deg, #ffffff, #f8fafc);
+            border-radius: 24px;
+            box-shadow: 
+                0 25px 50px rgba(15, 52, 96, 0.1),
+                0 0 0 1px rgba(255, 255, 255, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.7);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .focus-pain-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #0f3460, #2563eb, #e94560, #0f3460);
+            background-size: 300% 100%;
+            animation: gradientFlow 8s ease-in-out infinite;
+        }
+
+        @keyframes gradientFlow {
+            0%, 100% { background-position: 0% 0%; }
+            50% { background-position: 100% 0%; }
+        }
+
+        .header-section {
+            padding: 50px 40px 30px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(15, 52, 96, 0.02), rgba(37, 99, 235, 0.02));
+            position: relative;
+        }
+
+        .header-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #e94560, transparent);
+            border-radius: 2px;
+        }
+
+        .main-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, #0f3460, #1e40af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: #475569;
+            font-weight: 500;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .highlight-text {
+            color: #e94560;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .highlight-text::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: rgba(233, 69, 96, 0.3);
+            border-radius: 1px;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            padding: 50px 40px;
+        }
+
+        .category-block {
+            background: linear-gradient(145deg, #ffffff, #f8fafc);
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 
+                0 15px 35px rgba(15, 52, 96, 0.08),
+                0 0 0 1px rgba(226, 232, 240, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--category-color), transparent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.6s ease;
+        }
+
+        .category-block:hover::before {
+            transform: scaleX(1);
+        }
+
+        .category-block:hover {
+            transform: translateY(-8px);
+            box-shadow: 
+                0 25px 50px rgba(15, 52, 96, 0.15),
+                0 0 0 1px rgba(226, 232, 240, 0.8),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        }
+
+        .professional-category {
+            --category-color: #0f3460;
+        }
+
+        .personal-category {
+            --category-color: #e94560;
+        }
+
+        .social-category {
+            --category-color: #2563eb;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .category-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 
+                0 8px 20px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: 0.6s;
+        }
+
+        .category-block:hover .category-icon::before {
+            left: 100%;
+        }
+
+        .professional-category .category-icon {
+            background: linear-gradient(135deg, #0f3460, #1e40af);
+        }
+
+        .personal-category .category-icon {
+            background: linear-gradient(135deg, #e94560, #dc2626);
+        }
+
+        .social-category .category-icon {
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
+        }
+
+        .category-block:hover .category-icon {
+            transform: rotateY(180deg);
+            box-shadow: 
+                0 12px 30px rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        }
+
+        .category-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        .category-subtitle {
+            font-size: 1rem;
+            color: #64748b;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .pain-points-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .pain-point-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(248, 250, 252, 0.8), rgba(241, 245, 249, 0.8));
+            border-radius: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(226, 232, 240, 0.6);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pain-point-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--category-color);
+            transform: scaleY(0);
+            transform-origin: bottom;
+            transition: transform 0.3s ease;
+        }
+
+        .pain-point-item:hover::before {
+            transform: scaleY(1);
+        }
+
+        .pain-point-item:hover {
+            transform: translateX(12px);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 0.9));
+            box-shadow: 
+                0 8px 25px rgba(15, 52, 96, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        }
+
+        .pain-icon-container {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .professional-category .pain-icon-container {
+            background: linear-gradient(135deg, rgba(15, 52, 96, 0.1), rgba(30, 64, 175, 0.1));
+            border: 1px solid rgba(15, 52, 96, 0.2);
+        }
+
+        .personal-category .pain-icon-container {
+            background: linear-gradient(135deg, rgba(233, 69, 96, 0.1), rgba(220, 38, 38, 0.1));
+            border: 1px solid rgba(233, 69, 96, 0.2);
+        }
+
+        .social-category .pain-icon-container {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(59, 130, 246, 0.1));
+            border: 1px solid rgba(37, 99, 235, 0.2);
+        }
+
+        .pain-point-item:hover .pain-icon-container {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .pain-text {
+            flex-grow: 1;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #334155;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .pain-emphasis {
+            color: #e94560;
+            font-weight: 700;
+            background: rgba(233, 69, 96, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .emotional-impact {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .emotional-impact::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(233, 69, 96, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .emotional-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            color: #e94560;
+            position: relative;
+            z-index: 1;
+        }
+
+        .emotional-text {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: #e2e8f0;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stats-section {
+            padding: 50px 40px;
+            background: linear-gradient(135deg, rgba(15, 52, 96, 0.02), rgba(37, 99, 235, 0.02));
+            text-align: center;
+        }
+
+        .stats-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 40px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .stat-card {
+            background: linear-gradient(145deg, #ffffff, #f8fafc);
+            padding: 30px 20px;
+            border-radius: 16px;
+            box-shadow: 
+                0 10px 25px rgba(15, 52, 96, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(226, 232, 240, 0.5);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 
+                0 20px 40px rgba(15, 52, 96, 0.12),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        }
+
+        .stat-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #e94560;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #64748b;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .focus-pain-container {
+                border-radius: 16px;
+            }
+
+            .header-section, .categories-grid, .stats-section {
+                padding: 30px 25px;
+            }
+
+            .emotional-impact {
+                padding: 40px 25px;
+            }
+
+            .main-title {
+                font-size: 2.2rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .category-block {
+                padding: 25px;
+            }
+
+            .category-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .category-icon {
+                width: 50px;
+                height: 50px;
+            }
+
+            .category-title {
+                font-size: 1.5rem;
+            }
+
+            .pain-point-item {
+                padding: 15px;
+                gap: 15px;
+            }
+
+            .pain-icon-container {
+                width: 35px;
+                height: 35px;
+            }
+
+            .pain-text {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-title {
+                font-size: 1.8rem;
+            }
+
+            .emotional-title {
+                font-size: 1.8rem;
+            }
+
+            .emotional-text {
+                font-size: 1.1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+   <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consequências da Falta de Foco</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            padding: 2rem;
+            color: #1f2937;
+            min-height: 100vh;
+        }
+
+        .focus-pain-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: linear-gradient(145deg, #ffffff, #f8fafc);
+            border-radius: 24px;
+            box-shadow: 
+                0 25px 50px rgba(15, 52, 96, 0.1),
+                0 0 0 1px rgba(255, 255, 255, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.7);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .focus-pain-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #0f3460, #2563eb, #e94560, #0f3460);
+            background-size: 300% 100%;
+            animation: gradientFlow 8s ease-in-out infinite;
+        }
+
+        @keyframes gradientFlow {
+            0%, 100% { background-position: 0% 0%; }
+            50% { background-position: 100% 0%; }
+        }
+
+        .header-section {
+            padding: 50px 40px 30px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(15, 52, 96, 0.02), rgba(37, 99, 235, 0.02));
+            position: relative;
+        }
+
+        .header-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #e94560, transparent);
+            border-radius: 2px;
+        }
+
+        .main-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, #0f3460, #1e40af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: #475569;
+            font-weight: 500;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .highlight-text {
+            color: #e94560;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .highlight-text::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: rgba(233, 69, 96, 0.3);
+            border-radius: 1px;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            padding: 50px 40px;
+        }
+
+        .category-block {
+            background: linear-gradient(145deg, #ffffff, #f8fafc);
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 
+                0 15px 35px rgba(15, 52, 96, 0.08),
+                0 0 0 1px rgba(226, 232, 240, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--category-color), transparent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.6s ease;
+        }
+
+        .category-block:hover::before {
+            transform: scaleX(1);
+        }
+
+        .category-block:hover {
+            transform: translateY(-8px);
+            box-shadow: 
+                0 25px 50px rgba(15, 52, 96, 0.15),
+                0 0 0 1px rgba(226, 232, 240, 0.8),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        }
+
+        .professional-category {
+            --category-color: #0f3460;
+        }
+
+        .personal-category {
+            --category-color: #e94560;
+        }
+
+        .social-category {
+            --category-color: #2563eb;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .category-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 
+                0 8px 20px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: 0.6s;
+        }
+
+        .category-block:hover .category-icon::before {
+            left: 100%;
+        }
+
+        .professional-category .category-icon {
+            background: linear-gradient(135deg, #0f3460, #1e40af);
+        }
+
+        .personal-category .category-icon {
+            background: linear-gradient(135deg, #e94560, #dc2626);
+        }
+
+        .social-category .category-icon {
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
+        }
+
+        .category-block:hover .category-icon {
+            transform: rotateY(180deg);
+            box-shadow: 
+                0 12px 30px rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        }
+
+        .category-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        .category-subtitle {
+            font-size: 1rem;
+            color: #64748b;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .pain-points-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .pain-point-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(248, 250, 252, 0.8), rgba(241, 245, 249, 0.8));
+            border-radius: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(226, 232, 240, 0.6);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pain-point-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--category-color);
+            transform: scaleY(0);
+            transform-origin: bottom;
+            transition: transform 0.3s ease;
+        }
+
+        .pain-point-item:hover::before {
+            transform: scaleY(1);
+        }
+
+        .pain-point-item:hover {
+            transform: translateX(12px);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 0.9));
+            box-shadow: 
+                0 8px 25px rgba(15, 52, 96, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        }
+
+        .pain-icon-container {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .professional-category .pain-icon-container {
+            background: linear-gradient(135deg, rgba(15, 52, 96, 0.1), rgba(30, 64, 175, 0.1));
+            border: 1px solid rgba(15, 52, 96, 0.2);
+        }
+
+        .personal-category .pain-icon-container {
+            background: linear-gradient(135deg, rgba(233, 69, 96, 0.1), rgba(220, 38, 38, 0.1));
+            border: 1px solid rgba(233, 69, 96, 0.2);
+        }
+
+        .social-category .pain-icon-container {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(59, 130, 246, 0.1));
+            border: 1px solid rgba(37, 99, 235, 0.2);
+        }
+
+        .pain-point-item:hover .pain-icon-container {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .pain-text {
+            flex-grow: 1;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #334155;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .pain-emphasis {
+            color: #e94560;
+            font-weight: 700;
+            background: rgba(233, 69, 96, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .emotional-impact {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .emotional-impact::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(233, 69, 96, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .emotional-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            color: #e94560;
+            position: relative;
+            z-index: 1;
+        }
+
+        .emotional-text {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: #f1f5f9;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .emotional-text strong {
+            color: #ffffff;
+            font-weight: 700;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .stats-section {
+            padding: 50px 40px;
+            background: linear-gradient(135deg, rgba(15, 52, 96, 0.02), rgba(37, 99, 235, 0.02));
+            text-align: center;
+        }
+
+        .stats-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 40px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .stat-card {
+            background: linear-gradient(145deg, #ffffff, #f8fafc);
+            padding: 30px 20px;
+            border-radius: 16px;
+            box-shadow: 
+                0 10px 25px rgba(15, 52, 96, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(226, 232, 240, 0.5);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 
+                0 20px 40px rgba(15, 52, 96, 0.12),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        }
+
+        .stat-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #e94560;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #64748b;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .focus-pain-container {
+                border-radius: 16px;
+            }
+
+            .header-section, .categories-grid, .stats-section {
+                padding: 30px 25px;
+            }
+
+            .emotional-impact {
+                padding: 40px 25px;
+            }
+
+            .main-title {
+                font-size: 2.2rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .category-block {
+                padding: 25px;
+            }
+
+            .category-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .category-icon {
+                width: 50px;
+                height: 50px;
+            }
+
+            .category-title {
+                font-size: 1.5rem;
+            }
+
+            .pain-point-item {
+                padding: 15px;
+                gap: 15px;
+            }
+
+            .pain-icon-container {
+                width: 35px;
+                height: 35px;
+            }
+
+            .pain-text {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-title {
+                font-size: 1.8rem;
+            }
+
+            .emotional-title {
+                font-size: 1.8rem;
+            }
+
+            .emotional-text {
+                font-size: 1.1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="focus-pain-container">
+        <!-- Header Section -->
+        <div class="header-section">
+            <h2 class="main-title">O PREÇO QUE VOCÊ PAGA</h2>
+            <p class="subtitle">As <span class="highlight-text">consequências devastadoras</span> da falta de foco que arruínam sua vida em todas as áreas</p>
+        </div>
+
+        <!-- Categories Grid -->
+        <div class="categories-grid">
+            <!-- Vida de Estudante -->
+            <div class="category-block social-category">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28">
+                            <path fill="white" d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="category-title">Vida de Estudante</h3>
+                        <p class="category-subtitle"></p>
+                    </div>
+                </div>
+                
+                <div class="pain-points-grid">
+                    <div class="pain-point-item">
+                        <div class="pain-icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
+                                <path fill="#2563eb" d="M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M5,19V5H19V19H5M7,9H17V11H7V9M7,12H14V14H7V12M7,15H17V17H7V15Z"/>
+                            </svg>
+                        </div>
+                        <p class="pain-text">Ler a mesma página <span class="pain-emphasis">5 vezes</span> e ainda não saber do que se trata</p>
+                    </div>
+
+                    <div class="pain-point-item">
+                        <div class="pain-icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
+                                <path fill="#2563eb" d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z"/>
+                            </svg>
+                        </div>
+                        <p class="pain-text">Dar <span class="pain-emphasis">"branco total"</span> na prova mesmo sabendo a matéria</p>
+                    </div>
+
+                    <div class="pain-point-item">
+                        <div class="pain-icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
+                                <path fill="#2563eb" d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/>
+                            </svg>
+                        </div>
+                        <p class="pain-text">Estudar <span class="pain-emphasis">10 horas por dia</span> mas render como se fossem 2 horas</p>
+                    </div>
+
+                    <div class="pain-point-item">
+                        <div class="pain-icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
+                                <path fill="#2563eb" d="M11,13H13V7H11M12,17.3A1.3,1.3 0 0,1 10.7,16A1.3,1.3 0 0,1 12,14.7A1.3,1.3 0 0,1 13.3,16A1.3,1.3 0 0,1 12,17.3M15.73,3H8.27L3,8.27V15.73L8.27,21H15.73L21,15.73V8.27L15.73,3Z"/>
+                            </svg>
+                        </div>
+                        <p class="pain-text">Ver <span class="pain-emphasis">colegas "menos dedicados"</span> passando na sua frente</p>
+                    </div>
+
+                    <div class="pain-point-item">
+                        <div class="pain-icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
+                                <path fill="#2563eb" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+                            </svg>
+                        </div>
+                        <p class="pain-text">Fingir que entendeu na <span class="pain-emphasis">aula/cursinho</span> para não passar vergonha</p>
+                    </div>
+
+                    <div class="pain-point-item">
+                        <div class="pain-icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
+                                <path fill="#2563eb" d="M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M5,19V5H19V19H5Z"/>
+                            </svg>
+                        </div>
+                        <p class="pain-text">Esquecer <span class="pain-emphasis">tudo que estudou</span> no dia seguinte (como se apagasse da memória)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vida Profissional -->
+            <div class="category-block professional-category">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28">
+                            <path fill="white" d="M12,7V3H2V21H22V7H12M6,19H4V17H6V19M6,15H4V13H6V15M6,11H4V9H6V11M6,7H4V5H6V7M10,19H8V17H10V19M10,15H8V13H10V15M10,11H8V9H10V11M10,7H8V5H10V7M20,19H12V17H20V19M20,15H12V13H20V15M20,11H12V9H20V11Z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="category-title">Vida Profissional</h3>
+                        <p class="category-subtitle"></p>
+                    </div>
+                </div>
+                
+                <div class="pain-points-grid">
+                    <div class="pain-point-item">
+                        <div class="pain-icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
+                                <path fill="#0f3460" d="M12,2A3,3 0 0,1 15,5V11A3,3 0 0,1 12,14A3,3 0 0,1 9,11V5A3,3 0 0,1 12,2M19,11C19,14.53 16.39,17.44 13,17.93V21H11V17.93C7.61,17.44 5,14.53 5,11H7A5,5 0 0,0 12,16A5,5 0 0,0 17,11H19Z"/>
+                            </svg>
+                        </div>
+                        <p class="pain-text">Fingir que entendeu algo importante em <span class="pain-emphasis">reuniões, apresentações</span> e briefings</p>
+                    </div>
+
+                    <div class="pain-point-item">
+                        <div class="pain-icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
+                                <path fill="#0f3460" d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"/>
+                            </svg>
+                        </div>
+                        <p class="pain-text">Ser <span class="pain-emphasis">passado para trás</span> por colegas "menos qualificados" que você</p>
+                    </div>
+
+                    <div class="pain-point-item">
+                        <div class="pain-icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
+                                <path fill="#0f3460" d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                            </svg>
+                        </div>
+                        <p class="pain-text">Começar projetos importantes e <span class="pain-emphasis">nunca terminar</span> (conhecido como "o que não entrega")</p>
+                    </div>
+
+                    <div class="pain-point-item">
+                        <div class="pain-icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
+                                <path fill="#0f3460" d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/>
+                            </svg>
+                        </div>
+                        <p class="pain-text">Perder <span class="pain-emphasis">prazos importantes</span> e ter que inventar desculpas constrangedoras</p>
+                    </div>
+
+                    <div class="pain-point-item">
+                        <div class="pain-icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
+                                <path fill="#0f3460" d="M15,14C12.33,14 7,15.33 7,18V20H23V18C23,15.33 17.67,14 15,14M6,10V7H4V10H1V12H4V15H6V12H9V10M15,12A4,4 0 0,0 19,8A4,4 0 0,0 15,4A4,4 0 0,0 11,8A4,4 0 0,0 15,12Z"/>
+                            </svg>
+                        </div>
+                        <p class="pain-text">Esquecer <span class="pain-emphasis">nomes de clientes importantes</span> 2 segundos após a apresentação</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vida Pessoal -->
+            <div class="category-block personal-category">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28">
+                            <path fill="white" d="M12,5.5A3.5,3.5 0 0,1 15.5,9A3.5,3.5 0 0,1 12,12.5A3.5,3.5 0 0,1 8.5,9A3.5,3.5 0 0,1 12,5.5M5,8C5.56,8 6.08,8.15 6.53,8.42C6.38,9.85 6.8,11.27 7.66,12.38C7.16,13.34 6.16,14 5,14A3,3 0 0,1 2,11A3,3 0 0,1 5,8M19,8A3,3 0 0,1 22,11A3,3 0 0,1 19,14C17.84,14 16.84,13.34 16.34,12.38C17.2,11.27 17.62,9.85 17.47,8.42C17.92,8.15 18.44,8 19,8M5.5,18.25C5.5,16.18 8.41,14.5 12,14.5C15.59,14.5 18.5,16.18 18.5,18.25V20H5.5V18.25M0,20V18.5C0,17.11 1.89,15.94 4.45,15.6C3.86,16.28 3.5,17.22 3.5,18.25V20H0M24,20H20.5V18.25C20.5,17.22 20.14,16.28 19.55,15.6C22.11,15.94 24,17.11 24,18.5V20Z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="category-title">Vida Pessoal</h3>
+                        <p class="category-subtitle"></p>
+                    </div>
+                </div>
+                
+                <div class="pain-points-grid">
+                    <div class="pain-point-item">
+                        <div class="pain-icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
+                                <path fill="#e94560" d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z"/>
+                            </svg>
+                        </div>
+                        <p class="pain-text">Esquecer <span class="pain-emphasis">aniversários e compromissos importantes</span> com quem você ama</p>
+                    </div>
+
+                    <div class="pain-point-item">
+                        <div class="pain-icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
+                                <path fill="#e94560" d="M17,12V3A1,1 0 0,0 16,2H8A1,1 0 0,0 7,3V12A4,4 0 0,0 4,16A4,4 0 0,0 8,20H16A4,4 0 0,0 20,16A4,4 0 0,0 17,12M12,4A1,1 0 0,1 13,5A1,1 0 0,1 12,6A1,1 0 0,1 11,5A1,1 0 0,1 12,4Z"/>
+                            </svg>
+                        </div>
+                        <p class="pain-text">Não conseguir manter <span class="pain-emphasis">conversas profundas</span> porque está sempre distraído</p>
+                    </div>
+
+                    <div class="pain-point-item">
+                        <div class="pain-icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
+                                <path fill="#e94560" d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z"/>
+                            </svg>
+                        </div>
+                        <p class="pain-text">Começar <span class="pain-emphasis">dietas, exercícios, hobbies</span>... e abandonar em 2 semanas</p>
+                    </div>
+
+                    <div class="pain-point-item">
+                        <div class="pain-icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
+                                <path fill="#e94560" d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"/>
+                            </svg>
+                        </div>
+                        <p class="pain-text">Seu parceiro(a) reclamar que você <span class="pain-emphasis">"nunca está presente"</span> nos momentos importantes</p>
+                    </div>
+
+                    <div class="pain-point-item">
+                        <div class="pain-icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
+                                <path fill="#e94560" d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M10,17L6,13L7.41,11.59L10,14.17L16.59,7.58L18,9L10,17Z"/>
+                            </svg>
+                        </div>
+                        <p class="pain-text">Perder <span class="pain-emphasis">oportunidades de crescimento pessoal</span> por procrastinação crônica</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Emotional Impact -->
+        <div class="emotional-impact">
+            <h3 class="emotional-title">O RESULTADO FINAL?</h3>
+            <p class="emotional-text">
+                Uma vida inteira se sentindo <strong>inadequado</strong>, <strong>incompetente</strong> e <strong>limitado</strong>.
+                <br><br>
+                Enquanto isso, pessoas com <strong>menos conhecimento</strong> que você conquistam as oportunidades que deveriam ser suas.
+                <br><br>
+                <strong>Não é falta de capacidade. É seu cérebro em modo autossabotagem.</strong>
+            </p>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="stats-section">
+            <h3 class="stats-title">A Epidemia Silenciosa da Falta de Foco</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">73%</div>
+                    <div class="stat-label">sofrem com falta de concentração crônica</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">89%</div>
+                    <div class="stat-label">acreditam que são "o problema"</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">nunca descobrem a verdadeira causa</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+</body>
+</html>
+
+        
+    <!-- Seção Refinada de Revelação -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubra o Mecanismo Oculto que Sabota Sua Performance Mental</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            color: #f8fafc;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        /* Header Section */
+        .header {
+            text-align: center;
+            padding: 4rem 0;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.8));
+            border-radius: 24px;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(239, 68, 68, 0.1), transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(59, 130, 246, 0.1), transparent 50%);
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .headline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+        
+        .subheadline {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            color: #cbd5e1;
+            font-weight: 400;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Research Section */
+        .research-section {
+            background: linear-gradient(135deg, #1e293b, #334155);
+            border-radius: 20px;
+            padding: 0;
+            margin: 3rem 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        .research-header {
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .research-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .research-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+        
+        .research-subtitle {
+            font-size: 1.1rem;
+            opacity: 1;
+        }
+        
+        .research-content {
+            padding: 3rem 2rem;
+        }
+        
+        .research-intro {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: #e2e8f0;
+        }
+        
+        .highlight {
+            color: #ef4444;
+            font-weight: 700;
+            position: relative;
+        }
+        
+        .mechanism-grid {
+            display: grid;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .mechanism-card {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(51, 65, 85, 0.6));
+            border-radius: 16px;
+            padding: 2rem;
+            position: relative;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            overflow: hidden;
+        }
+        
+        .mechanism-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #ef4444, #dc2626);
+        }
+        
+        .mechanism-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+            border-color: rgba(59, 130, 246, 0.4);
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .card-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #f1f5f9;
+        }
+        
+        .card-description {
+            color: #cbd5e1;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .practical-examples {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 197, 253, 0.05));
+            border-radius: 12px;
+            padding: 1.5rem;
+            border-left: 3px solid #3b82f6;
+            position: relative;
+        }
+        
+        .examples-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            color: #93c5fd;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .arrow-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 0.5rem;
+        }
+        
+        .examples-text {
+            color: #e2e8f0;
+            font-style: italic;
+            line-height: 1.5;
+        }
+        
+        .examples-text strong {
+            color: #f8fafc;
+            font-weight: 700;
+            font-style: normal;
+        }
+        
+        /* Statistics Bar */
+        .stat-highlight {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            color: #92400e;
+            padding: 0.3rem 0.8rem;
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            display: inline-block;
+            margin: 0 0.3rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #dc2626, #ef4444);
+            border-radius: 20px;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1), transparent 70%);
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .cta-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            color: white;
+            padding: 1.5rem 3rem;
+            border-radius: 16px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .header {
+                padding: 2rem 1rem;
+            }
+            
+            .research-content {
+                padding: 2rem 1rem;
+            }
+            
+            .mechanism-card {
+                padding: 1.5rem;
+            }
+            
+            .cta-section {
+                padding: 3rem 1rem;
+            }
+        }
+        
+        /* Animation keyframes */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    
+        </header>
+        
+        <!-- Research Section -->
+        <section class="research-section">
+            <div class="research-header">
+                <div class="research-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="white"/>
+                        <path d="M19.5 9.5L20.5 12.5L22.5 13L20.5 13.5L19.5 16.5L18.5 13.5L16.5 13L18.5 12.5L19.5 9.5Z" fill="white"/>
+                        <path d="M4.5 2.5L5.5 5.5L7.5 6L5.5 6.5L4.5 9.5L3.5 6.5L1.5 6L3.5 5.5L4.5 2.5Z" fill="white"/>
+                    </svg>
+                </div>
+                <h2 class="research-title">SEU CÉREBRO ATIVOU O MODO AUTOSSABOTAGEM, E NÃO TE AVISOU: </h2>
+                <p class="research-subtitle"></p>
+            </div>
+            
+            <div class="research-content">
+                <p class="research-intro">
+                    Pesquisas recentíssimas  identificaram o <span class="highlight">os motivos</span> 
+                    que explicam por que pessoas inteligentes e capazes <strong>TRAVAM quando mais precisam do cérebro funcionando</strong>:
+                </p>
+                
+                <div class="mechanism-grid">
+                    <!-- Card 1 -->
+                    <div class="mechanism-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="white"/>
+                                </svg>
+                            </div>
+                            <h3 class="card-title">Bloqueio Cognitivo Sob Estresse</h3>
+                        </div>
+                        <p class="card-description">
+                            Níveis de estresse que <span class="stat-highlight">bloqueiam completamente</span> o funcionamento cognitivo normal, criando um ciclo vicioso de ansiedade e baixa performance.
+                        </p>
+                        <div class="practical-examples">
+                            <div class="examples-header">
+                                <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Na vida real:
+                            </div>
+                            <p class="examples-text">
+                                Por isso você <strong>esquece compromissos importantes</strong>, não lembra onde colocou as coisas, e <strong>dá branco na hora da prova</strong> ou apresentação crucial.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 2 -->
+                    <div class="mechanism-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="white"/>
+                                </svg>
+                            </div>
+                            <h3 class="card-title">Sabotagem Neuroquímica</h3>
+                        </div>
+                        <p class="card-description">
+                            Ciclo neuroquímico que <span class="stat-highlight">automaticamente transforma</span> tarefas importantes em tortura mental, fazendo você evitar exatamente o que mais precisa fazer.
+                        </p>
+                        <div class="practical-examples">
+                            <div class="examples-header">
+                                <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Na vida real:
+                            </div>
+                            <p class="examples-text">
+                                Por isso você <strong>procrastina projetos cruciais</strong>, sente ansiedade para estudar/trabalhar, e <strong>evita fazer coisas importantes</strong> que determinarão seu futuro.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 3 -->
+                    <div class="mechanism-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="white"/>
+                                </svg>
+                            </div>
+                            <h3 class="card-title">Colapso do Foco</h3>
+                        </div>
+                        <p class="card-description">
+                            Perda de <span class="stat-highlight">58-73%</span> da capacidade de foco sob pressão, tornando impossível a concentração profunda necessária para tarefas complexas.
+                        </p>
+                        <div class="practical-examples">
+                            <div class="examples-header">
+                                <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Na vida real:
+                            </div>
+                            <p class="examples-text">
+                                Por isso você <strong>não consegue se concentrar em reuniões importantes</strong>, lê a mesma página 5 vezes, e <strong>se distrai com qualquer coisa</strong> quando deveria estar focado.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 4 -->
+                    <div class="mechanism-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="white"/>
+                                </svg>
+                            </div>
+                            <h3 class="card-title">Travamento nos Momentos Decisivos</h3>
+                        </div>
+                        <p class="card-description">
+                            Mecanismo cerebral que <span class="stat-highlight">literalmente sabota</span> sua performance nos momentos decisivos, quando você mais precisa brilhar.
+                        </p>
+                        <div class="practical-examples">
+                            <div class="examples-header">
+                                <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Na vida real:
+                            </div>
+                            <p class="examples-text">
+                                Por isso você <strong>trava em apresentações importantes</strong>, esquece o que ia falar, e <strong>não consegue pensar quando mais precisa</strong> mostrar sua competência.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+                </a>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
+      <!-- HEADLINE PREMIUM - MODERN SCIENTIFIC UI -->
+<div class="premium-headline-section">
+    <div class="scientific-indicator">
+        <svg class="brain-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28">
+            <path fill="#e94560" d="M21.33 12.91c.09-.1.15-.24.15-.41s-.06-.31-.15-.41c-.28-.26-.61-.42-.93-.42-.05 0-.1.01-.15.02-.03-.17-.08-.33-.15-.49-.24-.55-.77-.93-1.39-.93-.04 0-.09.01-.13.02-.03-.18-.09-.35-.18-.5-.27-.55-.85-.91-1.51-.91-.04 0-.08.01-.12.02-.04-.18-.11-.35-.21-.5-.28-.54-.89-.89-1.58-.89-.05 0-.1.01-.14.02-.05-.18-.13-.35-.24-.5-.31-.53-.95-.87-1.67-.87-.05 0-.1.01-.15.02-.06-.18-.15-.34-.27-.49-.34-.51-1.01-.84-1.76-.84-.06 0-.11.01-.17.02-.07-.17-.17-.33-.3-.47-.37-.49-1.07-.81-1.85-.81-.06 0-.12.01-.18.02-.08-.17-.19-.32-.33-.45-.4-.47-1.13-.78-1.94-.78-.07 0-.13.01-.19.02-.09-.16-.21-.31-.36-.43-.43-.45-1.19-.75-2.03-.75-.07 0-.14.01-.21.02-.1-.16-.23-.3-.39-.41-.46-.43-1.25-.73-2.12-.73-.08 0-.15.01-.23.02-.11-.15-.25-.29-.42-.39-.49-.41-1.31-.71-2.21-.71-.08 0-.16.01-.24.02-.12-.15-.27-.28-.45-.37-.52-.39-1.37-.69-2.3-.69-.09 0-.17.01-.26.02-.13-.14-.29-.27-.48-.35-.55-.37-1.43-.67-2.39-.67-.09 0-.18.01-.27.02-.14-.14-.31-.26-.51-.33-.58-.35-1.49-.65-2.48-.65-.1 0-.19.01-.29.02-.15-.13-.33-.25-.54-.31-.61-.33-1.55-.63-2.57-.63-.1 0-.2.01-.3.02-.16-.13-.35-.24-.57-.29-.64-.31-1.61-.61-2.66-.61-.11 0-.21.01-.32.02-.17-.12-.37-.23-.6-.27-.67-.29-1.67-.59-2.75-.59-.11 0-.22.01-.33.02-.18-.12-.39-.22-.63-.25-.7-.27-1.73-.57-2.84-.57-.12 0-.23.01-.35.02-.19-.11-.41-.21-.66-.23-.73-.25-1.79-.55-2.93-.55-.12 0-.24.01-.36.02-.2-.11-.43-.2-.69-.21-.76-.23-1.85-.53-3.02-.53-.13 0-.25.01-.38.02-.21-.1-.45-.19-.72-.19-.79-.21-1.91-.51-3.11-.51-.13 0-.26.01-.39.02-.22-.1-.47-.18-.75-.17-.82-.19-1.97-.49-3.2-.49-.14 0-.27.01-.41.02-.23-.09-.49-.17-.78-.15-.85-.17-2.03-.47-3.29-.47-.14 0-.28.01-.42.02-.24-.09-.51-.16-.81-.13-.88-.15-2.09-.45-3.38-.45-.15 0-.29.01-.44.02-.25-.08-.53-.15-.84-.11-.91-.13-2.15-.43-3.47-.43-.15 0-.3.01-.45.02-.26-.08-.55-.14-.87-.09-.94-.11-2.21-.41-3.56-.41-.16 0-.31.01-.47.02-.27-.07-.57-.13-.9-.07-.97-.09-2.27-.39-3.65-.39-.16 0-.32.01-.48.02-.28-.07-.59-.12-.93-.05-1-.07-2.33-.37-3.74-.37-.17 0-.33.01-.5.02-.29-.06-.61-.11-.96-.03-1.03-.05-2.39-.35-3.83-.35-.17 0-.34.01-.51.02-.3-.06-.63-.1-.99-.01-1.06-.03-2.45-.33-3.92-.33-.18 0-.35.01-.53.02-.31-.05-.65-.09-1.02.01-1.09-.01-2.51-.31-4.01-.31-.18 0-.36.01-.54.02-.32-.05-.67-.08-1.05.03-1.12.01-2.57-.29-4.1-.29-.19 0-.37.01-.56.02-.33-.04-.69-.07-1.08.05-1.15.03-2.63-.27-4.19-.27-.19 0-.38.01-.57.02-.34-.04-.71-.06-1.11.07-1.18.05-2.69-.25-4.28-.25-.2 0-.39.01-.59.02-.35-.03-.73-.05-1.14.09-1.21.07-2.75-.23-4.37-.23-.2 0-.4.01-.6.02-.36-.03-.75-.04-1.17.11-1.24.09-2.81-.21-4.46-.21-.21 0-.41.01-.62.02-.37-.02-.77-.03-1.2.13-1.27.11-2.87-.19-4.55-.19-.21 0-.42.01-.63.02-.38-.02-.79-.02-1.23.15-1.3.13-2.93-.17-4.64-.17-.22 0-.43.01-.65.02-.39-.01-.81-.01-1.26.17-1.33.15-2.99-.15-4.73-.15-.22 0-.44.01-.66.02-.4-.01-.83 0-1.29.19-1.36.17-3.05-.13-4.82-.13-.23 0-.45.01-.68.02-.41 0-.85.01-1.32.21-1.39.19-3.11-.11-4.91-.11-.23 0-.46.01-.69.02-.42 0-.87.02-1.35.23-1.42.21-3.17-.09-5-.09-.24 0-.47.01-.71.02-.43.01-.89.03-1.38.25-1.45.23-3.23-.07-5.09-.07-.24 0-.48.01-.72.02-.44.01-.91.04-1.41.27-1.48.25-3.29-.05-5.18-.05-.25 0-.49.01-.74.02-.45.02-.93.05-1.44.29-1.51.27-3.35-.03-5.27-.03-.25 0-.5.01-.75.02-.46.02-.95.06-1.47.31-1.54.29-3.41-.01-5.36-.01-.26 0-.51.01-.77.02-.47.03-.97.07-1.5.33-1.57.31-3.47.01-5.45.01-.26 0-.52.01-.78.02-.48.03-.99.08-1.53.35-1.6.33-3.53.03-5.54.03-.27 0-.53.01-.8.02-.49.04-1.01.09-1.56.37-1.63.35-3.59.05-5.63.05-.27 0-.54.01-.81.02-.5.04-1.03.1-1.59.39-1.66.37-3.65.07-5.72.07-.28 0-.55.01-.83.02-.51.05-1.05.11-1.62.41-1.69.39-3.71.09-5.81.09-.28 0-.56.01-.84.02-.52.05-1.07.12-1.65.43-1.72.41-3.77.11-5.9.11-.29 0-.57.01-.86.02-.53.06-1.09.13-1.68.45-1.75.43-3.83.13-5.99.13-.29 0-.58.01-.87.02-.54.06-1.11.14-1.71.47-1.78.45-3.89.15-6.08.15-.3 0-.59.01-.89.02-.55.07-1.13.15-1.74.49-1.81.47-3.95.17-6.17.17-.3 0-.6.01-.9.02-.56.07-1.15.16-1.77.51-1.84.49-4.01.19-6.26.19-.31 0-.61.01-.92.02-.57.08-1.17.17-1.8.53-1.87.51-4.07.21-6.35.21-.31 0-.62.01-.93.02-.58.08-1.19.18-1.83.55-1.9.53-4.13.23-6.44.23-.32 0-.63.01-.95.02-.59.09-1.21.19-1.86.57-1.93.55-4.19.25-6.53.25-.32 0-.64.01-.96.02-.6.09-1.23.2-1.89.59-1.96.57-4.25.27-6.62.27-.33 0-.65.01-.98.02-.61.1-1.25.21-1.92.61-1.99.59-4.31.29-6.71.29-.33 0-.66.01-.99.02-.62.1-1.27.22-1.95.63-2.02.61-4.37.31-6.8.31-.34 0-.67.01-1.01.02-.63.11-1.29.23-1.98.65-2.05.63-4.43.33-6.89.33-.34 0-.68.01-1.02.02-.64.11-1.31.24-2.01.67-2.08.65-4.49.35-6.98.35-.35 0-.69.01-1.04.02-.65.12-1.33.25-2.04.69-2.11.67-4.55.37-7.07.37-.35 0-.7.01-1.05.02-.66.12-1.35.26-2.07.71-2.14.69-4.61.39-7.16.39-.36 0-.71.01-1.07.02-.67.13-1.37.27-2.1.73-2.17.71-4.67.41-7.25.41-.36 0-.72.01-1.08.02-.68.13-1.39.28-2.13.75-2.2.73-4.73.43-7.34.43-.37 0-.73.01-1.1.02-.69.14-1.41.29-2.16.77-2.23.75-4.79.45-7.43.45-.37 0-.74.01-1.11.02-.7.14-1.43.3-2.19.79-2.26.77-4.85.47-7.52.47-.38 0-.75.01-1.13.02-.71.15-1.45.31-2.22.81-2.29.79-4.91.49-7.61.49-.38 0-.76.01-1.14.02-.72.15-1.47.32-2.25.83-2.32.81-4.97.51-7.7.51-.39 0-.77.01-1.16.02-.73.16-1.49.33-2.28.85-2.35.83-5.03.53-7.79.53-.39 0-.78.01-1.17.02-.74.16-1.51.34-2.31.87-2.38.85-5.09.55-7.88.55-.4 0-.79.01-1.19.02-.75.17-1.53.35-2.34.89-2.41.87-5.15.57-7.97.57-.4 0-.8.01-1.2.02-.76.17-1.55.36-2.37.91-2.44.89-5.21.59-8.06.59-.41 0-.81.01-1.22.02-.77.18-1.57.37-2.4.93-2.47.91-5.27.61-8.15.61-.41 0-.82.01-1.23.02-.78.18-1.59.38-2.43.95-2.5.93-5.33.63-8.24.63-.42 0-.83.01-1.25.02-.79.19-1.61.39-2.46.97-2.53.95-5.39.65-8.33.65-.42 0-.84.01-1.26.02-.8.19-1.63.4-2.49.99-2.56.97-5.45.67-8.42.67-.43 0-.85.01-1.28.02-.81.2-1.65.41-2.52 1.01-2.59.99-5.51.69-8.51.69-.43 0-.86.01-1.29.02-.82.2-1.67.42-2.55 1.03-2.62 1.01-5.57.71-8.6.71-.44 0-.87.01-1.31.02-.83.21-1.69.43-2.58 1.05-2.65 1.03-5.63.73-8.69.73-.44 0-.88.01-1.32.02-.84.21-1.71.44-2.61 1.07-2.68 1.05-5.69.75-8.78.75-.45 0-.89.01-1.34.02-.85.22-1.73.45-2.64 1.09-2.71 1.07-5.75.77-8.87.77-.45 0-.9.01-1.35.02-.86.22-1.75.46-2.67 1.11-2.74 1.09-5.81.79-8.96.79-.46 0-.91.01-1.37.02-.87.23-1.77.47-2.7 1.13-2.77 1.11-5.87.81-9.05.81-.46 0-.92.01-1.38.02-.88.23-1.79.48-2.73 1.15-2.8 1.13-5.93.83-9.14.83-.47 0-.93.01-1.4.02-.89.24-1.81.49-2.76 1.17-2.83 1.15-5.99.85-9.23.85-.47 0-.94.01-1.41.02-.9.24-1.83.5-2.79 1.19-2.86 1.17-6.05.87-9.32.87-.48 0-.95.01-1.43.02-.91.25-1.85.51-2.82 1.21-2.89 1.19-6.11.89-9.41.89-.48 0-.96.01-1.44.02-.92.25-1.87.52-2.85 1.23-2.92 1.21-6.17.91-9.5.91-.49 0-.97.01-1.46.02-.93.26-1.89.53-2.88 1.25-2.95 1.23-6.23.93-9.59.93-.49 0-.98.01-1.47.02-.94.26-1.91.54-2.91 1.27-2.98 1.25-6.29.95-9.68.95-.5 0-.99.01-1.49.02-.95.27-1.93.55-2.94 1.29-3.01 1.27-6.35.97-9.77.97-.5 0-1 .01-1.5.02-.96.27-1.95.56-2.97 1.31-3.04 1.29-6.41.99-9.86.99-.51 0-1.01.01-1.52.02-.97.28-1.97.57-3 1.33-3.07 1.31-6.47 1.01-9.95 1.01-.51 0-1.02.01-1.53.02-.98.28-1.99.58-3.03 1.35-3.1 1.33-6.53 1.03-10.04 1.03-.52 0-1.03.01-1.55.02-.99.29-2.01.59-3.06 1.37-3.13 1.35-6.59 1.05-10.13 1.05-.52 0-1.04.01-1.56.02-1 .29-2.03.6-3.09 1.39-3.16 1.37-6.65 1.07-10.22 1.07-.53 0-1.05.01-1.58.02-1.01.3-2.05.61-3.12 1.41-3.19 1.39-6.71 1.09-10.31 1.09-.53 0-1.06.01-1.59.02-1.02.3-2.07.62-3.15 1.43-3.22 1.41-6.77 1.11-10.4 1.11-.54 0-1.07.01-1.61.02-1.03.31-2.09.63-3.18 1.45-3.25 1.43-6.83 1.13-10.49 1.13-.54 0-1.08.01-1.62.02-1.04.31-2.11.64-3.21 1.47-3.28 1.45-6.89 1.15-10.58 1.15-.55 0-1.09.01-1.64.02-1.05.32-2.13.65-3.24 1.49-3.31 1.47-6.95 1.17-10.67 1.17-.55 0-1.1.01-1.65.02-1.06.32-2.15.66-3.27 1.51-3.34 1.49-7.01 1.19-10.76 1.19-.56 0-1.11.01-1.67.02-1.07.33-2.17.67-3.3 1.53-3.37 1.51-7.07 1.21-10.85 1.21-.56 0-1.12.01-1.68.02-1.08.33-2.19.68-3.33 1.55-3.4 1.53-7.13 1.23-10.94 1.23-.57 0-1.13.01-1.7.02-1.09.34-2.21.69-3.36 1.57-3.43 1.55-7.19 1.25-11.03 1.25-.57 0-1.14.01-1.71.02-1.1.34-2.23.7-3.39 1.59-3.46 1.57-7.25 1.27-11.12 1.27-.58 0-1.15.01-1.73.02-1.11.35-2.25.71-3.42 1.61-3.49 1.59-7.31 1.29-11.21 1.29-.58 0-1.16.01-1.74.02-1.12.35-2.27.72-3.45 1.63-3.52 1.61-7.37 1.31-11.3 1.31-.59 0-1.17.01-1.76.02-1.13.36-2.29.73-3.48 1.65-3.55 1.63-7.43 1.33-11.39 1.33-.59 0-1.18.01-1.77.02-1.14.36-2.31.74-3.51 1.67-3.58 1.65-7.49 1.35-11.48 1.35-.6 0-1.19.01-1.79.02-1.15.37-2.33.75-3.54 1.69-3.61 1.67-7.55 1.37-11.57 1.37-.6 0-1.2.01-1.8.02-1.16.37-2.35.76-3.57 1.71-3.64 1.69-7.61 1.39-11.66 1.39-.61 0-1.21.01-1.82.02-1.17.38-2.37.77-3.6 1.73-3.67 1.71-7.67 1.41-11.75 1.41-.61 0-1.22.01-1.83.02-1.18.38-2.39.78-3.63 1.75-3.7 1.73-7.73 1.43-11.84 1.43-.62 0-1.23.01-1.85.02-1.19.39-2.41.79-3.66 1.77-3.73 1.75-7.79 1.45-11.93 1.45-.62 0-1.24.01-1.86.02-1.2.39-2.43.8-3.69 1.79-3.76 1.77-7.85 1.47-12.02 1.47-.63 0-1.25.01-1.88.02-1.21.4-2.45.81-3.72 1.81-3.79 1.79-7.91 1.49-12.11 1.49-.63 0-1.26.01-1.89.02-1.22.4-2.47.82-3.75 1.83-3.82 1.81-7.97 1.51-12.2 1.51-.64 0-1.27.01-1.91.02-1.23.41-2.49.83-3.78 1.85-3.85 1.83-8.03 1.53-12.29 1.53-.64 0-1.28.01-1.92.02-1.24.41-2.51.84-3.81 1.87-3.88 1.85-8.09 1.55-12.38 1.55-.65 0-1.29.01-1.94.02-1.25.42-2.53.85-3.84 1.89-3.91 1.87-8.15 1.57-12.47 1.57-.65 0-1.3.01-1.95.02-1.26.42-2.55.86-3.87 1.91-3.94 1.89-8.21 1.59-12.56 1.59-.66 0-1.31.01-1.97.02-1.27.43-2.57.87-3.9 1.93-3.97 1.91-8.27 1.61-12.65 1.61-.66 0-1.32.01-1.98.02-1.28.43-2.59.88-3.93 1.95-4 1.93-8.33 1.63-12.74 1.63-.67 0-1.33.01-2 .02-1.29.44-2.61.89-3.96 1.97-4.03 1.95-8.39 1.65-12.83 1.65-.67 0-1.34.01-2.01.02-1.3.44-2.63.9-3.99 1.99-4.06 1.97-8.45 1.67-12.92 1.67-.68 0-1.35.01-2.03.02-1.31.45-2.65.91-4.02 2.01-4.09 1.99-8.51 1.69-13.01 1.69-.68 0-1.36.01-2.04.02-1.32.45-2.67.92-4.05 2.03-4.12 2.01-8.57 1.71-13.1 1.71-.69 0-1.37.01-2.06.02-1.33.46-2.69.93-4.08 2.05-4.15 2.03-8.63 1.73-13.19 1.73-.69 0-1.38.01-2.07.02-1.34.46-2.71.94-4.11 2.07-4.18 2.05-8.69 1.75-13.28 1.75-.7 0-1.39.01-2.09.02-1.35.47-2.73.95-4.14 2.09-4.21 2.07-8.75 1.77-13.37 1.77-.7 0-1.4.01-2.1.02-1.36.47-2.75.96-4.17 2.11-4.24 2.09-8.81 1.79-13.46 1.79-.71 0-1.41.01-2.12.02-1.37.48-2.77.97-4.2 2.13-4.27 2.11-8.87 1.81-13.55 1.81-.71 0-1.42.01-2.13.02-1.38.48-2.79.98-4.23 2.15-4.3 2.13-8.93 1.83-13.64 1.83-.72 0-1.43.01-2.15.02-1.39.49-2.81.99-4.26 2.17-4.33 2.15-8.99 1.85-13.73 1.85-.72 0-1.44.01-2.16.02-1.4.49-2.83 1-4.29 2.19-4.36 2.17-9.05 1.87-13.82 1.87-.73 0-1.45.01-2.18.02-1.41.5-2.85 1.01-4.32 2.21-4.39 2.19-9.11 1.89-13.91 1.89-.73 0-1.46.01-2.19.02-1.42.5-2.87 1.02-4.35 2.23-4.42 2.21-9.17 1.91-14 1.91-.74 0-1.47.01-2.21.02-1.43.51-2.89 1.03-4.38 2.25-4.45 2.23-9.23 1.93-14.09 1.93-.74 0-1.48.01-2.22.02-1.44.51-2.91 1.04-4.41 2.27-4.48 2.25-9.29 1.95-14.18 1.95-.75 0-1.49.01-2.24.02-1.45.52-2.93 1.05-4.44 2.29-4.51 2.27-9.35 1.97-14.27 1.97-.75 0-1.5.01-2.25.02-1.46.52-2.95 1.06-4.47 2.31-4.54 2.29-9.41 1.99-14.36 1.99-.76 0-1.51.01-2.27.02-1.47.53-2.97 1.07-4.5 2.33-4.57 2.31-9.47 2.01-14.45 2.01-.76 0-1.52.01-2.28.02-1.48.53-2.99 1.08-4.53 2.35-4.6 2.33-9.53 2.03-14.54 2.03-.77 0-1.53.01-2.3.02-1.49.54-3.01 1.09-4.56 2.37-4.63 2.35-9.59 2.05-14.63 2.05-.77 0-1.54.01-2.31.02-1.5.54-3.03 1.1-4.59 2.39-4.66 2.37-9.65 2.07-14.72 2.07-.78 0-1.55.01-2.33.02-1.51.55-3.05 1.11-4.62 2.41-4.69 2.39-9.71 2.09-14.81 2.09-.78 0-1.56.01-2.34.02-1.52.55-3.07 1.12-4.65 2.43-4.72 2.41-9.77 2.11-14.9 2.11-.79 0-1.57.01-2.36.02-1.53.56-3.09 1.13-4.68 2.45-4.75 2.43-9.83 2.13-14.99 2.13-.79 0-1.58.01-2.37.02-1.54.56-3.11 1.14-4.71 2.47"/>
+        </svg>
+        <div class="indicator-line"></div>
+    </div>
+    
+    <div class="headline-content">
+        <div class="category-tag">
+            <svg class="tag-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                <path fill="#ffffff" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            <span>NEUROCIÊNCIA APLICADA</span>
+        </div>
+        
+        <h3 class="main-headline">
+            ENTENDA NA <span class="highlight-word">PRÁTICA</span><br>
+            POR QUE ISSO <span class="brain-highlight">ACONTECE</span>
+        </h3>
+        
+        <div class="neural-network">
+            <div class="neural-dot pulse-1"></div>
+            <div class="neural-dot pulse-2"></div>
+            <div class="neural-dot pulse-3"></div>
+            <div class="connection-line line-1"></div>
+            <div class="connection-line line-2"></div>
+        </div>
+    </div>
+    
+    <div class="progress-indicator">
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
+        <span class="progress-text">Veja na imagem</span>
+    </div>
+</div>
+
+<style>
+/* HEADLINE PREMIUM - MODERN SCIENTIFIC UI */
+.premium-headline-section {
+    position: relative;
+    margin: 50px 0;
+    padding: 45px 40px;
+    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%);
+    border-radius: 20px;
+    box-shadow: 
+        0 25px 50px rgba(15, 52, 96, 0.08),
+        0 0 0 1px rgba(226, 232, 240, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.premium-headline-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #0f3460, #2563eb, #e94560, #0f3460);
+    background-size: 300% 100%;
+    animation: gradientFlow 8s ease-in-out infinite;
+}
+
+@keyframes gradientFlow {
+    0%, 100% { background-position: 0% 0%; }
+    50% { background-position: 100% 0%; }
+}
+
+.premium-headline-section:hover {
+    transform: translateY(-8px);
+    box-shadow: 
+        0 35px 70px rgba(15, 52, 96, 0.12),
+        0 0 0 1px rgba(226, 232, 240, 0.8),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+/* Scientific Indicator */
+.scientific-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.brain-icon {
+    margin-right: 15px;
+    filter: drop-shadow(0 4px 8px rgba(233, 69, 96, 0.3));
+    animation: brainPulse 3s ease-in-out infinite;
+}
+
+@keyframes brainPulse {
+    0%, 100% { transform: scale(1); filter: drop-shadow(0 4px 8px rgba(233, 69, 96, 0.3)); }
+    50% { transform: scale(1.05); filter: drop-shadow(0 6px 12px rgba(233, 69, 96, 0.5)); }
+}
+
+.indicator-line {
+    flex-grow: 1;
+    height: 2px;
+    background: linear-gradient(90deg, #e94560, rgba(233, 69, 96, 0.2));
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+.indicator-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* Content */
+.headline-content {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.category-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    background: linear-gradient(135deg, #0f3460, #1e40af);
+    color: #ffffff;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 25px;
+    box-shadow: 
+        0 8px 20px rgba(15, 52, 96, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.category-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 12px 25px rgba(15, 52, 96, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.tag-icon {
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.1); }
+}
+
+.main-headline {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 900;
+    line-height: 1.2;
+    color: #0f172a;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 4px rgba(15, 23, 42, 0.1);
+    position: relative;
+}
+
+.highlight-word {
+    color: #e94560;
+    position: relative;
+    display: inline-block;
+}
+
+.highlight-word::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #e94560, #f472b6);
+    border-radius: 2px;
+    animation: underlineGrow 2s ease-in-out infinite;
+}
+
+@keyframes underlineGrow {
+    0%, 100% { transform: scaleX(1); }
+    50% { transform: scaleX(1.1); }
+}
+
+.brain-highlight {
+    color: #0f3460;
+    position: relative;
+    background: linear-gradient(135deg, #0f3460, #1e40af);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Neural Network Animation */
+.neural-network {
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    transform: translateY(-50%);
+    width: 80px;
+    height: 60px;
+    opacity: 0.6;
+}
+
+.neural-dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #e94560;
+    box-shadow: 0 0 10px rgba(233, 69, 96, 0.5);
+}
+
+.pulse-1 {
+    top: 0;
+    left: 0;
+    animation: neuralPulse 2s ease-in-out infinite;
+}
+
+.pulse-2 {
+    top: 25px;
+    right: 20px;
+    animation: neuralPulse 2s ease-in-out infinite 0.5s;
+}
+
+.pulse-3 {
+    bottom: 0;
+    left: 15px;
+    animation: neuralPulse 2s ease-in-out infinite 1s;
+}
+
+@keyframes neuralPulse {
+    0%, 100% { 
+        transform: scale(1); 
+        box-shadow: 0 0 10px rgba(233, 69, 96, 0.5); 
+    }
+    50% { 
+        transform: scale(1.3); 
+        box-shadow: 0 0 20px rgba(233, 69, 96, 0.8); 
+    }
+}
+
+.connection-line {
+    position: absolute;
+    height: 1px;
+    background: linear-gradient(90deg, #e94560, rgba(233, 69, 96, 0.3));
+    border-radius: 1px;
+}
+
+.line-1 {
+    top: 4px;
+    left: 8px;
+    width: 30px;
+    transform: rotate(25deg);
+    animation: connectionPulse 3s ease-in-out infinite;
+}
+
+.line-2 {
+    bottom: 4px;
+    left: 23px;
+    width: 25px;
+    transform: rotate(-30deg);
+    animation: connectionPulse 3s ease-in-out infinite 1.5s;
+}
+
+@keyframes connectionPulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
+/* Progress Indicator */
+.progress-indicator {
+    margin-top: 35px;
+    text-align: center;
+}
+
+.progress-bar {
+    width: 200px;
+    height: 4px;
+    background: rgba(15, 52, 96, 0.1);
+    border-radius: 2px;
+    margin: 0 auto 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #0f3460, #e94560);
+    border-radius: 2px;
+    animation: progressFill 4s ease-in-out infinite;
+}
+
+@keyframes progressFill {
+    0% { width: 0%; }
+    50% { width: 75%; }
+    100% { width: 0%; }
+}
+
+.progress-text {
+    font-size: 0.9rem;
+    color: #64748b;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .premium-headline-section {
+        padding: 35px 25px;
+        margin: 40px 0;
+    }
+    
+    .main-headline {
+        font-size: 2rem;
+        margin-bottom: 25px;
+    }
+    
+    .category-tag {
+        font-size: 0.8rem;
+        padding: 6px 16px;
+        margin-bottom: 20px;
+    }
+    
+    .neural-network {
+        right: 20px;
+        width: 60px;
+        height: 45px;
+    }
+    
+    .neural-dot {
+        width: 6px;
+        height: 6px;
+    }
+    
+    .progress-bar {
+        width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .premium-headline-section {
+        padding: 30px 20px;
+    }
+    
+    .main-headline {
+        font-size: 1.6rem;
+    }
+    
+    .scientific-indicator {
+        margin-bottom: 25px;
+    }
+    
+    .brain-icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 12px;
+    }
+    
+    .neural-network {
+        display: none;
+    }
+    
+    .progress-bar {
+        width: 120px;
+    }
+    
+    .progress-text {
+        font-size: 0.8rem;
+    }
+}
+</style>      
+            <!-- Imagem do Ciclo Cerebral -->
+            <div class="content-image">
+                <img src="https://noodrops.com.br/wp-content/uploads/2025/05/ChatGPT-Image-23-de-mai.-de-2025-10_17_16.png" alt="Ciclo de autossabotagem cerebral" width="100%">
+            </div>
+            
+            <div class="brain-cycle">
+                <p>Desliga seu hipocampo (área da memória)</p>
+                <p>Liga a amígdala (medo de errar)</p>
+                <p>Cria um ciclo de autossabotagem e perda de FOCO</p>
+            </div>
+            
+            <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seção de Protocolo - Versão Clean</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f7fa;
+            padding: 2rem;
+            color: #1f2937;
+        }
+        
+        .protocol-section {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            padding: 40px;
+        }
+        
+        .protocol-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #0a2e5c;
+        }
+        
+        .protocol-subtitle {
+            font-size: 1.1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            color: #4b5563;
+        }
+        
+        .protocol-highlight {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #e94560;
+            margin-bottom: 15px;
+            line-height: 1.3;
+            display: block;
+        }
+        
+        .protocol-description {
+            font-size: 1.05rem;
+            color: #4b5563;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        
+        .protocol-explanation {
+            font-size: 1.05rem;
+            color: #4b5563;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        
+        .highlight-text {
+            color: #e94560;
+            font-weight: 700;
+        }
+        
+        /* Timeline Style */
+        .timeline-list {
+            position: relative;
+            margin-left: 15px;
+            padding-left: 30px;
+        }
+        
+        .timeline-list::before {
+            content: '';
+            position: absolute;
+            left: 18px;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background-color: #0a2e5c;
+            opacity: 0.6;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+            min-height: 30px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .timeline-number {
+            position: absolute;
+            left: -30px;
+            top: 0;
+            width: 36px;
+            height: 36px;
+            background-color: #0a2e5c;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1rem;
+            border: 2px solid white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+        }
+        
+        .timeline-content {
+            flex-grow: 1;
+            padding: 8px 15px;
+            background-color: #f9fafb;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-item:hover .timeline-content {
+            transform: translateX(8px);
+            background-color: #f0f5ff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .timeline-content p {
+            margin: 0;
+            font-size: 1.05rem;
+            color: #1f2937;
+            line-height: 1.5;
+        }
+        
+        @media (max-width: 768px) {
+            .protocol-section {
+                padding: 30px;
+            }
+            
+            .protocol-title {
+                font-size: 1.8rem;
+            }
+            
+            .protocol-highlight {
+                font-size: 1.4rem;
+            }
+            
+            .timeline-list {
+                margin-left: 10px;
+                padding-left: 25px;
+            }
+            
+            .timeline-number {
+                width: 32px;
+                height: 32px;
+                left: -25px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .protocol-section {
+                padding: 25px 20px;
+            }
+            
+            .protocol-title {
+                font-size: 1.6rem;
+            }
+            
+            .protocol-highlight {
+                font-size: 1.3rem;
+            }
+            
+            .timeline-list {
+                margin-left: 5px;
+                padding-left: 20px;
+            }
+            
+            .timeline-number {
+                width: 28px;
+                height: 28px;
+                left: -20px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="protocol-section">
+        <h2 class="protocol-title">E COMO RESOLVER ISSO?</h2>
+        
+        <p class="protocol-subtitle">A CIÊNCIA É CATEGÓRIA AO AFIRMAR:</p>
+        
+        <h3 class="protocol-highlight">PROTOCOLO NEUROLÓGICO DE EMERGÊNCIA </h3>
+        
+        <p class="protocol-description">pois é o ÚNICO que rompe este ciclo de autodestruição cerebral em 72h:</p>
+        
+        <p class="protocol-explanation">O protocolo é composto pelo uso de 5 ingredientes, que em conjunto:</p>
+        
+        <div class="timeline-list">
+            <div class="timeline-item">
+                <div class="timeline-number">1</div>
+                <div class="timeline-content">
+                    <p>Desligam o modo "<span class="highlight-text">sabotagem</span>" do seu cérebro</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-number">2</div>
+                <div class="timeline-content">
+                    <p>Restauram o seu <span class="highlight-text">HIPERFOCO</span> e memória</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-number">3</div>
+                <div class="timeline-content">
+                    <p>Reduzem esquecimentos e chances de <span class="highlight-text">brancos</span> em provas e esquecimentos</p>
+                </div>
+            </div>
+            
+            
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+            
+            
+            <div class="ingredients">
+                <div class="ingredient">
+                    <i class="fas fa-brain"></i>
+                    <p>DHA</p>
+                    <p>Reconecta os neurônios danificados pelo estresse - você volta a lembrar do que estuda</p>
+                </div>
+                <div class="ingredient">
+                    <i class="fas fa-bolt"></i>
+                    <p>Inositol</p>
+                    <p>Desliga a ansiedade que apaga sua memória na hora da prova</p>
+                </div>
+                <div class="ingredient">
+                    <i class="fas fa-dna"></i>
+                    <p>Vitaminas B6 e B12</p>
+                    <p>Aumenta sua energia mental em 63% - estuda por horas sem cansar</p>
+                </div>
+                <div class="ingredient">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <p>Cafeína</p>
+                    <p>Liberação gradual que mantém níveis ótimos de vigilância neural sem picos e quedas de energia</p>
+                </div>
+                <div class="ingredient">
+                    <i class="fas fa-leaf"></i>
+                    <p>Paullinia Cupana</p>
+                    <p>Composto amazônico secreto que amplifica a neurotransmissão e mantém a performance mental por longo períodos</p>
+                </div>
+            </div>
+            
+            <!-- Badges de credibilidade -->
+            <div class="credibility-badges">
+                <span class="badge"><i class="fas fa-check-circle"></i> Testado Cientificamente</span>
+                <span class="badge"><i class="fas fa-certificate"></i> Aprovado pela ANVISA</span>
+                <span class="badge"><i class="fas fa-star"></i> Recomendado por Especialistas</span>
+            </div>
+            
+            <div class="highlight-box">
+                <p><strong>Imagine um piloto de Fórmula 1 em um carro com o FREIO DE MÃO PUXADO. Não importa seu talento. Não importa sua dedicação. <span class="highlight-text">VOCÊ NUNCA VAI CRUZAR A LINHA DE CHEGADA.</span></strong></p>
+                <p><strong>Seu cérebro está com o "freio de mão" neurológico ativado. Por isso você continua sem foco, concentração e reprovando.</strong></p>
+            </div>
+            </div>
+            
+            <!-- Transição Científica Visual -->
+            <div class="scientific-transition-bridge">
+                <div class="image-wrapper">
+                    <img src="https://noodrops.com.br/wp-content/uploads/2025/05/ChatGPT-Image-23-de-mai.-de-2025-10_16_09.png" 
+                         alt="Visualização do protocolo neurológico científico" 
+                         class="protocol-science-image">
+                    <div class="scientific-overlay">
+                        <div class="neural-indicator">
+                            <svg class="brain-wave" width="24" height="24">...</svg>
+                            <span>PROTOCOLO CIENTÍFICO</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- INÍCIO DO BLOCO MODERN SCIENTIFIC UI - SUBSTITUA A PARTIR DAQUI -->
+            <!-- INÍCIO DO BLOCO MODERN SCIENTIFIC UI - SUBSTITUA A PARTIR DAQUI -->
+<!-- VERSÃO INTEGRADA - Modern Scientific UI Premium -->
+<style>
+.sci-ui-container * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.sci-ui-container {
+    font-family: 'Inter', sans-serif;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0;
+    background: linear-gradient(145deg, 
+        rgba(255,255,255,0.98) 0%, 
+        rgba(248,250,252,0.95) 50%, 
+        rgba(241,245,249,0.92) 100%);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    box-shadow: 
+        0 25px 50px rgba(15, 52, 96, 0.12),
+        0 0 0 1px rgba(255, 255, 255, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    overflow: hidden;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sci-ui-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, 
+        #0f3460 0%, 
+        #2563eb 25%, 
+        #e94560 50%, 
+        #2563eb 75%, 
+        #0f3460 100%);
+    background-size: 200% 100%;
+    animation: gradientFlow 6s ease-in-out infinite;
+}
+
+@keyframes gradientFlow {
+    0%, 100% { background-position: 0% 0%; }
+    50% { background-position: 100% 0%; }
+}
+
+.sci-ui-container::after {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.6), 
+        transparent);
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.sci-ui-container:hover {
+    transform: translateY(-8px);
+    box-shadow: 
+        0 35px 70px rgba(15, 52, 96, 0.18),
+        0 0 0 1px rgba(255, 255, 255, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+/* Decorações Científicas */
+.neural-decoration {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 80px;
+    height: 80px;
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.neural-node {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #e94560;
+    border-radius: 50%;
+    animation: neuralPulse 3s ease-in-out infinite;
+}
+
+.neural-node:nth-child(1) { top: 10px; left: 20px; animation-delay: 0s; }
+.neural-node:nth-child(2) { top: 40px; right: 15px; animation-delay: 1s; }
+.neural-node:nth-child(3) { bottom: 20px; left: 10px; animation-delay: 2s; }
+
+.neural-connection {
+    position: absolute;
+    height: 1px;
+    background: linear-gradient(90deg, #2563eb, rgba(37, 99, 235, 0.3));
+    animation: connectionPulse 4s ease-in-out infinite;
+}
+
+.neural-connection:nth-child(4) {
+    top: 15px; left: 25px; width: 30px; transform: rotate(25deg);
+}
+
+.neural-connection:nth-child(5) {
+    top: 45px; right: 20px; width: 25px; transform: rotate(-30deg);
+    animation-delay: 2s;
+}
+
+@keyframes neuralPulse {
+    0%, 100% { 
+        transform: scale(1); 
+        box-shadow: 0 0 5px rgba(233, 69, 96, 0.5); 
+    }
+    50% { 
+        transform: scale(1.3); 
+        box-shadow: 0 0 15px rgba(233, 69, 96, 0.8); 
+    }
+}
+
+@keyframes connectionPulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+/* Conteúdo */
+.sci-ui-content {
+    padding: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.sci-ui-alert {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(145deg, 
+        rgba(233, 69, 96, 0.1) 0%, 
+        rgba(220, 38, 38, 0.05) 100%);
+    border: 2px solid rgba(233, 69, 96, 0.2);
+    color: #e94560;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    margin-bottom: 1.5rem;
+    box-shadow: 
+        0 8px 20px rgba(233, 69, 96, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    animation: alertPulse 3s ease-in-out infinite;
+}
+
+@keyframes alertPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
+.sci-ui-alert:hover {
+    transform: scale(1.05);
+    box-shadow: 
+        0 12px 25px rgba(233, 69, 96, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.sci-ui-alert svg {
+    animation: iconRotate 4s linear infinite;
+}
+
+@keyframes iconRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.sci-ui-heading {
+    font-size: 1.8rem;
+    line-height: 1.3;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.sci-ui-emphasis {
+    color: #e94560;
+    font-weight: 800;
+    position: relative;
+    display: inline-block;
+}
+
+.sci-ui-emphasis::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        rgba(233,69,96,0.3), 
+        rgba(233,69,96,0.8), 
+        rgba(233,69,96,0.3));
+    border-radius: 2px;
+    animation: underlineGlow 2s ease-in-out infinite;
+}
+
+@keyframes underlineGlow {
+    0%, 100% { transform: scaleX(0.9); opacity: 0.6; }
+    50% { transform: scaleX(1.1); opacity: 1; }
+}
+
+.sci-ui-protocol {
+    background: linear-gradient(135deg, #e94560, #dc2626);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+}
+
+.sci-ui-sidebar {
+    background: linear-gradient(145deg, 
+        rgba(37, 99, 235, 0.03) 0%, 
+        rgba(59, 130, 246, 0.02) 100%);
+    border-left: 5px solid #2563eb;
+    border-radius: 0 16px 16px 0;
+    padding: 32px;
+    margin: 2rem 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        0 8px 25px rgba(37, 99, 235, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    transition: all 0.4s ease;
+}
+
+.sci-ui-sidebar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(180deg, 
+        #2563eb 0%, 
+        #3b82f6 50%, 
+        #2563eb 100%);
+    animation: borderFlow 3s ease-in-out infinite;
+}
+
+@keyframes borderFlow {
+    0%, 100% { opacity: 0.6; transform: scaleY(0.9); }
+    50% { opacity: 1; transform: scaleY(1.1); }
+}
+
+.sci-ui-sidebar:hover {
+    transform: translateX(8px);
+    box-shadow: 
+        0 15px 35px rgba(37, 99, 235, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.sci-ui-sidebar p {
+    color: #1e40af;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    position: relative;
+    padding-left: 40px;
+}
+
+.sci-ui-sidebar p::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    animation: iconFloat 4s ease-in-out infinite;
+}
+
+@keyframes iconFloat {
+    0%, 100% { transform: translateY(-50%) scale(1); }
+    50% { transform: translateY(-60%) scale(1.1); }
+}
+
+.sci-ui-bullet-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sci-ui-bullet-list li {
+    position: relative;
+    padding: 16px 0 16px 60px;
+    color: #334155;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.5);
+}
+
+.sci-ui-bullet-list li:last-child {
+    border-bottom: none;
+}
+
+.sci-ui-bullet-list li:hover {
+    transform: translateX(12px);
+    color: #1e293b;
+    background: linear-gradient(90deg, 
+        rgba(37, 99, 235, 0.02), 
+        transparent);
+    border-radius: 12px;
+    padding-left: 72px;
+}
+
+.sci-ui-bullet-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, 
+        rgba(37, 99, 235, 0.1), 
+        rgba(59, 130, 246, 0.1));
+    border: 2px solid rgba(37, 99, 235, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: bulletPulse 3s ease-in-out infinite;
+}
+
+.sci-ui-bullet-list li:nth-child(1)::before { animation-delay: 0s; }
+.sci-ui-bullet-list li:nth-child(2)::before { animation-delay: 1s; }
+.sci-ui-bullet-list li:nth-child(3)::before { animation-delay: 2s; }
+
+@keyframes bulletPulse {
+    0%, 100% { 
+        transform: translateY(-50%) scale(1); 
+        box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4); 
+    }
+    50% { 
+        transform: translateY(-50%) scale(1.1); 
+        box-shadow: 0 0 0 8px rgba(37, 99, 235, 0); 
+    }
+}
+
+.sci-ui-bullet-list li::after {
+    content: '→';
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #2563eb;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.timing-highlight {
+    color: #e94560;
+    font-weight: 700;
+    background: rgba(233, 69, 96, 0.1);
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+/* Indicadores de Progresso */
+.progress-section {
+    margin-top: 32px;
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, 
+        rgba(248, 250, 252, 0.8), 
+        rgba(241, 245, 249, 0.6));
+    border-radius: 12px;
+    border: 1px solid rgba(226, 232, 240, 0.5);
+}
+
+.progress-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin: 16px 0;
+}
+
+.progress-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    animation: progressPulse 2s ease-in-out infinite;
+}
+
+.progress-dot:nth-child(1) { animation-delay: 0s; }
+.progress-dot:nth-child(2) { animation-delay: 0.5s; }
+.progress-dot:nth-child(3) { animation-delay: 1s; }
+
+@keyframes progressPulse {
+    0%, 100% { 
+        transform: scale(1); 
+        box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4); 
+    }
+    50% { 
+        transform: scale(1.3); 
+        box-shadow: 0 0 0 8px rgba(37, 99, 235, 0); 
+    }
+}
+
+.progress-text {
+    font-size: 0.9rem;
+    color: #64748b;
+    font-weight: 500;
+    font-style: italic;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .sci-ui-container {
+        margin: 1.5rem 0.5rem;
+        border-radius: 16px;
+    }
+    
+    .sci-ui-content {
+        padding: 30px 24px;
+    }
+    
+    .sci-ui-heading {
+        font-size: 1.5rem;
+    }
+    
+    .sci-ui-sidebar {
+        padding: 24px;
+        margin: 1.5rem 0;
+    }
+    
+    .sci-ui-sidebar p {
+        font-size: 1.1rem;
+        padding-left: 32px;
+    }
+    
+    .sci-ui-bullet-list li {
+        padding-left: 50px;
+        font-size: 1rem;
+    }
+    
+    .neural-decoration {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sci-ui-content {
+        padding: 24px 20px;
+    }
+    
+    .sci-ui-heading {
+        font-size: 1.3rem;
+    }
+    
+    .sci-ui-sidebar p {
+        font-size: 1rem;
+        padding-left: 28px;
+    }
+    
+    .sci-ui-bullet-list li {
+        padding-left: 45px;
+        font-size: 0.95rem;
+    }
+    
+    .neural-decoration {
+        display: none;
+    }
+}
+</style>
+
+<div class="sci-ui-container">
+    <!-- Decoração Neural -->
+    <div class="neural-decoration">
+        <div class="neural-node"></div>
+        <div class="neural-node"></div>
+        <div class="neural-node"></div>
+        <div class="neural-connection"></div>
+        <div class="neural-connection"></div>
+    </div>
+    
+    <!-- Conteúdo -->
+    <div class="sci-ui-content">
+        <div class="sci-ui-alert">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                <path fill="#e94560" d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-1-5h2v2h-2v-2zm0-8h2v6h-2V7z"/>
+            </svg>
+            PROTOCOLO CIENTÍFICO
+        </div>
+        
+        <h2 class="sci-ui-heading">
+            Isso <span class="sci-ui-emphasis">NÃO É</span> mais uma promessa vazia da internet — é um <span class="sci-ui-protocol">Protocolo de Resgate Cerebral</span> comprovado por milhares de estudantes e empresários
+        </h2>
+        
+        <div class="sci-ui-sidebar">
+            <p>Protocolo desenvolvido após anos de pesquisas científicas com 5 compostos neurotropicos:</p>
+            
+            <ul class="sci-ui-bullet-list">
+                <li>Atravessam a barreira hematoencefálica <span class="timing-highlight">em 15min</span></li>
+                <li>Desbloqueiam receptores de foco e memória <span class="timing-highlight">em 48-72h</span></li>
+                <li>Anulam o 'modo sabotagem' do seu cérebro <span class="timing-highlight">permanentemente</span></li>
+            </ul>
+        </div>
+      
+</div>
+<!-- FIM DO BLOCO MODERN SCIENTIFIC UI - SUBSTITUA ATÉ AQUI -->
+            
+            <!-- Imagem do Produto -->
+            <!-- Seção do Protocolo Raro com Design Premium -->
+<div class="technology-barrier">
+<!-- Título da Seção -->
+<div class="barrier-header">
+
+<!-- Acesso Limitado - Bloco Final -->
+<div class="limited-access">
+<svg class="lock-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+<path fill="#e94560" d="M12,17A2,2 0 0,0 14,15C14,13.89 13.1,13 12,13A2,2 0 0,0 10,15A2,2 0 0,0 12,17M18,8A2,2 0 0,1 20,10V20A2,2 0 0,1 18,22H6A2,2 0 0,1 4,20V10C4,8.89 4.9,8 6,8H7V6A5,5 0 0,1 12,1A5,5 0 0,1 17,6V8H18M12,3A3,3 0 0,0 9,6V8H15V6A3,3 0 0,0 12,3Z"/>
+</svg>
+<p>
+<span class="limited-highlight">Acesso limitado:</span> Devido à complexidade de
+ produção e à alta demanda, este protocolo tem disponibilidade restrita no mercado brasileiro.
+</p>
+</div>
+
+<style>
+/* Estilos para a Seção Premium de Barreira Tecnológica */
+.technology-barrier {
+  max-width: 100%;
+  margin: 40px auto;
+  font-family: 'Inter', sans-serif;
+  color: #1a1a2e;
+}
+
+/* Título da Seção */
+.barrier-header {
+  margin-bottom: 35px;
+}
+
+.barrier-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin: 0 0 10px 0;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: -0.5px;
+}
+
+.barrier-title:after {
+  display: none;
+}
+
+.barrier-subtitle {
+  color: #f1f5f9;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Seção do Grande Problema */
+.problem-container {
+  background: linear-gradient(to right, #0f3460, #192a56);
+  border-radius: 12px;
+  padding: 30px;
+  color: white;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.problem-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.problem-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.problem-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.problem-description {
+  font-size: 1.15rem;
+  margin-bottom: 30px;
+  color: #e2e8f0;
+  line-height: 1.6;
+}
+
+.highlight-text {
+  color: #e94560;
+  font-weight: 700;
+  position: relative;
+}
+
+.challenges-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.challenge-item {
+  background: rgba(30, 64, 175, 0.2);
+  padding: 25px 20px;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.challenge-item:hover {
+  transform: translateY(-5px);
+}
+
+.challenge-icon {
+  margin-bottom: 15px;
+}
+
+.challenge-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.challenge-description {
+  font-size: 0.95rem;
+  margin: 0;
+  color: #ffffff;
+  line-height: 1.5;
+}
+
+/* Estatística Visual */
+.stats-container {
+  background: rgba(30, 64, 175, 0.2);
+  padding: 25px;
+  border-radius: 8px;
+}
+
+.stats-heading {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.stats-bar-container {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.stats-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.stats-level {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3%;
+  background: linear-gradient(to right, #e94560, #ff9f43);
+  border-radius: 4px;
+}
+
+.stats-marker {
+  position: absolute;
+  left: 3%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  background: #ff9f43;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.stats-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #cbd5e0;
+}
+
+.stats-current {
+  color: #ff9f43;
+  font-weight: 700;
+}
+
+/* Comparação de Protocolos */
+.protocols-comparison {
+  margin-bottom: 40px;
+}
+
+.comparison-title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #1a1a2e;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.protocol-card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.common-protocol {
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+}
+
+.advanced-protocol {
+  border: 2px solid #4169e1;
+  background: white;
+  position: relative;
+}
+
+.protocol-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #4169e1;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-bottom-left-radius: 8px;
+}
+
+.protocol-header {
+  padding: 15px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.common-protocol .protocol-header {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.advanced-protocol .protocol-header {
+  background: #4169e1;
+  color: white;
+}
+
+.protocol-content {
+  padding: 20px;
+}
+
+.protocol-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 15px;
+  padding: 8px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.protocol-item:hover {
+  background-color: #f8f9fa;
+}
+
+.protocol-item:last-child {
+  margin-bottom: 0;
+}
+
+.negative-mark, .positive-mark {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.negative-mark {
+  background: #fee2e2;
+}
+
+.positive-mark {
+  background: #e6f6ff;
+}
+
+.protocol-text {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #4a5568;
+  line-height: 1.5;
+}
+
+/* Ingredientes do Protocolo */
+.compounds-container {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 30px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 30px;
+}
+
+.compounds-title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #1a1a2e;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.compounds-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.compound-item {
+  background: white;
+  padding: 20px 15px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s ease;
+}
+
+.compound-item:hover {
+  transform: translateY(-5px);
+}
+
+.compound-icon {
+  margin-bottom: 15px;
+}
+
+.compound-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #1a1a2e;
+}
+
+.compound-function {
+  font-size: 0.85rem;
+  margin: 0;
+  color: #718096;
+  line-height: 1.4;
+}
+
+.scientific-note {
+  background: #f0f7ff;
+  border-left: 4px solid #4169e1;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.scientific-note p {
+  margin: 0;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #4a5568;
+  line-height: 1.6;
+}
+
+/* Acesso Limitado */
+.limited-access {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  background: #fff5f5;
+  border: 1px solid #fed7d7;
+  border-radius: 8px;
+}
+
+.lock-icon {
+  flex-shrink: 0;
+}
+
+.limited-access p {
+  margin: 0;
+  font-size: 1rem;
+  color: #4a5568;
+  line-height: 1.5;
+}
+
+.limited-highlight {
+  color: #e94560;
+  font-weight: 700;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .challenges-grid {
+    grid-template-columns: 1fr;
+  }
+  .comparison-grid {
+    grid-template-columns: 1fr;
+  }
+  .compounds-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .barrier-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .compounds-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .barrier-title {
+    font-size: 1.6rem;
+  }
+}
+</style>
+            
+
+            
+            <div class="section-divider"></div>
+            
+            <!-- Imagem de Transformação -->
+            <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>72 Horas de Transformação</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .transformation-section {
+            font-family: 'Inter', sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 50px 30px;
+            background: linear-gradient(145deg, #ffffff, #f8fafc);
+            border-radius: 24px;
+            box-shadow: 0 25px 50px rgba(15, 52, 96, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .transformation-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #0f3460, #2563eb, #e94560, #0f3460);
+            background-size: 200% 100%;
+            animation: gradientShift 8s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 0%; }
+            50% { background-position: 100% 0%; }
+        }
+
+        .main-header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .main-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            color: #0f172a;
+            margin-bottom: 25px;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #0f3460, #1e40af, #e94560);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .main-subtitle {
+            font-size: 1.4rem;
+            color: #475569;
+            font-weight: 500;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+
+        .intro-text {
+            font-size: 1.2rem;
+            color: #334155;
+            font-weight: 600;
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 25px;
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border-radius: 16px;
+            border: 1px solid #bae6fd;
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.05);
+        }
+
+        .phases-container {
+            margin: 60px 0;
+        }
+
+        .phase-block {
+            margin-bottom: 50px;
+            position: relative;
+            background: linear-gradient(145deg, #ffffff, #f8fafc);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(15, 52, 96, 0.06);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            transition: all 0.4s ease;
+            overflow: hidden;
+        }
+
+        .phase-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #0f3460, #2563eb);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.6s ease;
+        }
+
+        .phase-block:hover::before {
+            transform: scaleX(1);
+        }
+
+        .phase-block:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(15, 52, 96, 0.12);
+        }
+
+        .phase-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .phase-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #0f3460, #1e40af);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(15, 52, 96, 0.2);
+            transition: all 0.4s ease;
+        }
+
+        .phase-block:hover .phase-icon {
+            transform: rotateY(180deg);
+            box-shadow: 0 12px 35px rgba(15, 52, 96, 0.3);
+        }
+
+        .phase-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: white;
+        }
+
+        .phase-title-container {
+            flex-grow: 1;
+        }
+
+        .phase-time {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #e94560;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .phase-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0f172a;
+            line-height: 1.3;
+        }
+
+        .phase-content {
+            line-height: 1.8;
+            color: #334155;
+        }
+
+        .phase-content p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .phase-content strong {
+            color: #0f3460;
+            font-weight: 700;
+        }
+
+        .comparison-section {
+            margin: 35px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .comparison-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #475569;
+            margin-bottom: 25px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .comparison-card {
+            padding: 25px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .before-card {
+            background: linear-gradient(135deg, #fef2f2, #fee2e2);
+            border: 2px solid #fecaca;
+        }
+
+        .after-card {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border: 2px solid #bae6fd;
+        }
+
+        .comparison-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .before-card .card-title {
+            color: #dc2626;
+        }
+
+        .after-card .card-title {
+            color: #0369a1;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .timeline-bullet {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            margin-top: 8px;
+            flex-shrink: 0;
+        }
+
+        .before-card .timeline-bullet {
+            background: #dc2626;
+        }
+
+        .after-card .timeline-bullet {
+            background: #0369a1;
+        }
+
+        .highlight-text {
+            background: linear-gradient(120deg, rgba(233, 69, 96, 0.1) 0%, rgba(233, 69, 96, 0.2) 100%);
+            color: #e94560;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .neurological-markers {
+            margin: 30px 0;
+        }
+
+        .markers-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .marker-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #fff7ed, #ffedd5);
+            border-left: 4px solid #f97316;
+            border-radius: 0 12px 12px 0;
+            transition: all 0.3s ease;
+        }
+
+        .marker-item:hover {
+            transform: translateX(8px);
+            box-shadow: 0 8px 20px rgba(249, 115, 22, 0.1);
+        }
+
+        .marker-time {
+            font-weight: 700;
+            color: #ea580c;
+            min-width: 80px;
+        }
+
+        .marker-description {
+            color: #92400e;
+            font-weight: 500;
+        }
+
+        .changes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .change-item {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #bae6fd;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .change-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(3, 105, 161, 0.1);
+        }
+
+        .change-label {
+            font-weight: 700;
+            color: #0369a1;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .change-value {
+            font-size: 1.1rem;
+            color: #1e293b;
+            font-weight: 500;
+        }
+
+        .stats-section {
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            padding: 40px;
+            border-radius: 20px;
+            margin: 50px 0;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 15px 35px rgba(15, 52, 96, 0.06);
+        }
+
+        .stats-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0f172a;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .stats-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #0f3460, #e94560);
+            border-radius: 2px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .stat-card {
+            background: linear-gradient(145deg, #ffffff, #f8fafc);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(15, 52, 96, 0.05);
+            border: 1px solid #e2e8f0;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #0f3460, #e94560);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .stat-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(15, 52, 96, 0.1);
+        }
+
+        .stat-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            color: #e94560;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #475569;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .rupture-section {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            color: white;
+            padding: 50px;
+            border-radius: 20px;
+            margin: 60px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .rupture-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(233, 69, 96, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .rupture-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #e94560;
+        }
+
+        .rupture-content {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .transformation-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .transformation-item {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .transformation-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .science-section {
+            background: linear-gradient(145deg, #f0f9ff, #e0f2fe);
+            padding: 40px;
+            border-radius: 20px;
+            margin: 50px 0;
+            border: 2px solid #bae6fd;
+        }
+
+        .science-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0369a1;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .science-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .science-step {
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(3, 105, 161, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .science-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(3, 105, 161, 0.15);
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(135deg, #0369a1, #0284c7);
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            line-height: 30px;
+            margin-bottom: 15px;
+        }
+
+        .transition-section {
+            text-align: center;
+            padding: 50px 30px;
+            background: linear-gradient(135deg, #fafafa, #f5f5f5);
+            border-radius: 20px;
+            margin: 50px 0;
+            border: 1px solid #e5e5e5;
+        }
+
+        .transition-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #374151;
+            margin-bottom: 20px;
+        }
+
+        .transition-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #6b7280;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .arrow-down {
+            width: 40px;
+            height: 40px;
+            fill: #e94560;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        @media (max-width: 768px) {
+            .transformation-section {
+                padding: 40px 20px;
+            }
+
+            .main-title {
+                font-size: 2.2rem;
+            }
+
+            .phase-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .changes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .transformation-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-title {
+                font-size: 1.8rem;
+            }
+
+            .phase-block {
+                padding: 30px 20px;
+            }
+
+            .phase-title {
+                font-size: 1.5rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloco de Curiosidade</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f7fa;
+            padding: 2rem;
+            color: #1f2937;
+        }
+
+        .revelation-bridge {
+            max-width: 800px;
+            margin: 0 auto;
+            background: linear-gradient(145deg, #ffffff, #f8fafc);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(15, 52, 96, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .revelation-bridge::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #e94560, #0f3460, #e94560);
+            background-size: 200% 100%;
+            animation: gradientShift 3s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 0%; }
+            50% { background-position: 100% 0%; }
+        }
+
+        /* Estatística Chocante */
+        .shock-stat {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shock-stat::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(233, 69, 96, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .stat-container {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 20px;
+        }
+
+        .stat-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 4rem;
+            font-weight: 900;
+            color: #e94560;
+            margin-bottom: 10px;
+            text-shadow: 0 4px 10px rgba(233, 69, 96, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .stat-description {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 15px;
+        }
+
+        .stat-detail {
+            font-size: 1.2rem;
+            color: #cbd5e0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .highlight-text {
+            color: #e94560;
+            font-weight: 700;
+            background: rgba(233, 69, 96, 0.1);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        /* Revelação Misteriosa */
+        .mystery-reveal {
+            padding: 40px 30px;
+            background: linear-gradient(135deg, #f8fafc, #ffffff);
+        }
+
+        .mystery-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #0f172a;
+            text-align: center;
+            margin-bottom: 30px;
+            line-height: 1.3;
+            position: relative;
+        }
+
+        .mystery-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #0f3460, #e94560);
+            border-radius: 2px;
+        }
+
+        .secret-container {
+            background: linear-gradient(135deg, #fff0f0, #fff8f8);
+            border: 2px dashed #e94560;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .secret-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #e94560, #c73650);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 8px 20px rgba(233, 69, 96, 0.3);
+            animation: clockTick 2s linear infinite;
+        }
+
+        @keyframes clockTick {
+            0%, 90% { transform: rotate(0deg) scale(1); }
+            95% { transform: rotate(12deg) scale(1.05); }
+            100% { transform: rotate(0deg) scale(1); }
+        }
+
+        .secret-text {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 15px;
+        }
+
+        .secret-protocol {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #e94560;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Testemunhos */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .teaser-testimonial {
+            background: linear-gradient(135deg, #f0f5ff, #e6f0ff);
+            border-left: 5px solid #0f3460;
+            padding: 25px;
+            border-radius: 0 15px 15px 0;
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(15, 52, 96, 0.08);
+        }
+
+        .teaser-testimonial:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(15, 52, 96, 0.15);
+        }
+
+        .teaser-testimonial::before {
+            content: '"';
+            font-family: Georgia, serif;
+            font-size: 3rem;
+            color: rgba(15, 52, 96, 0.1);
+            position: absolute;
+            top: -5px;
+            left: 15px;
+        }
+
+        .testimonial-avatar {
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #ffffff;
+            box-shadow: 0 4px 12px rgba(15, 52, 96, 0.2);
+            background: #f1f5f9;
+        }
+
+        .testimonial-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .testimonial-content {
+            flex-grow: 1;
+            position: relative;
+            z-index: 1;
+        }
+
+        .teaser-quote {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #2d3748;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .teaser-author {
+            font-weight: 600;
+            color: #0f3460;
+            text-align: right;
+            font-size: 0.95rem;
+        }
+
+        /* Urgência Emocional */
+        .urgency-block {
+            background: linear-gradient(135deg, #fef2f2, #fee2e2);
+            border: 2px solid #fecaca;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .urgency-question {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #dc2626;
+            margin-bottom: 20px;
+        }
+
+        .urgency-text {
+            font-size: 1.1rem;
+            color: #7f1d1d;
+            margin-bottom: 15px;
+        }
+
+        .urgency-emphasis {
+            font-weight: 700;
+            color: #dc2626;
+        }
+
+        /* CTA Final */
+        .cta-section {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            padding: 40px 30px;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-pre-text {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            color: #e2e8f0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #e94560, #c73650);
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            padding: 20px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(233, 69, 96, 0.4);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: 0.5s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(233, 69, 96, 0.5);
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-sub-text {
+            font-size: 0.9rem;
+            color: #e94560;
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .revelation-bridge {
+                margin: 0 10px;
+            }
+
+            .shock-stat, .mystery-reveal, .cta-section {
+                padding: 30px 20px;
+            }
+
+            .stat-number {
+                font-size: 3rem;
+            }
+
+            .mystery-title {
+                font-size: 1.5rem;
+            }
+
+            .urgency-question {
+                font-size: 1.3rem;
+            }
+
+            .cta-button {
+                font-size: 1.1rem;
+                padding: 18px 30px;
+            }
+
+            .teaser-testimonial {
+                padding: 20px;
+                gap: 15px;
+            }
+
+            .testimonial-avatar {
+                width: 55px;
+                height: 55px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .mystery-title {
+                font-size: 1.3rem;
+            }
+
+            .teaser-testimonial {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+                padding: 20px;
+            }
+
+            .testimonial-avatar {
+                align-self: center;
+                width: 50px;
+                height: 50px;
+            }
+
+            .teaser-author {
+                text-align: center;
+            }
+
+            .urgency-block, .secret-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="revelation-bridge">
+        <!-- Estatística Chocante -->
+        <div class="shock-stat">
+            <div class="stat-container">
+                <div class="stat-number">10.287</div>
+                <div class="stat-description">Pessoas já desbloquearam</div>
+            </div>
+            <p class="stat-detail">seus cérebros com um protocolo<span class="highlight-text">comprovadamente eficaz</span></p>
+        </div>
+
+        <!-- Revelação Misteriosa -->
+        <div class="mystery-reveal">
+            <h3 class="mystery-title">ELES DESCOBRIRAM ALGO QUE PROFESSORES E BANCAS DE CONCURSOS NÃO QUEREM QUE VOCÊ SAIBA</h3>
+            
+            <div class="secret-container">
+                <div class="secret-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="white" d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M16.2,16.2L11,13V7H12.5V12.2L17,14.9L16.2,16.2Z"/>
+                    </svg>
+                </div>
+                <p class="secret-text">O protocolo de emergência cerebral da NOODROPS</p>
+                <p class="secret-protocol">DESBLOQUEIA SEU CÉREBRO EM 72 HORAS</p>
+            </div>
+<div class="content-image">
+    <img src="https://noodrops.com.br/wp-content/uploads/2025/05/aprovada.png" alt="Imagem" width="100%">
+</div>
+<h3>VEJA OS DEPOIMENTOS REAIS DE QUEM JÁ DESBLOQUEOU O CÉREBRO</h3>
+            <!-- Testemunhos -->
+            <div class="testimonials-grid">
+                <div class="teaser-testimonial">
+                    <div class="testimonial-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Marina L." />
+                    </div>
+                    <div class="testimonial-content">
+                        <p class="teaser-quote">"Em 72 horas meu cérebro virou outro. Não consigo nem explicar... é como se uma névoa tivesse saído da minha mente. Pela primeira vez em anos, EU CONSEGUI estudar 6 horas seguidas."</p>
+                        <p class="teaser-author">- Marina L., aprovada na Receita Federal</p>
+                    </div>
+                </div>
+
+                <div class="teaser-testimonial">
+                    <div class="testimonial-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Carlos R." />
+                    </div>
+                    <div class="testimonial-content">
+                        <p class="teaser-quote">"Chorei na primeira semana. Meu cérebro finalmente obedecia. 8 anos tentando passar em concurso e NADA. Em 2 meses com esse protocolo: Estudos 100% focados e com memorização"</p>
+                        <p class="teaser-author">- Carlos R., 34 anos, Técnico Judiciário</p>
+                    </div>
+                </div>
+
+                <div class="teaser-testimonial">
+                    <div class="testimonial-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Ana Carolina" />
+                    </div>
+                    <div class="testimonial-content">
+                        <p class="teaser-quote">"Meu marido disse: 'Você voltou!' Eu estava presente nas conversas, lembrava de tudo que ele falava, dos compromissos... Finalmente conseguia conversar sem a mente voando para outro lugar."
+
+</p>
+                        <p class="teaser-author">- Fernanda S., 29 anos, relacionamento salvo</p>
+                    </div>
+                </div>
+
+                <div class="teaser-testimonial">
+                    <div class="testimonial-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Rafael M." />
+                    </div>
+                    <div class="testimonial-content">
+                        <p class="teaser-quote">"Deixei de fingir que entendia nas reuniões. Minha concentração estava REAL. Em 3 meses recebi a promoção que esperava há 2 anos. Meu chefe notou a diferença na primeira semana."</p>
+                        <p class="teaser-author">- Ricardo M., 38 anos, Gerente de Projetos</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Urgência Emocional -->
+            <div class="urgency-block">
+                <h4 class="urgency-question">ATÉ QUANDO VAI DEIXAR SEU CÉREBRO EM MODO LIMITADO?</h4>
+                <p class="urgency-text">Quantas vezes mais você vai <span class="urgency-emphasis">mentir para sua família</span> dizendo que "dessa vez vai dar certo"?</p>
+                <p class="urgency-text">Quantas noites mais você vai <span class="urgency-emphasis">chorar no banho</span> se perguntando "por que EU não consigo?"</p>
+                <p class="urgency-text"><strong>Esta é sua última chance de não ser mais humilhado pelo próprio cérebro.</strong></p>
+            </div>
+        </div>
+
+        <!-- CTA Final -->
+        <div class="cta-section">
+            <p class="cta-pre-text">Se você está cansado de ser <span style="color: #e94560; font-weight: 700;">TRAÍDO</span> pelo seu próprio cérebro na hora H...</p>
+            
+            <a href="#protocolo" class="cta-button">
+                DESCOBRIR O PROTOCOLO DE 72 HORAS
+            </a>
+            
+            <p class="cta-sub-text">↓ Clique e veja exatamente como 10.287 pessoas desbloquearam seus cérebros ↓</p>
+        </div>
+    </div>
+</body>
+</html>
+
+            <div class="section-divider"></div>
+            
+            <!-- Selo de Garantia -->
+            <div class="guarantee-seal" style="text-align: center; margin: 0 auto;">
+                <img src="https://noodrops.com.br/wp-content/uploads/2025/05/Selo-30.jpg" alt="Garantia de 30 dias">
+            </div>
+            
+            <div class="guarantee">
+                <p><strong>GARANTIA TRIPLA DE SATISFAÇÃO:</strong> Se em 30 dias você não sentir seu cérebro finalmente respondendo como deveria, devolvemos cada centavo. <span class="emphasis">Sem perguntas. Sem burocracia. Sem julgamentos.</span></p>
+            </div>
+            
+            <!-- Imagem Final Motivacional -->
+            <div class="content-image">
+                <img src="https://noodrops.com.br/wp-content/uploads/2025/05/final-concurseiro-aprovado.png" alt="Finalmente aprovado" width="100%">
+            </div>
+            
+            <!-- CTA Final -->
+            <div class="final-cta">
+                <div class="highlight-box">
+                    <p><strong>⚠️ HOJE À NOITE, QUANDO VOCÊ:</strong></p>
+                    <div class="pain-points">
+                        <p>Sentar pra estudar e esquecer TUDO de novo</p>
+                        <p>Ver mais colegas comemorando aprovação</p>
+                        <p>Se perguntar "Por que EU não consigo?"</p>
+                    </div>
+                    <p><strong>...VAI LEMBRAR DESTE CLIQUE QUE NÃO DEU.</strong></p>
+                </div>
+                
+                <p>Se cansou de ser humilhado pelo próprio cérebro...</p>
+                <a href="#comprar" class="cta-button">CLIQUE AQUI e acesse o protocolo de emergência que já DESTRAVOU 10.287 cérebros</a>
+                
+                <div class="security-trust">
+                    <span><i class="fas fa-lock"></i> Pagamento 100% Seguro</span>
+                    <span><i class="fas fa-credit-card"></i> Várias Formas de Pagamento</span>
+                </div>
+                
+                <p class="urgency">Atenção: Nosso estoque é limitado devido à alta demanda de concurseiros e estudantes de alta performance.</p>
+                
+                <p class="pps">OBS: Cada dia que você espera é mais um dia que seu cérebro continua no modo "sabotagem". Os aprovados que você vê hoje tomaram uma decisão: <strong>parar de tentar sozinhos</strong>.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Popup de saída -->
+    <div class="exit-popup" id="exitPopup">
+        <div class="popup-content">
+            <span class="close-popup" id="closePopup">&times;</span>
+            <h3>ESPERE!</h3>
+            <p>Antes de sair, queremos oferecer um desconto especial de <strong>35% OFF</strong> válido apenas por <strong>15 minutos</strong>.</p>
+            <p>Seu cérebro merece essa segunda chance!</p>
+            <a href="#comprar-desconto" class="cta-button">QUERO APROVEITAR ESSA OFERTA ÚNICA</a>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script>
+        // Função para atualizar a barra de progresso de leitura
+        function updateReadProgress() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.querySelector(".read-progress").style.width = scrolled + "%";
+        }
+        
+        // Função para iniciar contagem regressiva
+        function startTimer() {
+            const timer = document.getElementById('timer');
+            if (!timer) return;
+            
+            const time = {
+                hours: 23,
+                minutes: 59,
+                seconds: 59
+            };
+            
+            setInterval(function() {
+                time.seconds--;
+                if (time.seconds < 0) {
+                    time.seconds = 59;
+                    time.minutes--;
+                    
+                    if (time.minutes < 0) {
+                        time.minutes = 59;
+                        time.hours--;
+                        
+                        if (time.hours < 0) {
+                            time.hours = 23;
+                        }
+                    }
+                }
+                
+                timer.textContent = 
+                    (time.hours < 10 ? '0' : '') + time.hours + ':' +
+                    (time.minutes < 10 ? '0' : '') + time.minutes + ':' +
+                    (time.seconds < 10 ? '0' : '') + time.seconds;
+            }, 1000);
+        }
+        
+        // Função para atualizar contadores de prova social 
+        function updateSocialProof() {
+            // Atualiza número de visualizadores
+            const viewers = document.getElementById('viewers');
+            if (viewers) {
+                let currentViewers = parseInt(viewers.textContent);
+                
+                setInterval(function() {
+                    // Aleatoriamente aumenta ou diminui o número de visualizações
+                    const change = Math.floor(Math.random() * 3) - 1; // -1, 0, ou 1
+                    const newValue = currentViewers + change;
+                    
+                    // Garante que o valor esteja entre 25 e 50
+                    if (newValue >= 25 && newValue <= 50) {
+                        currentViewers = newValue;
+                        viewers.textContent = currentViewers;
+                    }
+                }, 5000);
+            }
+            
+            // Atualiza contagem de vendas recentes
+            const sales = document.getElementById('recent-sales');
+            if (sales) {
+                setInterval(function() {
+                    const currentSales = parseInt(sales.textContent);
+                    
+                    // Ocasionalmente aumenta o número de vendas
+                    if (Math.random() > 0.7) { // 30% de chance de aumentar
+                        sales.textContent = currentSales + 1;
+                    }
+                }, 30000); // A cada 30 segundos
+            }
+        }
+        
+        // Função para controlar popup de saída
+        function setupExitPopup() {
+            const exitPopup = document.getElementById('exitPopup');
+            const closePopup = document.getElementById('closePopup');
+            
+            if (!exitPopup || !closePopup) return;
+            
+            // Mostra popup quando o mouse sai da janela
+            document.addEventListener('mouseleave', function(e) {
+                if (e.clientY < 0 && !sessionStorage.getItem('exitShown')) {
+                    exitPopup.style.display = 'flex';
+                    sessionStorage.setItem('exitShown', 'true');
+                }
+            });
+            
+            // Fecha popup ao clicar no X
+            closePopup.addEventListener('click', function() {
+                exitPopup.style.display = 'none';
+            });
+        }
+        
+        // Inicializa todos os scripts quando a página carrega
+        window.addEventListener('load', function() {
+            // Adiciona listener para barra de progresso
+            window.addEventListener('scroll', updateReadProgress);
+            
+            // Inicia contagem regressiva 
+            startTimer();
+            
+            // Inicia contadores de prova social
+            updateSocialProof();
+            
+            // Configura popup de saída
+            setupExitPopup();
+        });
+    </script>
+</body>
+</html>
