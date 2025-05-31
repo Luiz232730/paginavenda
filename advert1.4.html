@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEU CÉREBRO VAI TRAVAR A QUALQUER MOMENTO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(11, 20, 38, 0.8) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(212, 175, 55, 0.02) 0%, transparent 50%),
+                linear-gradient(135deg, #0B1426 0%, #1a2640 25%, #0B1426 50%, #243447 75%, #0B1426 100%);
+            background-size: 600% 600%;
+            animation: neuralPulse 20s ease infinite;
+            color: #E8E9EA;
+            line-height: 1.7;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4AF37' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat,
+                url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4AF37' fill-opacity='0.01'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+            z-index: -2;
+            opacity: 0.3;
+        }
+
+        @keyframes neuralPulse {
+            0%, 100% { background-position: 0% 50%; }
+            33% { background-position: 100% 50%; }
+            66% { background-position: 50% 100%; }
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header de Emergência Nacional */
+        .national-alert {
+            background: 
+                linear-gradient(135deg, rgba(220, 53, 69, 0.15) 0%, rgba(220, 53, 69, 0.08) 100%),
+                rgba(11, 20, 38, 0.4);
+            backdrop-filter: blur(60px) saturate(200%);
+            border: 2px solid rgba(220, 53, 69, 0.4);
+            padding: 80px 0;
+            text-align: center;
+            border-radius: 32px;
+            margin-bottom: 80px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 40px 80px rgba(220, 53, 69, 0.2),
+                0 20px 40px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .national-alert::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #DC3545, #FF6B6B, #DC3545, transparent);
+            animation: emergencyPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes emergencyPulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        .national-alert::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23DC3545' stroke-width='0.5' opacity='0.05'%3E%3Ccircle cx='60' cy='60' r='40'/%3E%3Cpath d='M30 30 L90 90 M90 30 L30 90'/%3E%3Cpath d='M60 20 L100 60 L60 100 L20 60 Z'/%3E%3C/g%3E%3C/svg%3E") center repeat;
+            z-index: -1;
+        }
+
+        .alert-badge {
+            display: inline-block;
+            background: linear-gradient(135d, #DC3545, #FF6B6B);
+            color: #0B1426;
+            padding: 12px 32px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            font-family: 'Orbitron', monospace;
+            text-transform: uppercase;
+            border-radius: 50px;
+            font-size: 11px;
+            box-shadow: 
+                0 12px 24px rgba(220, 53, 69, 0.4),
+                0 6px 12px rgba(220, 53, 69, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        h1 {
+            font-family: 'Orbitron', monospace;
+            font-size: clamp(2.5rem, 6vw, 4.2rem);
+            font-weight: 900;
+            margin: 30px 0;
+            color: #E8E9EA;
+            line-height: 1.1;
+            text-shadow: 0 4px 16px rgba(220, 53, 69, 0.5);
+        }
+
+        .header-subtitle {
+            font-size: 1.5rem;
+            color: #C8CDD4;
+            font-weight: 500;
+            margin: 30px 0;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Seção Vilão */
+        .villain-section {
+            background: 
+                linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%),
+                rgba(11, 20, 38, 0.3);
+            backdrop-filter: blur(60px) saturate(200%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 32px;
+            padding: 70px 50px;
+            margin: 80px 0;
+            position: relative;
+            box-shadow: 
+                0 40px 80px rgba(0, 0, 0, 0.3),
+                0 20px 40px rgba(0, 0, 0, 0.2),
+                0 8px 32px rgba(220, 53, 69, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.12),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+
+        .villain-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #DC3545 20%, #FF6B6B 50%, #DC3545 80%, transparent);
+            border-radius: 32px 32px 0 0;
+        }
+
+        .villain-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23DC3545' stroke-width='0.3' opacity='0.03'%3E%3Cpath d='M40 10 L70 40 L40 70 L10 40 Z'/%3E%3Ccircle cx='40' cy='40' r='25'/%3E%3C/g%3E%3C/svg%3E") repeat;
+            z-index: -1;
+            animation: subtleFloat 25s ease-in-out infinite;
+        }
+
+        @keyframes subtleFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-5px) rotate(1deg); }
+        }
+
+        .villain-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #FF6B6B;
+            text-align: center;
+            margin-bottom: 50px;
+            text-shadow: 0 4px 16px rgba(220, 53, 69, 0.5);
+        }
+
+        .villain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin: 50px 0;
+        }
+
+        .villain-card {
+            background: 
+                linear-gradient(135d, rgba(220, 53, 69, 0.12) 0%, rgba(220, 53, 69, 0.06) 100%),
+                rgba(11, 20, 38, 0.2);
+            backdrop-filter: blur(40px) saturate(180%);
+            border: 1px solid rgba(220, 53, 69, 0.3);
+            border-left: 5px solid #DC3545;
+            padding: 40px 35px;
+            border-radius: 24px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 20px 40px rgba(220, 53, 69, 0.15),
+                0 8px 16px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .villain-card:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 
+                0 30px 60px rgba(220, 53, 69, 0.2),
+                0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .villain-card h4 {
+            font-family: 'Orbitron', monospace;
+            color: #D4AF37;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+        }
+
+        .villain-warning {
+            background: 
+                linear-gradient(135deg, rgba(220, 53, 69, 0.15) 0%, rgba(220, 53, 69, 0.08) 100%),
+                rgba(11, 20, 38, 0.3);
+            backdrop-filter: blur(40px) saturate(180%);
+            border: 2px solid #DC3545;
+            padding: 40px 35px;
+            border-radius: 24px;
+            margin-top: 50px;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 500;
+            box-shadow: 
+                0 32px 64px rgba(220, 53, 69, 0.2),
+                0 16px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Pain Calculator */
+        .pain-calculator {
+            background: 
+                linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0.08) 50%, rgba(212, 175, 55, 0.03) 100%),
+                rgba(11, 20, 38, 0.4);
+            backdrop-filter: blur(60px) saturate(200%);
+            border: 2px solid rgba(212, 175, 55, 0.4);
+            padding: 70px 50px;
+            border-radius: 32px;
+            margin: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 40px 80px rgba(212, 175, 55, 0.2),
+                0 20px 40px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
+        }
+
+        .pain-calculator::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background: 
+                radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 40%),
+                conic-gradient(from 0deg, transparent, rgba(212, 175, 55, 0.05), transparent);
+            animation: cosmicRotate 30s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes cosmicRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .calculator-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #D4AF37;
+            margin-bottom: 40px;
+            text-shadow: 0 4px 16px rgba(212, 175, 55, 0.5);
+        }
+        
+        .calculator-display {
+            font-size: 4rem;
+            font-family: 'Orbitron', monospace;
+            font-weight: 900;
+            color: #FF6B6B;
+            margin: 30px 0;
+            text-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+            background: linear-gradient(135deg, #FF6B6B, #DC3545);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .calculator-label {
+            color: #C8CDD4;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        /* FOMO Psicológico */
+        .fomo-psychological {
+            background: 
+                linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%),
+                rgba(11, 20, 38, 0.3);
+            backdrop-filter: blur(60px) saturate(200%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 32px;
+            padding: 70px 50px;
+            margin: 80px 0;
+            position: relative;
+            box-shadow: 
+                0 40px 80px rgba(0, 0, 0, 0.3),
+                0 20px 40px rgba(0, 0, 0, 0.2),
+                0 8px 32px rgba(0, 209, 255, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.12);
+            overflow: hidden;
+        }
+
+        .fomo-psychological::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #00d9ff 20%, #00f5d4 50%, #00d9ff 80%, transparent);
+            border-radius: 32px 32px 0 0;
+        }
+
+        .fomo-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #00d9ff;
+            text-align: center;
+            margin-bottom: 50px;
+            text-shadow: 0 4px 16px rgba(0, 217, 255, 0.5);
+        }
+
+        .live-counter {
+            display: flex;
+            justify-content: space-around;
+            margin: 50px 0;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .counter-item {
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+            background: 
+                linear-gradient(135deg, rgba(0, 217, 255, 0.12) 0%, rgba(0, 217, 255, 0.06) 100%),
+                rgba(11, 20, 38, 0.2);
+            backdrop-filter: blur(30px);
+            padding: 30px 25px;
+            border-radius: 24px;
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            box-shadow: 
+                0 20px 40px rgba(0, 217, 255, 0.15),
+                0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .counter-number {
+            display: block;
+            font-size: 3rem;
+            color: #00d9ff;
+            font-family: 'Orbitron', monospace;
+            font-weight: 900;
+            animation: countUp 2s ease-in-out infinite;
+            text-shadow: 0 4px 8px rgba(0, 217, 255, 0.3);
+        }
+
+        .counter-label {
+            color: #C8CDD4;
+            font-size: 1rem;
+            font-weight: 500;
+            margin-top: 15px;
+        }
+
+        @keyframes countUp {
+            0%, 100% { 
+                transform: scale(1); 
+            }
+            50% { 
+                transform: scale(1.05); 
+            }
+        }
+
+        .fomo-pain {
+            margin-top: 50px;
+        }
+
+        .fomo-pain h4 {
+            font-family: 'Orbitron', monospace;
+            color: #D4AF37;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+        }
+
+        .brain-response {
+            background: 
+                linear-gradient(135deg, rgba(255, 42, 109, 0.12) 0%, rgba(255, 42, 109, 0.06) 100%),
+                rgba(11, 20, 38, 0.2);
+            backdrop-filter: blur(30px);
+            padding: 35px 30px;
+            margin: 30px 0;
+            border-left: 5px solid #ff2a6d;
+            border-radius: 0 20px 20px 0;
+            box-shadow: 
+                0 20px 40px rgba(255, 42, 109, 0.15),
+                0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .brain-response p {
+            font-style: italic;
+            font-size: 1.2rem;
+            margin: 15px 0;
+            color: #FFB3FF;
+            font-weight: 500;
+        }
+
+        .fomo-result {
+            background: 
+                linear-gradient(135deg, rgba(0, 217, 255, 0.15) 0%, rgba(0, 217, 255, 0.08) 100%),
+                rgba(11, 20, 38, 0.3);
+            backdrop-filter: blur(40px);
+            padding: 35px 30px;
+            margin-top: 40px;
+            border: 2px solid #00d9ff;
+            border-radius: 24px;
+            text-align: center;
+            font-weight: 500;
+            box-shadow: 
+                0 32px 64px rgba(0, 217, 255, 0.2),
+                0 16px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Comparação Social */
+        .social-comparison {
+            background: 
+                linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%),
+                rgba(11, 20, 38, 0.3);
+            backdrop-filter: blur(60px) saturate(200%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 32px;
+            padding: 70px 50px;
+            margin: 80px 0;
+            position: relative;
+            box-shadow: 
+                0 40px 80px rgba(0, 0, 0, 0.3),
+                0 20px 40px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.12);
+            overflow: hidden;
+        }
+
+        .comparison-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #FF6B6B;
+            text-align: center;
+            margin-bottom: 50px;
+            text-shadow: 0 4px 16px rgba(255, 107, 107, 0.5);
+        }
+
+        .comparison-stories {
+            margin: 50px 0;
+        }
+
+        .story-item {
+            display: flex;
+            align-items: flex-start;
+            margin: 40px 0;
+            padding: 30px;
+            background: 
+                linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%),
+                rgba(11, 20, 38, 0.2);
+            backdrop-filter: blur(30px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 
+                0 16px 32px rgba(0, 0, 0, 0.2),
+                0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .story-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 
+                0 24px 48px rgba(0, 0, 0, 0.3),
+                0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .story-icon {
+            font-size: 2rem;
+            margin-right: 25px;
+            flex-shrink: 0;
+        }
+
+        .story-content {
+            flex: 1;
+        }
+
+        .story-content strong {
+            color: #D4AF37;
+            font-weight: 700;
+        }
+
+        .brutal-truth {
+            background: 
+                linear-gradient(135deg, rgba(220, 53, 69, 0.15) 0%, rgba(220, 53, 69, 0.08) 100%),
+                rgba(11, 20, 38, 0.3);
+            backdrop-filter: blur(40px);
+            padding: 50px 40px;
+            margin-top: 50px;
+            border: 2px solid #DC3545;
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: 
+                0 32px 64px rgba(220, 53, 69, 0.2),
+                0 16px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .brutal-truth h4 {
+            font-family: 'Orbitron', monospace;
+            color: #FF6B6B;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            text-shadow: 0 4px 16px rgba(255, 107, 107, 0.5);
+        }
+        
+        /* Scientific Proof */
+        .scientific-proof {
+            background: 
+                linear-gradient(135deg, rgba(0, 217, 255, 0.12) 0%, rgba(0, 217, 255, 0.06) 100%),
+                rgba(11, 20, 38, 0.3);
+            backdrop-filter: blur(60px) saturate(200%);
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            border-left: 5px solid #00d9ff;
+            padding: 60px 50px;
+            border-radius: 0 32px 32px 0;
+            margin: 80px 0;
+            position: relative;
+            box-shadow: 
+                0 40px 80px rgba(0, 217, 255, 0.15),
+                0 20px 40px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+        }
+        
+        .proof-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #00d9ff;
+            margin-bottom: 30px;
+            text-shadow: 0 4px 16px rgba(0, 217, 255, 0.5);
+        }
+        
+        .proof-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin: 50px 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            background: 
+                linear-gradient(135deg, rgba(0, 217, 255, 0.08) 0%, rgba(0, 217, 255, 0.03) 100%),
+                rgba(11, 20, 38, 0.2);
+            backdrop-filter: blur(30px);
+            padding: 30px 25px;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            box-shadow: 
+                0 16px 32px rgba(0, 217, 255, 0.1),
+                0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-number {
+            font-family: 'Orbitron', monospace;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #00d9ff;
+            margin-bottom: 15px;
+            text-shadow: 0 4px 8px rgba(0, 217, 255, 0.3);
+        }
+        
+        .stat-label {
+            color: #C8CDD4;
+            font-weight: 500;
+        }
+        
+        /* Loss Section */
+        .loss-section {
+            background: 
+                linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%),
+                rgba(11, 20, 38, 0.3);
+            backdrop-filter: blur(60px) saturate(200%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 32px;
+            padding: 70px 50px;
+            margin: 80px 0;
+            text-align: center;
+            position: relative;
+            box-shadow: 
+                0 40px 80px rgba(0, 0, 0, 0.3),
+                0 20px 40px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.12);
+            overflow: hidden;
+        }
+
+        .loss-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #DC3545 20%, #FF6B6B 50%, #DC3545 80%, transparent);
+            border-radius: 32px 32px 0 0;
+        }
+
+        .loss-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #DC3545 20%, #FF6B6B 50%, #DC3545 80%, transparent);
+            border-radius: 0 0 32px 32px;
+        }
+        
+        .loss-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #FF6B6B;
+            margin-bottom: 50px;
+            text-shadow: 0 4px 16px rgba(255, 107, 107, 0.5);
+        }
+        
+        .loss-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin: 50px 0;
+        }
+        
+        .loss-card {
+            background: 
+                linear-gradient(135deg, rgba(220, 53, 69, 0.12) 0%, rgba(220, 53, 69, 0.06) 100%),
+                rgba(11, 20, 38, 0.2);
+            backdrop-filter: blur(40px);
+            padding: 40px 35px;
+            border-radius: 24px;
+            border-left: 4px solid #DC3545;
+            border: 1px solid rgba(220, 53, 69, 0.3);
+            box-shadow: 
+                0 20px 40px rgba(220, 53, 69, 0.15),
+                0 8px 16px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .loss-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 
+                0 30px 60px rgba(220, 53, 69, 0.2),
+                0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .loss-card h4 {
+            font-family: 'Orbitron', monospace;
+            color: #D4AF37;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Urgência Emocional */
+        .emotional-urgency {
+            background: 
+                linear-gradient(135deg, rgba(220, 53, 69, 0.15) 0%, rgba(220, 53, 69, 0.08) 50%, rgba(220, 53, 69, 0.03) 100%),
+                rgba(11, 20, 38, 0.4);
+            backdrop-filter: blur(60px) saturate(200%);
+            border: 2px solid rgba(220, 53, 69, 0.4);
+            padding: 80px 50px;
+            border-radius: 32px;
+            margin: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 40px 80px rgba(220, 53, 69, 0.2),
+                0 20px 40px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
+        }
+
+        .urgency-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #FF6B6B;
+            margin-bottom: 50px;
+            text-shadow: 0 4px 16px rgba(255, 107, 107, 0.5);
+        }
+
+        .loss-calculator-live {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin: 50px 0;
+        }
+
+        .live-loss-item {
+            padding: 30px 25px;
+            background: 
+                linear-gradient(135deg, rgba(220, 53, 69, 0.12) 0%, rgba(220, 53, 69, 0.06) 100%),
+                rgba(11, 20, 38, 0.2);
+            backdrop-filter: blur(30px);
+            border-radius: 20px;
+            min-width: 180px;
+            border: 1px solid rgba(220, 53, 69, 0.3);
+            box-shadow: 
+                0 16px 32px rgba(220, 53, 69, 0.15),
+                0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .loss-amount {
+            display: block;
+            font-family: 'Orbitron', monospace;
+            font-size: 2rem;
+            font-weight: 900;
+            color: #FF6B6B;
+            margin-bottom: 15px;
+            text-shadow: 0 4px 8px rgba(255, 107, 107, 0.3);
+        }
+
+        .loss-label {
+            color: #C8CDD4;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .desperation-section {
+            margin: 60px 0;
+        }
+
+        .desperation-section h4 {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #D4AF37;
+            margin-bottom: 40px;
+            text-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+        }
+
+        .desperation-list {
+            text-align: left;
+            max-width: 600px;
+            margin: 40px auto;
+            font-size: 1.1rem;
+            font-weight: 500;
+            list-style: none;
+            padding: 0;
+        }
+
+        .desperation-list li {
+            margin: 20px 0;
+            padding: 20px 25px;
+            background: 
+                linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%),
+                rgba(11, 20, 38, 0.2);
+            backdrop-filter: blur(20px);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .rock-bottom {
+            background: 
+                linear-gradient(135deg, rgba(220, 53, 69, 0.15) 0%, rgba(220, 53, 69, 0.08) 100%),
+                rgba(11, 20, 38, 0.3);
+            backdrop-filter: blur(40px);
+            padding: 40px 35px;
+            margin: 50px 0;
+            border: 2px solid #DC3545;
+            border-radius: 24px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: 
+                0 32px 64px rgba(220, 53, 69, 0.2),
+                0 16px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .final-cta-section {
+            margin-top: 80px;
+        }
+
+        .final-cta-section h3 {
+            font-family: 'Orbitron', monospace;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #FF6B6B;
+            margin-bottom: 30px;
+            text-shadow: 0 4px 16px rgba(255, 107, 107, 0.5);
+        }
+
+        .emergency-button {
+            display: inline-block;
+            background: 
+                linear-gradient(135deg, #DC3545 0%, #FF6B6B 25%, #FF4757 50%, #FF6B6B 75%, #DC3545 100%),
+                radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.2) 0%, transparent 50%);
+            background-size: 300% 300%, 100% 100%;
+            color: white;
+            padding: 30px 70px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-decoration: none;
+            margin: 40px 0;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            animation: urgentPulse 1.5s infinite;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 
+                0 25px 50px rgba(220, 53, 69, 0.4),
+                0 15px 30px rgba(220, 53, 69, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes urgentPulse {
+            0%, 100% { 
+                transform: scale(1);
+                box-shadow: 
+                    0 25px 50px rgba(220, 53, 69, 0.4),
+                    0 0 30px rgba(220, 53, 69, 0.6);
+            }
+            50% { 
+                transform: scale(1.05);
+                box-shadow: 
+                    0 30px 60px rgba(220, 53, 69, 0.5),
+                    0 0 50px rgba(220, 53, 69, 0.8);
+            }
+        }
+
+        .emergency-button:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 
+                0 35px 70px rgba(220, 53, 69, 0.5),
+                0 20px 40px rgba(220, 53, 69, 0.4);
+        }
+
+        .final-warning {
+            background: 
+                linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%),
+                rgba(11, 20, 38, 0.3);
+            backdrop-filter: blur(40px);
+            padding: 40px 35px;
+            margin-top: 40px;
+            border: 2px solid #ff2a6d;
+            border-radius: 24px;
+            box-shadow: 
+                0 32px 64px rgba(255, 42, 109, 0.2),
+                0 16px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .last-chance {
+            color: #ff2a6d;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+        
+        /* CTA de Emergência */
+        .emergency-cta {
+            text-align: center;
+            margin: 80px 0;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: 
+                linear-gradient(135deg, #DC3545 0%, #ff2a6d 100%),
+                radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2) 0%, transparent 50%);
+            color: white;
+            padding: 25px 60px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            margin: 30px 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: pulse 2s infinite;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 
+                0 20px 40px rgba(220, 53, 69, 0.4),
+                0 10px 20px rgba(220, 53, 69, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 
+                0 25px 50px rgba(220, 53, 69, 0.5),
+                0 15px 30px rgba(220, 53, 69, 0.4);
+        }
+        
+        .cta-note {
+            color: #8B9097;
+            font-size: 0.9rem;
+            margin-top: 30px;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .container { padding: 0 15px; }
+            .national-alert { padding: 60px 0; }
+            .villain-section, .pain-calculator, .fomo-psychological, 
+            .social-comparison, .scientific-proof, .loss-section, 
+            .emotional-urgency { padding: 50px 30px; }
+            
+            h1 { font-size: 2.5rem; }
+            
+            .villain-grid,
+            .loss-grid,
+            .proof-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .live-counter {
+                flex-direction: column;
+            }
+            
+            .story-item {
+                flex-direction: column;
+                padding: 25px;
+            }
+            
+            .story-icon {
+                margin-bottom: 15px;
+                margin-right: 0;
+            }
+
+            .emergency-button {
+                padding: 25px 50px;
+                font-size: 1.5rem;
+            }
+
+            .loss-calculator-live {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .villain-title, .fomo-title, .comparison-title, 
+            .loss-title, .urgency-title { font-size: 1.8rem; }
+            
+            .calculator-display { font-size: 3rem; }
+            .counter-number { font-size: 2.5rem; }
+            .stat-number { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Alerta Nacional -->
+        <header class="national-alert">
+            <div class="alert-badge">ALERTA NACIONAL DE SAÚDE PÚBLICA</div>
+            <h1>SEU CÉREBRO VAI TRAVAR A QUALQUER MOMENTO</h1>
+            <p class="header-subtitle">9 horas de telas diárias estão DESTRUINDO seu cérebro e seu foco</p>
+        </header>
+
+        <!-- Seção do Vilão Real -->
+        <div class="villain-section">
+            <h3 class="villain-title">CONHEÇA SEU VERDADEIRO INIMIGO:</h3>
+            
+            <div class="villain-grid">
+                <div class="villain-card">
+                    <h4>🔴 O ALGORITMO VICIANTE</h4>
+                    <p>O Instagram foi PROGRAMADO por 300 PHDs para viciar seu cérebro. Cada scroll libera dopamina e destrói sua capacidade de foco natural. <strong>Você não tem controle.</strong></p>
+                </div>
+                
+                <div class="villain-card">
+                    <h4>📱 O WHATSAPP VAMPIRO</h4>
+                    <p>Aquela notificação às 23h47? Ela fragmentou seu sono REM e destruiu 3,7 horas de produtividade do dia seguinte. Multiplicado por 365 dias = sua carreira sabotada.</p>
+                </div>
+                
+                <div class="villain-card">
+                    <h4>💼 O LINKEDIN TÓXICO</h4>
+                    <p>"Parabéns pela promoção, João!" - Sua autoestima despenca 23% a cada post de sucesso alheio. Seu cérebro interpreta como fracasso pessoal e ativa o modo auto-sabotagem.</p>
+                </div>
+            </div>
+            
+            <div class="villain-warning">
+                <p><strong>ELES SABEM EXATAMENTE O QUE FAZEM:</strong> Essas empresas contrataram neurocientistas de Harvard para tornar você DEPENDENTE. Cada cor, som e vibração foi testada para viciar seu cérebro.</p>
+            </div>
+        </div>
+        
+        <!-- Calculadora de Dor -->
+        <div class="pain-calculator">
+            <h3 class="calculator-title">CALCULE QUANTO VOCÊ JÁ PERDEU:</h3>
+            <div class="calculator-display">R$ 142.780</div>
+            <p class="calculator-label">Em oportunidades, promoções e crescimento pessoal</p>
+        </div>
+
+        <!-- FOMO Psicológico -->
+        <div class="fomo-psychological">
+            <h3 class="fomo-title">AGORA MESMO, ENQUANTO VOCÊ LÊ ISSO:</h3>
+            
+            <div class="live-counter">
+                <div class="counter-item">
+                    <span class="counter-number" id="linkedin-posts">1.247</span>
+                    <div class="counter-label">posts de "conquista" no LinkedIn</div>
+                </div>
+                <div class="counter-item">
+                    <span class="counter-number" id="instagram-stories">3.891</span>
+                    <div class="counter-label">stories de "vida perfeita"</div>
+                </div>
+                <div class="counter-item">
+                    <span class="counter-number" id="job-positions">347</span>
+                    <div class="counter-label">vagas preenchidas por pessoas "menos qualificadas"</div>
+                </div>
+            </div>
+            
+            <div class="fomo-pain">
+                <h4>SEU CÉREBRO REGISTROU TUDO ISSO COMO:</h4>
+                <div class="brain-response">
+                    <p>"Estou ficando para trás"</p>
+                    <p>"Todo mundo está melhor que eu"</p>
+                    <p>"Nunca vou conseguir alcançar"</p>
+                    <p>"Sou um fracasso"</p>
+                </div>
+                
+                <div class="fomo-result">
+                    <p><strong>RESULTADO:</strong> Seu cérebro ativou o MODO PÂNICO PERMANENTE. Você não consegue mais relaxar, focar ou ser feliz sem comparar sua vida com a dos outros.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comparação Social Brutal -->
+        <div class="social-comparison">
+            <h3 class="comparison-title">ENQUANTO VOCÊ ESTAVA "OCUPADO" NAVEGANDO...</h3>
+            
+            <div class="comparison-stories">
+                <div class="story-item">
+                    <div class="story-icon">😤</div>
+                    <div class="story-content">
+                        <p><strong>Sua cunhada que "não é tão inteligente"</strong> acabou de abrir a terceira loja. Ela não ficava perdendo tempo em 15 abas abertas sobre "como empreender".</p>
+                    </div>
+                </div>
+                
+                <div class="story-item">
+                    <div class="story-icon">💼</div>
+                    <div class="story-content">
+                        <p><strong>Seu ex-colega "medíocre"</strong> virou gerente regional. Enquanto você checava o Instagram, ele estava focado entregando resultados.</p>
+                    </div>
+                </div>
+                
+                <div class="story-item">
+                    <div class="story-icon">🏠</div>
+                    <div class="story-content">
+                        <p><strong>Seu primo "preguiçoso"</strong> comprou apartamento de R$ 380mil. Ele não sabia nem fazer uma planilha, mas não era VÍTIMA da infoxicação.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="brutal-truth">
+                <h4>A VERDADE BRUTAL:</h4>
+                <p>A diferença entre eles e você não é talento, QI ou sorte.</p>
+                <p>É que <strong>eles CONSEGUEM MANTER O FOCO, com protocolos que já existem, mas que não são divulgados para todos</strong>.</p>
+                <p>Enquanto você consome conteúdo, eles PRODUZEM resultados.</p>
+            </div>
+        </div>
+        
+        <!-- Prova Científica -->
+        <div class="scientific-proof">
+            <h3 class="proof-title">A CIÊNCIA COMPROVOU: VOCÊ É VÍTIMA DA INFOXICAÇÃO</h3>
+            <p>Pesquisas da USP revelam que seu cérebro sofre uma overdose diária de informação equivalente a:</p>
+            
+            <div class="proof-stats">
+                <div class="stat-item">
+                    <div class="stat-number">9h</div>
+                    <div class="stat-label">Tempo diário em telas</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">34GB</div>
+                    <div class="stat-label">Dados processados/dia</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">300%</div>
+                    <div class="stat-label">Mais ansiedade</div>
+                </div>
+            </div>
+            
+            <p>Resultado: Seu cérebro desenvolveu <strong>Síndrome da Atenção Parcial Contínua</strong> - você nunca foca 100% em nada, vivendo em estado de "quase concentrado".</p>
+        </div>
+        
+        <!-- Seção de Perdas -->
+        <div class="loss-section">
+            <h3 class="loss-title">O QUE A INFOXICAÇÃO JÁ ROUBOU DE VOCÊ:</h3>
+            
+            <div class="loss-grid">
+                <div class="loss-card">
+                    <h4>CARREIRA</h4>
+                    <p>Promoções perdidas, projetos atrasados, salário estagnado. Seus colegas avançam enquanto você patina.</p>
+                </div>
+                
+                <div class="loss-card">
+                    <h4>RELACIONAMENTOS</h4>
+                    <p>Pessoas reais substituídas por likes vazios. Sua família merecia mais que sua atenção fragmentada.</p>
+                </div>
+                
+                <div class="loss-card">
+                    <h4>SAÚDE</h4>
+                    <p>Noites sem dormir, ansiedade crônica, dores de cabeça. Seu corpo está pagando o preço.</p>
+                </div>
+                
+                <div class="loss-card">
+                    <h4>POTENCIAL</h4>
+                    <p>Você poderia ser 347% mais produtivo. Mas seu cérebro está em modo sobrevivência, não de excelência.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Urgência Emocional -->
+        <div class="emotional-urgency">
+            <h3 class="urgency-title">CADA SEGUNDO QUE PASSA SEM AGIR:</h3>
+            
+            <div class="loss-calculator-live">
+                <div class="live-loss-item">
+                    <span class="loss-amount">R$ 5,47</span>
+                    <span class="loss-label">em oportunidades perdidas</span>
+                </div>
+                <div class="live-loss-item">
+                    <span class="loss-amount">12 min</span>
+                    <span class="loss-label">de vida produtiva desperdiçada</span>
+                </div>
+                <div class="live-loss-item">
+                    <span class="loss-amount">2,3%</span>
+                    <span class="loss-label">da sua sanidade mental se deteriorando</span>
+                </div>
+            </div>
+            
+            <div class="desperation-section">
+                <h4>EM 30 DIAS VOCÊ VAI ESTAR:</h4>
+                <ul class="desperation-list">
+                    <li>❌ Ainda abrindo 50 abas e não terminando nenhuma</li>
+                    <li>❌ Ainda comprando cursos que nunca vai concluir</li>
+                    <li>❌ Ainda prometendo "começar na segunda-feira"</li>
+                    <li>❌ Ainda vendo seus colegas serem promovidos</li>
+                    <li>❌ Ainda se sentindo um fracasso toda vez que abre o LinkedIn</li>
+                </ul>
+                
+                <div class="rock-bottom">
+                    <p><strong>A menos que você PARE A SANGRIA AGORA.</strong></p>
+                </div>
+            </div>
+            
+            <div class="final-cta-section">
+                <h3>ÚLTIMAS 72 HORAS PARA SALVAR SEU FUTURO</h3>
+                <p>Baseado em estudos neurológicos, você tem uma JANELA CRÍTICA de 72h para reprogramar seu cérebro antes que os padrões se cristalizem permanentemente.</p>
+                
+                <a href="#protocolo" class="emergency-button">PARAR A SANGRIA AGORA - ÚLTIMAS 72H</a>
+                
+                <div class="final-warning">
+                    <p>⚠️ <strong>AVISO CIENTÍFICO:</strong> Após 72h, sua plasticidade neural diminui 34% e fica 5x mais difícil reverter os danos da infoxicação.</p>
+                    <p class="last-chance">Esta pode ser sua última chance real de mudança.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Calculadora de perdas
+        const calculateLoss = () => {
+            const age = 30; // Média do público
+            const dailyLoss = 127; // Estimativa conservadora
+            const yearsWasted = 5; // Tempo médio de infoxicação
+            const totalLoss = dailyLoss * 365 * yearsWasted;
+            
+            const display = document.querySelector('.calculator-display');
+            if (display) {
+                display.textContent = `R$ ${totalLoss.toLocaleString('pt-BR')}`;
+            }
+        };
+        
+        // Contadores dinâmicos
+        const updateCounters = () => {
+            const linkedinPosts = document.getElementById('linkedin-posts');
+            const instagramStories = document.getElementById('instagram-stories');
+            const jobPositions = document.getElementById('job-positions');
+            
+            if (linkedinPosts) {
+                const currentLinkedin = parseInt(linkedinPosts.textContent);
+                linkedinPosts.textContent = currentLinkedin + Math.floor(Math.random() * 3);
+            }
+            
+            if (instagramStories) {
+                const currentInstagram = parseInt(instagramStories.textContent);
+                instagramStories.textContent = currentInstagram + Math.floor(Math.random() * 5);
+            }
+            
+            if (jobPositions) {
+                const currentJobs = parseInt(jobPositions.textContent);
+                jobPositions.textContent = currentJobs + Math.floor(Math.random() * 2);
+            }
+        };
+
+        // Enhanced scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0) scale(1)';
+                }
+            });
+        }, observerOptions);
+
+        // Apply animations to elements
+        document.querySelectorAll('.villain-section, .pain-calculator, .fomo-psychological, .social-comparison, .scientific-proof, .loss-section, .emotional-urgency').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(50px) scale(0.95)';
+            el.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+            observer.observe(el);
+        });
+
+        // Stagger animation for cards
+        document.querySelectorAll('.villain-card').forEach((card, index) => {
+            card.style.transitionDelay = `${index * 0.2}s`;
+        });
+
+        document.querySelectorAll('.loss-card').forEach((card, index) => {
+            card.style.transitionDelay = `${index * 0.2}s`;
+        });
+
+        document.querySelectorAll('.story-item').forEach((item, index) => {
+            item.style.transitionDelay = `${index * 0.3}s`;
+        });
+
+        // Add subtle parallax effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+            document.body.style.backgroundPosition = `center ${rate}px`;
+        });
+        
+        // Inicializar
+        calculateLoss();
+        
+        // Atualizar contadores a cada 3 segundos
+        setInterval(updateCounters, 3000);
+    </script>
+</body>
+</html>
