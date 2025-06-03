@@ -1386,6 +1386,7 @@
     </style>
 </head>
 <body>
+    
     <!-- HERO SECTION -->
     <div class="hero-section">
         <div class="container">
@@ -2112,13 +2113,460 @@ Quanto mais intenso o protocolo, mais rápida a transformação.</p>
 
            
         </div>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - NooDrops</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(11, 20, 38, 0.8) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(212, 175, 55, 0.02) 0%, transparent 50%),
+                linear-gradient(135deg, #0B1426 0%, #1a2640 25%, #0B1426 50%, #243447 75%, #0B1426 100%);
+            background-size: 600% 600%;
+            animation: neuralPulse 20s ease infinite;
+            color: #E8E9EA;
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        @keyframes neuralPulse {
+            0%, 100% { background-position: 0% 50%; }
+            33% { background-position: 100% 50%; }
+            66% { background-position: 50% 100%; }
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* FAQ SECTION STYLES */
+        .faq-section {
+            background: 
+                linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%),
+                rgba(11, 20, 38, 0.3);
+            backdrop-filter: blur(60px) saturate(200%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 32px;
+            padding: 60px 50px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 40px 80px rgba(0, 0, 0, 0.3),
+                0 20px 40px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.12);
+        }
+
+        .faq-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+            border-radius: 32px 32px 0 0;
+        }
+
+        .faq-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #D4AF37;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 16px rgba(212, 175, 55, 0.5);
+        }
+
+        .faq-grid {
+            display: grid;
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .faq-item {
+            background: 
+                linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%),
+                rgba(11, 20, 38, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.1);
+        }
+
+        .faq-item.highlighted {
+            border: 2px solid rgba(212, 175, 55, 0.4);
+            background: 
+                linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(212, 175, 55, 0.06) 100%),
+                rgba(11, 20, 38, 0.3);
+        }
+
+        .faq-question {
+            padding: 25px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .faq-question h3 {
+            color: #E8E9EA;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.4;
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: #D4AF37;
+            font-weight: 700;
+            transition: transform 0.3s ease;
+            min-width: 30px;
+            text-align: center;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .faq-answer.active {
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            padding: 25px 30px;
+            margin: 0;
+            color: #C8CDD4;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .faq-answer strong {
+            color: #D4AF37;
+            font-weight: 700;
+        }
+
+        .extra-guarantee {
+            background: linear-gradient(135deg, rgba(39, 174, 96, 0.12) 0%, rgba(39, 174, 96, 0.06) 100%);
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin-top: 15px;
+            border: 1px solid rgba(39, 174, 96, 0.3);
+        }
+
+        .extra-guarantee strong {
+            color: #27AE60;
+        }
+
+        .anvisa-badge {
+            background: linear-gradient(135deg, rgba(39, 174, 96, 0.15) 0%, rgba(39, 174, 96, 0.08) 100%);
+            padding: 12px 20px;
+            border-radius: 12px;
+            margin-top: 15px;
+            text-align: center;
+            border: 1px solid rgba(39, 174, 96, 0.4);
+        }
+
+        .anvisa-badge strong {
+            color: #27AE60;
+            font-weight: 700;
+        }
+
+        .studies-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .studies-link a {
+            color: #D4AF37;
+            font-weight: 700;
+            text-decoration: underline;
+            font-size: 1rem;
+        }
+
+        .studies-link a:hover {
+            color: #F4D03F;
+        }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 768px) {
+            body { padding: 20px 15px; }
+            .faq-section { padding: 40px 30px; }
+            .faq-title { font-size: 1.8rem; }
+            .faq-question { padding: 20px 25px; }
+            .faq-answer p { padding: 20px 25px; }
+            .faq-question h3 { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- FAQ SECTION -->
+        <div class="faq-section">
+            <h2 class="faq-title">DÚVIDAS FREQUENTES - RESPONDIDAS PELO DR. RAFAEL</h2>
+            <p style="text-align: center; font-size: 1.1rem; color: #C8CDD4; margin-bottom: 50px;">
+                Respostas cientificamente embasadas para suas principais questões
+            </p>
+            
+            <div class="faq-grid">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>NOODROPS FUNCIONA PARA QUALQUER PESSOA?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim, pois foi desenvolvido com compostos naturais, treinados e embasados cientificamente, além de testados por milhares de pessoas no Brasil.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>SINTO OS RESULTADOS COM QUANTOS DIAS DE USO?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Desde o primeiro dia de uso. O suplemento irá estimular seus neurotransmissores entre 30 e 45 minutos após a ingestão.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>COMO USAR?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Tomar DUAS cápsulas, JUNTAS para ter o efeito total. Não ultrapassar o consumo de 2 cápsulas por dia.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>QUAL MELHOR HORÁRIO PRA UTILIZAR?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Indicamos tomar nos momentos em que necessite de performance cerebral. Ou seja, entre as 10:00 da manhã e as 16:00 da tarde. Evitar tomar após as 17:00 horas, por conter cafeína.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="faq-item highlighted">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>COMO DOBRAR OS EFEITOS DO NOODROPS?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p><strong>DICA EXCLUSIVA:</strong> Combine com 8 horas de sono, hidratação adequada (35ml por kg de peso) e evite álcool. Essa combinação pode aumentar a eficácia em até 200%.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 6 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>POSSUI CONTRAINDICAÇÕES?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Por ser um suplemento natural, todas as pessoas podem consumir, exceto: Gestantes, lactantes, pessoas que tomam remédios controlados, e menores de 19 anos, conforme determina a ANVISA. Essas pessoas podem tomar, desde que consultem seus médicos antes.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 7 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>QUAL PRAZO DE ENTREGA?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No momento de fechar a compra, será passado o prazo de entrega para sua região.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 8 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>E SE EU ME ARREPENDER, POSSO DEVOLVER?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Conforme Código de Defesa do Consumidor, você pode devolver no prazo de 7 dias da coleta. Para tanto, o pote deve estar lacrado e não ter sido consumido.</p>
+                        <div class="extra-guarantee">
+                            <strong>+ GARANTIA ESTENDIDA:</strong> Além dos 7 dias legais, oferecemos 30 dias de garantia total ou devolvemos seu dinheiro + R$ 50 pelo seu tempo.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 9 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>CAUSA ANSIEDADE, TAQUICARDIA OU ATRAPALHA O SONO?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Empregamos tecnologia Slow Release, que tende a evitar esses sintomas em pessoas SEM sensibilidade à cafeína. Se você tem sensibilidade e não se sente bem consumindo cafeína, informamos que nosso suplemento contém cafeína equivalente a 2 xícaras pequenas de café. Se você sabe possuir essa sensibilidade e histórico de problemas com cafeína, evitar a compra e o consumo.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 10 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>POSSUI EFEITOS COLATERAIS?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Não, nenhum efeito colateral, por ser feito apenas com substâncias naturais e aprovado pela ANVISA.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 11 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>TENHO PROBLEMAS COM CAFEÍNA E CAFÉ, POSSO TOMAR MESMO ASSIM?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nossa fórmula contém 150mg de cafeína, equivalente a 2 xícaras pequenas de café. Apesar da tecnologia empregada de liberação gradual de efeitos, se você costuma se sentir muito mal ingerindo cafeína, não recomendamos a compra do NooDrops antes de consultar seu médico.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 12 -->
+                <div class="faq-item highlighted">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>É PERMITIDO PELA ANVISA?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p><strong>SIM, TOTALMENTE LEGAL:</strong> Somos categorizados pela ANVISA como Suplementos alimentares – Código RDC N 240/2018 – Código 4300041. – Sendo assim Isentos de registro na Anvisa, conforme determinação do órgão federal.</p>
+                        <div class="anvisa-badge">
+                            <strong>✅ ANVISA APROVADO</strong> | Código: 4300041
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 13 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>COMO VOU RASTREAR MEU PEDIDO DEPOIS DE PAGO?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>O código de rastreio será enviado pelo seu EMAIL no máximo 48 horas.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 14 -->
+                <div class="faq-item highlighted">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>É MESMO ESTUDADO CIENTIFICAMENTE?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p><strong>SIM, COMPLETAMENTE EMBASADO:</strong> Segue o link para acessar os estudos científicos utilizados na fórmula.</p>
+                        <div class="studies-link">
+                            <a href="#" style="color: #D4AF37; font-weight: 700; text-decoration: underline;">🔬 CLIQUE AQUI PARA VER OS ESTUDOS</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // FAQ Toggle functionality
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            const toggle = element.querySelector('.faq-toggle');
+            
+            // Close all other FAQs
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (item !== faqItem) {
+                    item.classList.remove('active');
+                    item.querySelector('.faq-answer').classList.remove('active');
+                    item.querySelector('.faq-toggle').textContent = '+';
+                }
+            });
+            
+            // Toggle current FAQ
+            faqItem.classList.toggle('active');
+            answer.classList.toggle('active');
+            toggle.textContent = faqItem.classList.contains('active') ? '−' : '+';
+        }
+
+        // Enhanced scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0) scale(1)';
+                }
+            });
+        }, observerOptions);
+
+        // Apply animations to FAQ items
+        document.querySelectorAll('.faq-item').forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(30px) scale(0.98)';
+            item.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+            item.style.transitionDelay = `${index * 0.1}s`;
+            observer.observe(item);
+        });
+    </script>
+</body>
+</html>
         <!-- CTA FINAL PODEROSO -->
       
             
-            <a href="#" class="cta-primary">CLIQUE AQUI PARA VOLTAR A TER FOCO</a>
-            
            
+        
+        <a href="#" class="cta-primary">CLIQUE AQUI PARA VOLTAR A TER FOCO</a>
+            
 
         <div class="disclaimer">
             <p>© 2025 NooDrops Detox Protocol. Esta página contém informações baseadas em pesquisas científicas reais. Os resultados podem variar de pessoa para pessoa. Este produto não se destina a diagnosticar, tratar, curar ou prevenir qualquer doença. Consulte sempre um profissional de saúde antes de iniciar qualquer suplementação.</p>
